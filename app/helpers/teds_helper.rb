@@ -1,0 +1,2 @@
+module TedsHelper
+end
