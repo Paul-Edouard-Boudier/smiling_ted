@@ -1,23 +1,19 @@
 class PagesController < ApplicationController
-
-  def index
+  def home
   end
 
-  def show
+  def rules
   end
 
-  def new
+  def info
   end
 
-  def create
+  def team
   end
 
-  def edit
+  def shop
   end
 
-  def update
-  end
-
-  def delete
+  def contact
   end
 end
