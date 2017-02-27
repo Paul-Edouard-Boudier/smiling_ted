@@ -3,4 +3,20 @@ class HomesController < ApplicationController
 
   def welcome
   end
+
+  def rules
+  end
+
+  def shop
+  end
+
+  def info
+  end
+
+  def team
+  end
+
+  def contact
+  end
+
 end
