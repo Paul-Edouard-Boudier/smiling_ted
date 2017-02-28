@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :chapters
   has_many :teds
-  has_many :pages, through: :chapters
+  has_many :photos, through: :chapters
 
 end
