@@ -1,7 +1,11 @@
 fr:
+  name_creation: "Nommez votre peluche"
   search: Cherchez un nom
   submit: Lancer la recherche
   all: Liste des peluches
+  new_ted: Devenez propriétaire d'une peluche
   teds:
     show:
       name: "Nom de la peluche:"
+
+

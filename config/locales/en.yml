@@ -20,11 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  name_creation: "Name your Teddybear"
   hello: "Hello world"
   search: "Search for a name"
   submit: "Search"
   all: List of all teds
+  new_ted: Create a Ted's profile
   teds:
     show:
       name: "Ted's name is:"
+    form:
+
+
 

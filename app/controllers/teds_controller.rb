@@ -8,9 +8,17 @@ class TedsController < ApplicationController
   end
 
   def new
+    @ted = Ted.new
   end
 
   def create
+    @ted = Ted.new
+    @ted.user = current_user
+      if @ted.save
+        redirect_to ted_path(@ted)
+      else
+        render :new
+      end
   end
 
   def edit
@@ -35,7 +43,7 @@ class TedsController < ApplicationController
   def ted_params
     params
     .require(:ted)
-    .permit(:name, :rank, :distance_traveled, :code)
+    .permit(:name, :rank, :distance_traveled, :code, photos: [])
   end
 
   def find_ted

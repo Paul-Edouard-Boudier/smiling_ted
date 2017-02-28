@@ -1,4 +1,4 @@
 class Photo < ApplicationRecord
   belongs_to :chapter
-  has_attachment :photo
+  has_attachment :photos
 end
