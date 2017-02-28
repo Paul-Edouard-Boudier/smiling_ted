@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  search: "Search for a name"
+  submit: "Search"
+  all: List of all teds
+  teds:
+    show:
+      name: "Ted's name is:"
+
