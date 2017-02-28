@@ -1,7 +1,6 @@
 <h1>Photos#show</h1>
 <p>Find me in app/views/photos/show.html.erb</p>
 
-
-<% if @product.photo? %>
-  <%= cl_image_tag @product.photo.path, width: 200, height: 300, crop: :fill %>
+<% @product.photos.each do |photo| %>
+  <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
 <% end %>
