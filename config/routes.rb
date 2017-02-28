@@ -14,4 +14,5 @@ Rails.application.routes.draw do
     resources :chapters
   end
   resources :profiles, only: [:show, :edit, :update, :delete]
+  resources :photos
 end
