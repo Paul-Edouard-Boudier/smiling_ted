@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :teds do
       resources :chapters
     end
-    resources :profiles, only: [:show, :edit, :update, :delete]
+    resources :profiles, only: :show
     resources :photos
     mount Attachinary::Engine => "/attachinary"
   end
