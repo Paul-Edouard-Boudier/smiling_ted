@@ -21,6 +21,7 @@
 
 en:
   name_creation: "Name your Teddybear"
+  code: What's his code?
   hello: "Hello world"
   search: "Search for a name"
   submit: "Search"
