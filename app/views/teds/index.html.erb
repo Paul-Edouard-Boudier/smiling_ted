@@ -6,7 +6,19 @@
     <div class="col-xs-12">
       <% @teds.each do |ted| %>
         <div class="ted">
-          <p><%= ted.name %> <%= link_to "details", ted_path(ted) %><p>
+          <p>
+            <%= ted.name %>
+            <%= ted.rank %>
+            <%= ted.distance_traveled %>
+            <%= ted.user.first_name %>
+
+
+
+
+
+
+            <%= link_to "details", ted_path(ted) %>
+          </p>
         </div>
       <% end %>
     </div>
