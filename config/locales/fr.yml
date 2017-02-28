@@ -1,0 +1,7 @@
+fr:
+  search: Cherchez un nom
+  submit: Lancer la recherche
+  all: Liste des peluches
+  teds:
+    show:
+      name: "Nom de la peluche:"

@@ -15,6 +15,8 @@ gem 'uglifier'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+# views devise remodeled
+gem 'devise-i18n'
 gem 'autoprefixer-rails'
 gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'

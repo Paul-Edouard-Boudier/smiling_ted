@@ -1,3 +1,6 @@
-<%= simple_form_for :query,  url: teds_path, method: :get,  wrapper: :inline_form, html: {class: 'form-inline'} do |f| %>
-  <%= f.input :name, placeholder: "Search by name", html: {class: 'filter-element'}, input_html:{value: params[:query][:name]} %>
-  <% end %>
+<%= form_tag teds_path, method: :get,  wrapper: :inline_form, html: {class: 'form-inline'} do %>
+  <%= text_field_tag :name, t('search') %>
+  <button type="submit"> <%= t('submit')%></button>
+<% end %>
+
+
