@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
   resources :profiles, only: [:show, :edit, :update, :delete]
   resources :photos
+  mount Attachinary::Engine => "/attachinary"
 end

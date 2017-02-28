@@ -19,4 +19,11 @@ class PhotosController < ApplicationController
 
   def delete
   end
+
+  private
+
+  def photo_params
+  params.require(:photo).permit(:title, :description, :photo)
+end
+
 end
