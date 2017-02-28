@@ -6,5 +6,8 @@ class User < ApplicationRecord
   has_many :chapters
   has_many :teds
   has_many :photos, through: :chapters
+  has_attachment  :avatar, accept: [:jpg, :png, :gif]
+  has_attachments :photos, maximum: 5
+
 
 end

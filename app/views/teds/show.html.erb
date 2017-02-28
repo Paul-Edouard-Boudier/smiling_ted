@@ -1,3 +1,14 @@
-<h1> Test</h1>
+<div class="container">
 
-<p> <%= t('.name') %> <%= @ted.name %></p>
+  <p> <%= t('.name') %> <%= @ted.name %></p>
+
+  <% @ted.chapters.each do |chapter|  %>
+    <% chapter.photos.each do |photo| %>
+      <%= cl_image_tag(photo.path, { size: '125x125', crop: :fit }) %>
+    <% end %>
+  <% end %>
+
+
+
+
+</div>
