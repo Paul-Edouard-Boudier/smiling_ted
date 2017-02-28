@@ -27,6 +27,8 @@ en:
   all: List of all teds
   new_ted: Create a Ted's profile
   teds:
+    index:
+      title: Select a ted's story
     show:
       name: "Ted's name is:"
     form:

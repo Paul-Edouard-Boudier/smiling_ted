@@ -1,11 +1,16 @@
 class TedsController < ApplicationController
   before_action :find_ted, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    filtered_ted
+    if params[:name].present?
+      @teds = Ted.where('name like ?', params[:name])
+    else
+      @teds = Ted.all
+    end
   end
 
   def show
-
   end
 
   def new
@@ -32,14 +37,6 @@ class TedsController < ApplicationController
   end
 
   private
-
-  def filtered_ted
-    if params[:name].present?
-      @teds = Ted.where('name like ?', params[:name])
-    else
-      @teds = Ted.all
-    end
-  end
 
   def ted_params
     params
