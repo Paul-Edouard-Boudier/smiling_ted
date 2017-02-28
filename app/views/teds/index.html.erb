@@ -1,8 +1,14 @@
-
 <div class="container">
-  <div class="row text-center filter_form">
-    <% @teds.each do |ted| %>
-      <p> <%= ted.name %> <%= link_to "details", ted_path(ted) %> <p>
+
+  <h1><%= t('.title') %></h1>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <% @teds.each do |ted| %>
+        <div class="ted">
+          <p><%= ted.name %> <%= link_to "details", ted_path(ted) %><p>
+        </div>
       <% end %>
+    </div>
   </div>
 </div>
