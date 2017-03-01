@@ -33,7 +33,7 @@ class ChaptersController < ApplicationController
   def chapter_params
     params
     .require(:chapter)
-    .permit(:description, :localisation, :likes, :ted_id)
+    .permit(:description, :localisation, :likes, :ted_id, tasks_attributes: [:id, :description, :done, :_destroy])
   end
 
 end
