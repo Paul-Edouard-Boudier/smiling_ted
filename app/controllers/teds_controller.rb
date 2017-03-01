@@ -18,7 +18,7 @@ class TedsController < ApplicationController
   end
 
   def create
-    @ted = Ted.new
+    @ted = Ted.new(ted_params)
     @ted.user = current_user
       if @ted.save
         redirect_to ted_path(@ted)
