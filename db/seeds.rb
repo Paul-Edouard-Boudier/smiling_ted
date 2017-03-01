@@ -29,6 +29,7 @@ user = User.create(
     distance_traveled: Faker::Number.between(10, 3000),
     code: "739541FR",
     avatar_url: 'https://upload.wikimedia.org/wikipedia/en/d/d5/Pedobear.png'
+
   )
 
   chapter = ted.chapters.create(
