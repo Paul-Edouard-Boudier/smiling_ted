@@ -2,6 +2,8 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
+    <%= link_to t('all'), teds_path %>
+
   <% end %>
 
   <!-- Right Navigation -->
@@ -56,6 +58,7 @@
 
       <!-- Login text link -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 
     <% end %>
 
