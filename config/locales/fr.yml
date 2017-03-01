@@ -1,4 +1,8 @@
 fr:
+  pages:
+    home:
+      value-proposition: Donnez du sens à vos voyages
+      second-value: Sous titre à trouver fr.yml
   name_creation: "Nommez votre peluche"
   code: Entrez le code de la peluche
   search: Cherchez un nom

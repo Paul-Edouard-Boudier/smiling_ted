@@ -1,3 +1,14 @@
-
-<%= render 'shared/banner' %>
-<%= render 'teds/filter_form' %>
+<div class="banner" style="background-image: url(http://www.bdo.az/getattachment/30a1eb5a-de0b-4058-9656-503dc8f7d7f9/Items-You-Shouldn%E2%80%99t-Take-On-Summer-Holiday.jpg.aspx?lang=en-GB&width=1200&height=800&ext=.jpg);">
+  <div class="banner-style">
+    <div class="banner-content">
+      <h1> <%= t('.value-proposition') %></h1>
+      <h3> <%= t('.second-value') %></h3>
+    </div>
+    <div class="banner-search">
+      <%= form_tag teds_path, method: :get,  wrapper: :inline_form, html: {class: 'form-inline'} do %>
+        <%= text_field_tag :name, nil, placeholder: t('search') %>
+        <button class='btn btn-primary'  type="submit"> <%= t('submit')%></button>
+      <% end %>
+    </div>
+  </div>
+</div>
