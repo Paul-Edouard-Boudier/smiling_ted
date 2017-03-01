@@ -27,7 +27,7 @@ user = User.create(
     user_id: user.id,
     rank: Faker::Number.between(1, 5),
     distance_traveled: Faker::Number.between(10, 3000),
-    code: Faker::Lorem.characters(6)
+    code: "123127FR"
   )
 
   chapter = ted.chapters.create(

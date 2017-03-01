@@ -9,8 +9,9 @@
           </button>
         <% end %>
       </div>
-      <div class="chapter">
-        <% @ted.chapters.each do |chapter| %>
+      <% @ted.chapters.each do |chapter| %>
+        <div class="chapter">
+          <h5><%= chapter.description %></h5>
           <div class="row">
             <% chapter.photos.each do |photo| %>
               <div class="col-xs-4">
@@ -21,8 +22,8 @@
               </div>
             <% end %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
     <div class="col-xs-4">
       <div class="teddy-card">
