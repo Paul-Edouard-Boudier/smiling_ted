@@ -1,6 +1,7 @@
 <%= simple_form_for([@user, @ted]) do |f| %>
   <%= f.input :name, label: t('name_creation')  %>
   <%= f.input :code, label: t('code') %>
+  <%= f.input :avatar, as: :attachinary %>
   <h1>
     <%= f.button :submit, class: 'btn btn-primary' %>
   </h1>

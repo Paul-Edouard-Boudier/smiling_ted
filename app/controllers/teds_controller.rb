@@ -41,7 +41,7 @@ class TedsController < ApplicationController
   def ted_params
     params
     .require(:ted)
-    .permit(:name, :rank, :distance_traveled, :code, photos: [])
+    .permit(:name, :rank, :distance_traveled, :code, :avatar)
   end
 
   def find_ted
