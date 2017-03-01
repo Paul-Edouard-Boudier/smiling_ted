@@ -1,3 +1,4 @@
+
 .banner-style{
   display: flex;
   position: relative;
@@ -20,28 +21,21 @@
     text-align: center;
     left: 0;
     right: 0;
+    .btn.btn-primary {
+      height: auto;
+      margin-left: 15px;
+    }
   }
 }
-.button {
-  height: 25px;
-}
 
-// .banner-style{
-//   position: relative;
-//   display: flex;
-//   justify-content: center;
-//   height: 100vh;
-//   /* if you have a 70px navbar => height: calc(100vh - 70px); */
-//   background-size: cover !important;
-//   .banner-content {
-//     color: white;
-//     padding-right: 15px;
-//   }
-//   .banner-search {
-//     position: absolute;
-//     bottom: 0px;
-//   }
-// }
-// .button {
-//   height: 25px;
-// }
+.infos {
+  background-color: #ffc266;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .row > div {
+    padding-right: 60px;
+    margin-top: 20px;
+    text-align: center;
+  }
+}

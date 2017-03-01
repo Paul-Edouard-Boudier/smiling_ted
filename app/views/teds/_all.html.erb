@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <% @teds.each do |ted| %>
+      <%= link_to ted_path(ted) do %>
+        <div class="col-sm-offset-1 col-xs-12 col-sm-3">
+          <div class="card">
+            <% if ted.photos[0].nil? %>
+            <!-- TODO : Afficher le titre sans background-image -->
+            <% else %>
+              <div class="card-img">
+                <div class="card-bottom">
+                  <h1><%= ted.name %></h1>
+                  <% if ted.user_id == current_user %>
+                    <%= link_to 'Edit', edit_ted_path(ted), class: 'btn btn-primary' %>
+                  <% end %>
+                </div>
+              </div>
+          <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
