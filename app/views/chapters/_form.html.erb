@@ -1,0 +1,7 @@
+  <%= simple_form_for([@ted, @chapter]) do |f| %>
+    <%= f.input :description, label: t('description_chapter_creation') %>
+    <%= f.input :localisation, label: t('localisation_chapter_creation') %>
+    <h1>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    </h1>
+  <% end %>

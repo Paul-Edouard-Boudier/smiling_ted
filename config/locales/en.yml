@@ -27,6 +27,9 @@ en:
   submit: "Search"
   all: List of all teds
   new_ted: Create a Ted's profile
+  description_chapter_creation: "write a description"
+  localisation_chapter_creation: "Enter the actual location of ted"
+
   teds:
     index:
       title: Select a ted's story
