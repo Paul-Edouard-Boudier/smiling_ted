@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="row">
+      <% @teds.last(10).each do |ted| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to ted_path(ted) do %>
+            <div class="card-home border">
+              <div class="first-row border">
+                <div class="row border">
+                  <div class="col-sm-offset-1 col-xs-6 col-sm-4">
+                    <div class="avatar border">
+                      <% if ted.avatar? %>
+                        <%= cl_image_tag(ted.avatar.path, { size: '50x50', crop: :thumb, gravity: :face }) %>
+                      <% end %>
+                    </div>
+                  </div>
+                  <div class="col-sm-offset-1 col-xs-6 col-sm-6">
+                    <div class="name border">
+                      <p><%= ted.name %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="https://cdn.jdesigngroup.com/wp-content/uploads/2014/01/18143751/bigstock-Landscape-Design-45426937-300x200-1.jpg" style="width:100%; height:65%" alt="">
+              <div class="second-row border">
+                <div class="row border">
+                  <div class="resume border">
+                  <% if ted.chapters.present? %>
+                    <p><%= ted.chapters.last.description.first(25)  %></p>
+                  <% end %>
+                  </div>
+                </div>
+              </div>
+              <% if ted.user_id == current_user %>
+                <%= link_to 'Edit', edit_ted_path(ted), class: 'btn btn-primary' %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

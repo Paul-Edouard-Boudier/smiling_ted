@@ -32,10 +32,14 @@ en:
 
   teds:
     index:
-      title: Select a ted's story
+      title: "Select a ted's story"
     show:
       name: "Ted's name is:"
     form:
+  pages:
+    home:
+      value-proposition: Give meanings to your travels
+      second-value: Fins second value en.yml
 
 
 
