@@ -26,22 +26,20 @@ class TedsController < ApplicationController
   end
 
   def create
-    @ted = Ted.new(ted_params)
-    @ted.user = current_user
-      if @ted.save
-        redirect_to ted_path(@ted)
-      else
-        render :new
-      end
+    @ted = Ted.find_by_code(params[:ted][:code])
+
+    if @ted.orphan? && @ted.update(ted_params)
+      redirect_to ted_path(@ted)
+    else
+      render :new
+    end
   end
 
   def edit
+
   end
 
   def update
-  end
-
-  def delete
   end
 
   def check_code
@@ -58,8 +56,8 @@ class TedsController < ApplicationController
 
   def ted_params
     params
-    .require(:ted)
-    .permit(:name, :rank, :distance_traveled, :code, :avatar)
+      .require(:ted)
+      .permit(:name, :avatar)
   end
 
   def find_ted

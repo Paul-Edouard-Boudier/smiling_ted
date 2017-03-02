@@ -17,15 +17,10 @@
     </form> -->
 
     <!-- Different navigation if login or not -->
-    <%= link_to new_ted_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-    <h4> <%= t('new_ted') %> </h4>
+    <%= link_to smile_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+      <h4> <%= t('new_ted') %> </h4>
     <% end %>
     <% if user_signed_in? %>
-
-      <!-- Notification -->
-
-
-
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
