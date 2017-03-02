@@ -7,10 +7,23 @@ class TedsController < ApplicationController
       @teds = Ted.where('name like ?', params[:name])
     else
       @teds = Ted.all
+      @teds = Ted.where.not(latitude: nil, longitude: nil)
+
+      @hash = Gmaps4rails.build_markers(@teds) do |ted, marker|
+        marker.lat ted.latitude
+        marker.lng ted.longitude
+      end
     end
   end
 
   def show
+    @chapters = @ted.chapters
+    @chapters = @chapters.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@chapters) do |chapter, marker|
+      marker.lat chapter.latitude
+      marker.lng chapter.longitude
+    end
   end
 
   def new
