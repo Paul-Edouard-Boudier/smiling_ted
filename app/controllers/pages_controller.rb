@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @teds = Ted.all
+    @teds = Ted.all.last(6)
     filtered_ted
   end
 
