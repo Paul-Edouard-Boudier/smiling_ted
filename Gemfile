@@ -24,6 +24,8 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem "cocoon"
 gem 'omniauth-facebook'
+gem "administrate", "~> 0.3.0"
+gem "bourbon"
 
 group :development, :test do
   gem 'binding_of_caller'

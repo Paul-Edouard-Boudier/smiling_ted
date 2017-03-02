@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+  mount Attachinary::Engine => "/attachinary"
+
+  namespace :admin do
+    resources :users
+resources :chapters
+resources :photos
+resources :teds
+
+    root to: "users#index"
+  end
+
  devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   scope '(:locale)', locale: /fr|en/ do
@@ -16,7 +28,5 @@ Rails.application.routes.draw do
 
     resources :profiles, only: :show
     resources :photos
-
-    mount Attachinary::Engine => "/attachinary"
   end
 end
