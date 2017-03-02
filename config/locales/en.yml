@@ -33,6 +33,7 @@ en:
   teds:
     index:
       title: "Select a ted's story"
+      map: Here's where are all Teds
     show:
       name: "Ted's name is:"
     form:

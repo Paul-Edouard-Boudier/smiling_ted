@@ -1,8 +1,4 @@
 fr:
-  pages:
-    home:
-      value-proposition: Donnez du sens à vos voyages
-      second-value: Sous titre à trouver fr.yml
   name_creation: "Nommez votre peluche"
   code: Entrez le code de la peluche
   search: Cherchez un nom
@@ -11,8 +7,15 @@ fr:
   new_ted: Devenez propriétaire d'une peluche
   description_chapter_creation: "Ecrivez une description"
   localisation_chapter_creation: "Entrez la localisation actuel de ted "
+
+  pages:
+    home:
+      value-proposition: Donnez du sens à vos voyages
+      second-value: Sous titre à trouver fr.yml
   teds:
     show:
       name: "Nom de la peluche:"
-
+    index:
+      title: Toutes nos "peluches"
+      map:  Où se trouvent nos Teddys
 

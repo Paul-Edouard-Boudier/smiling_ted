@@ -1,23 +1,53 @@
 <div class="container">
-
+  <h2><%= t('.map') %></h2>
+  <div id="map" style="width: 100%; height: 400px;"></div>
   <h1><%= t('.title') %></h1>
-
+  <div class="row">
+    <div class="col-xs-12 col-sm-1">
+      rank
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      name
+    </div>
+    <div class="col-ws-12 col-sm-2">
+      owner
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      location
+    </div>
+    <div class="col-ws-12 col-sm-3">
+      distance traveled
+    </div>
+    <div class="col-xs-12 col-sm-2">
+      details
+    </div>
+  </div>
   <div class="row">
     <div class="col-xs-12">
       <% @teds.each do |ted| %>
         <div class="ted">
-          <p>
-            <%= ted.name %>
+          <div class="col-xs-12 col-sm-1">
             <%= ted.rank %>
-            <%= ted.distance_traveled %>
+          </div>
+          <div class="col-xs-12 col-sm-2">
+            <%= ted.name %>
+          </div>
+          <div class="col-xs-12 col-sm-2">
             <%= ted.user.first_name %>
+          </div>
+          <div class="col-xs-12 col-sm-2">
+            <%= ted.location %>
+          </div>
+          <div class="col-xs-12 col-sm-3">
+            <%= ted.distance_traveled %>
+          </div>
+          <div class="col-xs-12 col-sm-2">
             <%= link_to "details", ted_path(ted) %>
-          </p>
+          </div>
         </div>
       <% end %>
     </div>
   </div>
-  <div id="map" style="width: 100%; height: 600px;"></div>
 
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
