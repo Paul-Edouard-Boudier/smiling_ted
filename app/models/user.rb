@@ -31,4 +31,11 @@ class User < ApplicationRecord
     return user
   end
 
+  def avatar_image_url
+    if avatar.present?
+      avatar.path
+    else
+      'http://placehold.it/50'
+    end
+  end
 end
