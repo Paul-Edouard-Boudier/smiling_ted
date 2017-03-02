@@ -2,7 +2,7 @@
 .banner-style{
   display: flex;
   position: relative;
-  height: 100vh;
+  height: 70vh;
   align-items: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
@@ -29,7 +29,7 @@
 }
 
 .infos {
-  background-color: #ffc266;
+  height: 55vh;
   display: flex;
   justify-content: center;
   align-items: center;
