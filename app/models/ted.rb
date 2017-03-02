@@ -5,6 +5,9 @@ class Ted < ApplicationRecord
   has_many :chapters, dependent: :destroy
   has_many :photos, through: :chapters
   has_attachment :avatar
+  geocoded_by :location
+  after_validation :geocode, if: :location_changed?
+
 
   validates :code, presence: true, inclusion: { in: CODES }
 
