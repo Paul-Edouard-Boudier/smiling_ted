@@ -34,7 +34,7 @@ user = User.create(
   chapter = ted.chapters.create(
     user: autre,
     description: Faker::HarryPotter.quote,
-    localisation: 'Paris',
+    localisation: Faker::Address.country,
     likes: 0
   )
 
