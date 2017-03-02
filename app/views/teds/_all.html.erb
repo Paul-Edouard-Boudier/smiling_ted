@@ -1,7 +1,7 @@
 <div class="container">
   <div class="wrapper">
     <div class="row">
-      <% @teds.last(10).each do |ted| %>
+      <% @teds.each do |ted| %>
         <div class="col-xs-12 col-sm-4">
           <%= link_to ted_path(ted) do %>
             <div class="card-home border">
