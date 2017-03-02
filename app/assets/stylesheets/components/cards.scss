@@ -56,3 +56,51 @@ p:hover {
 // .card h1:hover, .card p:hover{
 //   color: $light_text_color !important;
 // }
+
+.chapter{
+}
+
+.card-photo{
+  border-radius: $border_radius;
+  // height:0;
+  // width:30%;
+  // padding-bottom:35%;
+  height:0;
+  width:100%;
+  padding-bottom:100%;
+  display: inline-block;
+  position: relative;
+  margin: 5px;
+  -moz-box-shadow:    $box-shadow;
+  -webkit-box-shadow: $box-shadow;
+  box-shadow:         $box-shadow;
+}
+
+.card-content{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 30%;
+  padding: 0 20px 3px 8px;
+  background-color: #fff;
+  overflow: hidden;
+  border-bottom-left-radius: $border_radius;
+  border-bottom-right-radius: $border_radius;
+ }
+.card-content h3, .card-content h4, .card-content h5{
+  line-height: 90%;
+  text-align: center;
+}
+
+.font1{font-family: $handwriting1, sans-serif;}
+.font2{font-family: $handwriting2, sans-serif;}
+.font3{font-family: $handwriting3, sans-serif;}
+.font4{font-family: $handwriting4, sans-serif;}
+.font5{font-family: $handwriting5, sans-serif;}
+
+
+.photo_set{
+  width: 100%;
+  text-align: center;
+}
