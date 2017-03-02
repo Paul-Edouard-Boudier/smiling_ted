@@ -61,19 +61,3 @@ class TedsController < ApplicationController
     @ted = Ted.find(params[:id])
   end
 end
-
-  # if params[:name].present?
-  #     @teds = Ted.where('name like ?', params[:name])
-  #     @teds = Ted.where.not(latitude: nil, longitude: nil)
-  #     @hash = Gmaps4rails.build_markers(@teds) do |ted, marker|
-  #       marker.lat ted.latitude
-  #       marker.lng ted.longitude
-  #     end
-  #   else
-  #     @teds = Ted.all
-  #     @teds = Ted.where.not(latitude: nil, longitude: nil)
-  #     @hash = Gmaps4rails.build_markers(@chapters) do |chapter, marker|
-  #       marker.lat chapter.last.latitude
-  #       marker.lng chapter.last.longitude
-  #     end
-  #   end
