@@ -9,6 +9,13 @@ class Ted < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
 
+  def distance_traveled
+    distance_traveled = 0
+    chapters.all.each_cons(2) do |chapters|
+      distance_traveled += chapters.last.distance_from(chapters.first)
+    end
+    distance_traveled
+  end
 
   private
 

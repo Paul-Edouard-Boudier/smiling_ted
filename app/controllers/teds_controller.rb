@@ -1,5 +1,5 @@
 class TedsController < ApplicationController
-  before_action :find_ted, only: [:show]
+  before_action :find_ted, only: [:show, :distance_traveled]
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
@@ -60,4 +60,5 @@ class TedsController < ApplicationController
   def find_ted
     @ted = Ted.find(params[:id])
   end
+
 end
