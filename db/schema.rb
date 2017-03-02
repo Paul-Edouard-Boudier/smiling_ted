@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228164755) do
+ActiveRecord::Schema.define(version: 20170302131648) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20170228164755) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "ted_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["ted_id"], name: "index_chapters_on_ted_id", using: :btree
     t.index ["user_id"], name: "index_chapters_on_user_id", using: :btree
   end
@@ -59,6 +61,9 @@ ActiveRecord::Schema.define(version: 20170228164755) do
     t.integer  "rank"
     t.integer  "distance_traveled"
     t.string   "code"
+    t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["user_id"], name: "index_teds_on_user_id", using: :btree
   end
 
@@ -83,6 +88,11 @@ ActiveRecord::Schema.define(version: 20170228164755) do
     t.date     "date_of_birth"
     t.string   "long_description"
     t.string   "short_description"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "facebook_picture_url"
+    t.string   "token"
+    t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
