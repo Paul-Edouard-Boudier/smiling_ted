@@ -12,32 +12,34 @@
     </div>
   </div>
 </div>
-<div class="infos">
-  <div class="row ">
-    <div class="col-sm-offset-2 col-xs-12 col-sm-3" >
-      <div class="image border">
-        <img src="http://lorempixel.com/150/150/" alt="Image 1">
+<div class="banner" style="background-image: url(<%= image_path("map-background.jpg") %>);">
+  <div class="infos">
+    <div class="row ">
+      <div class="col-sm-offset-2 col-xs-12 col-sm-3" >
+        <div class="image border">
+          <img src="http://lorempixel.com/150/150/" alt="Image 1">
+        </div>
+        <div class="content border">
+          <h3>some text that display what we will do with the app, need changes though</h3>
+        </div>
       </div>
-      <div class="content border">
-        <h3>some text that display what we will do with the app, need changes though</h3>
+      <div class="col-xs-12 col-sm-3" >
+        <div class="image border">
+          <img src="http://lorempixel.com/150/150/" alt="Image 2">
+        </div>
+        <div class="content border">
+          <h3>The second feature the app offers, yet to be changed</h3>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-sm-3" >
-      <div class="image border">
-        <img src="http://lorempixel.com/150/150/" alt="Image 2">
-      </div>
-      <div class="content border">
-        <h3>The second feature the app offers, yet to be changed</h3>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-3" >
-      <div class="image border">
-        <img src="http://lorempixel.com/150/150/" alt="Image 3">
-      </div>
-      <div class="content border">
-        <h3>The last feature we need to display and explain, work in progress</h3>
+      <div class="col-xs-12 col-sm-3" >
+        <div class="image border">
+          <img src="http://lorempixel.com/150/150/" alt="Image 3">
+        </div>
+        <div class="content border">
+          <h3>The last feature we need to display and explain, work in progress</h3>
+        </div>
       </div>
     </div>
   </div>
+    <%= render 'teds/all' %>
 </div>
-  <%= render 'teds/all' %>
