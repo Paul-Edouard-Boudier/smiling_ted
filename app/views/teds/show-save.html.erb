@@ -1,6 +1,7 @@
 <div class="container">
   <p> <%= t('.name') %> <%= @ted.name %></p>
-
+  <div class="row">
+    <div class="col-xs-8">
       <div class="add-chapter">
         <%= image_tag "bear.svg" %>
         <%= link_to new_ted_chapter_path(@ted) do %>
@@ -8,24 +9,25 @@
           </button>
         <% end %>
       </div>
-
-      <!-- Chapter -->
       <% @ted.chapters.each do |chapter| %>
         <div class="chapter">
-          <h2><%= chapter.description %></h2>
-
-            <!-- Photos -->
+          <h5><%= chapter.description %></h5>
+          <div class="row">
             <% chapter.photos.each do |photo| %>
-
-              <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo.image.path, height: 270, crop: :scale %>');">
-                <div class="card-content">
-                  <h3 class="font<%= [1,2,3,4,5].sample %>"><%= photo.title %></h3>
+              <div class="col-xs-4">
+                <div class="card-photo">
+                  <%= photo.title %>
+                  <%= cl_image_tag(photo.image.path, { size: '125x125', crop: :fit }) %>
                 </div>
               </div>
-
             <% end %>
-            </ul>
-
+          </div>
+        </div>
       <% end %>
-
+    </div>
+    <div class="col-xs-4">
+      <div class="teddy-card">
+      </div>
+    </div>
+  </div><!-- row -->
 </div>
