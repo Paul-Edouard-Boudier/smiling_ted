@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302131648) do
+ActiveRecord::Schema.define(version: 20170302194011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(version: 20170302131648) do
     t.string   "short_description"
     t.string   "provider"
     t.string   "uid"
-    t.string   "facebook_picture_url"
     t.string   "token"
     t.datetime "token_expiry"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
