@@ -23,6 +23,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem "cocoon"
+gem 'omniauth-facebook'
 
 # geocoder
 gem "geocoder"
