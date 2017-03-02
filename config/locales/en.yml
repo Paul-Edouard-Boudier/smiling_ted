@@ -34,6 +34,12 @@ en:
     index:
       title: "Select a ted's story"
       map: Here's where are all Teds
+      rank: rank
+      name: Ted's name
+      owner: Owner
+      location: Location
+      distance_traveled: Distance traveled
+      details: Details
     show:
       name: "Ted's name is:"
     form:

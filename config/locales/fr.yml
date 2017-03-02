@@ -18,4 +18,10 @@ fr:
     index:
       title: Toutes nos "peluches"
       map:  Où se trouvent nos Teddys
+      rank: Rang
+      name: Nom
+      owner: Propriétaire
+      location: Localisation
+      distance_traveled: Distance parcourue
+      details: Détails
 
