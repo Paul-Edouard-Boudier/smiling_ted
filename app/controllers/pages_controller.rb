@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  skip_before_action :authenticate_user!
   def home
     @teds = Ted.all.last(6)
     filtered_ted
