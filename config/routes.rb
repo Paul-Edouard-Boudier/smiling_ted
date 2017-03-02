@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-resources :chapters
-resources :photos
-resources :teds
+    resources :chapters
+    resources :photos
+    resources :teds
 
-    root to: "users#index"
+  root to: "users#index"
   end
 
  devise_for :users,
@@ -28,5 +28,7 @@ resources :teds
 
     resources :profiles, only: :show
     resources :photos
+
+    get 'smile', to: 'teds#smile'
   end
 end
