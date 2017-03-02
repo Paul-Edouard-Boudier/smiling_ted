@@ -16,7 +16,7 @@
       <%= t('.location') %>
     </div>
     <div class="col-ws-12 col-sm-3">
-      <%= t('.distance_traveled') %>
+      <%= t('.distance_traveled') %> km
     </div>
     <div class="col-xs-12 col-sm-2">
       <%= t('.details') %>
@@ -39,7 +39,7 @@
             <%= ted.location %>
           </div>
           <div class="col-xs-12 col-sm-3">
-            <%= ted.distance_traveled %>
+            <%= ted.distance_traveled.round %>
           </div>
           <div class="col-xs-12 col-sm-2">
             <%= link_to "details", ted_path(ted) %>

@@ -22,6 +22,6 @@ fr:
       name: Nom
       owner: Propriétaire
       location: Localisation
-      distance_traveled: Distance parcourue
+      distance_traveled: Distance parcourue en
       details: Détails
 

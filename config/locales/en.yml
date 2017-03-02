@@ -38,7 +38,7 @@ en:
       name: Ted's name
       owner: Owner
       location: Location
-      distance_traveled: Distance traveled
+      distance_traveled: Distance traveled in
       details: Details
     show:
       name: "Ted's name is:"
