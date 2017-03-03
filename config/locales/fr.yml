@@ -8,15 +8,23 @@ fr:
   description_chapter_creation: Ecrivez une description
   localisation_chapter_creation: Entrez la localisation actuel de ted 
   chapter: Nouveau chapitre 
+  about: A propos de nous
+  aboutinfos: Une équipe de passionné se met aux services des enfants pour leur permettre de voyager
+  team: équipe
+  home: accueil
 
   pages:
     home:
       value-proposition: Donnez du sens à vos voyages
       second-value: Sous titre à trouver fr.yml
+      order: Achetez une peluche sur le site
+      write: Ecrivez le premier chapitre de votre peluche
+      send: Renvoyez nous votre peluche, nous la partagerons aux voyageurs
   teds:
     show:
       name: Nom de la peluche
       history: Les aventures de
+      travel: est allé à
     index:
       title: Toutes nos peluches
       map:  Où se trouvent nos Teddys

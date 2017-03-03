@@ -31,6 +31,10 @@ en:
   localisation_chapter_creation: Enter the actual location of ted
   chapter: Write a new chapter
   sign_out: Déconnexion
+  about: About us
+  aboutinfos: A team that work together to allow children to realise their dream
+  team: team
+  home: home
 
   teds:
     index:
@@ -45,11 +49,15 @@ en:
     show:
       name: Ted's name is
       history: The adventures of
+      travel: went to
     form:
   pages:
     home:
-      value-proposition: Give meanings to your travels
-      second-value: Fins second value en.yml
+      value-proposition: Give meaning to your travels
+      second-value: Find second value en.yml
+      order: Order a Teddy from the website
+      write: Write the first chapter of your ted life
+      send: Send him back to us, we will give your ted to travellers
 
 
 
