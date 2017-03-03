@@ -20,19 +20,21 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  name_creation: "Name your Teddybear"
+  name_creation: Name your Teddybear
   code: What's his code?
-  hello: "Hello world"
-  search: "Search for a name"
-  submit: "Search"
+  hello: Hello world
+  search: Search for a name
+  submit: Search
   all: List of all teds
   new_ted: Create a Ted's profile
-  description_chapter_creation: "write a description"
-  localisation_chapter_creation: "Enter the actual location of ted"
+  description_chapter_creation: write a description
+  localisation_chapter_creation: Enter the actual location of ted
+  chapter: Write a new chapter
+  sign_out: Déconnexion
 
   teds:
     index:
-      title: "Select a ted's story"
+      title: Select a ted's story
       map: Here's where are all Teds
       rank: rank
       name: Ted's name
@@ -41,7 +43,8 @@ en:
       distance_traveled: Distance traveled in
       details: Details
     show:
-      name: "Ted's name is:"
+      name: Ted's name is
+      history: The adventures of
     form:
   pages:
     home:

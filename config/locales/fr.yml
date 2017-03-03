@@ -1,12 +1,13 @@
 fr:
-  name_creation: "Nommez votre peluche"
+  name_creation: Nommez votre peluche
   code: Entrez le code de la peluche
   search: Cherchez un nom
   submit: Lancer la recherche
   all: Liste des peluches
   new_ted: Devenez propriétaire d'une peluche
-  description_chapter_creation: "Ecrivez une description"
-  localisation_chapter_creation: "Entrez la localisation actuel de ted "
+  description_chapter_creation: Ecrivez une description
+  localisation_chapter_creation: Entrez la localisation actuel de ted 
+  chapter: Nouveau chapitre 
 
   pages:
     home:
@@ -14,9 +15,10 @@ fr:
       second-value: Sous titre à trouver fr.yml
   teds:
     show:
-      name: "Nom de la peluche:"
+      name: Nom de la peluche
+      history: Les aventures de
     index:
-      title: Toutes nos "peluches"
+      title: Toutes nos peluches
       map:  Où se trouvent nos Teddys
       rank: Rang
       name: Nom
