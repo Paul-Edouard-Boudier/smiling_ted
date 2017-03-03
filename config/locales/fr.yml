@@ -17,6 +17,9 @@ fr:
     home:
       value-proposition: Donnez du sens à vos voyages
       second-value: Sous titre à trouver fr.yml
+      order: Achetez une peluche sur le site
+      write: Ecrivez le premier chapitre de votre peluche
+      send: Renvoyez nous votre peluche, nous la partagerons aux voyageurs
   teds:
     show:
       name: Nom de la peluche
