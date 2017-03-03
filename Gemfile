@@ -26,6 +26,7 @@ gem "cocoon"
 gem 'omniauth-facebook'
 gem "administrate", "~> 0.3.0"
 gem "bourbon"
+gem 'faker', '~> 1.7', '>= 1.7.3'
 
 # geocoder
 gem "geocoder"
@@ -41,7 +42,6 @@ end
 group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'faker', '~> 1.7', '>= 1.7.3'
 
   gem 'pry-byebug'
   gem 'pry-rails'
