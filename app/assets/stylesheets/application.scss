@@ -7,16 +7,14 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "variables";
+@import 'swipebox';
 
 // Your CSS
+@import "variables";
 @import "layout/index";
 @import "pages/index";
 @import "vendor/index";
 @import "components/*";
-
-@import 'swipebox';
-
 
 #body-wrap {
   background-color:   #FFF;
