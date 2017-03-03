@@ -7,6 +7,6 @@
 //= require gmaps/google
 //= require attachinary
 //= require cocoon
+//= require swipebox
+
 //= require_tree .
-
-

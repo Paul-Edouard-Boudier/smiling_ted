@@ -37,36 +37,16 @@ p:hover {
   text-decoration: none;
 }
 
-//   .card-img-home{
-//     // height: 400px !important;
-//     overflow: hidden;
-//   }
-//   .card-bottom-home{
-//     padding-right: 20px; // pour que le texte aille à la ligne
-//     position: absolute;
-//     left: 20px;
-//     bottom: 120px;
-//    }
-
-//   .card-bottom-home {
-//     text-align: right;
-//   }
-// }
-
-// .card h1:hover, .card p:hover{
-//   color: $light_text_color !important;
-// }
-
-.chapter{
-}
 
 .card-photo{
+  background-size: cover;
+  background-position: 50%;
   border-radius: $border_radius;
   // height:0;
   // width:30%;
   // padding-bottom:35%;
   height:0;
-  width:100%;
+  min-width:100%;
   padding-bottom:100%;
   display: inline-block;
   position: relative;
@@ -91,6 +71,7 @@ p:hover {
 .card-content h3, .card-content h4, .card-content h5{
   line-height: 90%;
   text-align: center;
+  color: black;
 }
 
 .font1{font-family: $handwriting1, sans-serif;}
@@ -98,9 +79,3 @@ p:hover {
 .font3{font-family: $handwriting3, sans-serif;}
 .font4{font-family: $handwriting4, sans-serif;}
 .font5{font-family: $handwriting5, sans-serif;}
-
-
-.photo_set{
-  width: 100%;
-  text-align: center;
-}
