@@ -19,11 +19,6 @@ class TedsController < ApplicationController
   def show
     @chapters = @ted.chapters
     @chapters = @chapters.where.not(latitude: nil, longitude: nil)
-
-    @hash = Gmaps4rails.build_markers(@chapters) do |chapter, marker|
-      marker.lat chapter.latitude
-      marker.lng chapter.longitude
-    end
   end
 
   def new
