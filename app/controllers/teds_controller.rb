@@ -49,7 +49,17 @@ class TedsController < ApplicationController
   def delete
   end
 
+  def check_code
+    @ted = Ted.find(params[:ted_id])
+    if params[:ted_code] == @ted.code
+      redirect_to new_ted_chapter_path(@ted)
+    else
+      render 'show'
+    end
+  end
+
   private
+
 
   def ted_params
     params

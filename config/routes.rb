@@ -23,8 +23,10 @@ Rails.application.routes.draw do
     get 'shop', to: 'pages#shop'
 
     resources :teds do
+      post 'check_code', to: 'teds#check_code'
       resources :chapters
     end
+
 
     resources :profiles, only: :show
     resources :photos

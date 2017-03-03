@@ -16,6 +16,12 @@
           </button>
         <% end %>
       </div>
+
+      <%= form_tag ted_check_code_path(@ted) do %>
+        <%= label_tag(:ted_code, "enter the code") %>
+        <%= text_field_tag(:ted_code) %>
+        <%= submit_tag("write your chapter") %>
+      <% end %>
     </div>
 
       <!-- Chapter -->
