@@ -18,12 +18,12 @@
     </form> -->
 
     <!-- Different navigation if login or not -->
+    <%= link_to new_ted_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+    <h4> <%= t('new_ted') %> </h4>
+    <% end %>
     <% if user_signed_in? %>
 
       <!-- Notification -->
-      <%= link_to new_ted_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-       <h4> <%= t('new_ted') %> </h4>
-       <% end %>
 
 
 
@@ -78,4 +78,3 @@
     </div>
   </div>
 </div>
-
