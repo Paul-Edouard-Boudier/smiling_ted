@@ -1,39 +1,54 @@
+
 <div class="container">
   <div class="wrapper">
     <div class="row">
       <% @teds.each do |ted| %>
         <div class="col-xs-12 col-sm-4">
           <%= link_to ted_path(ted) do %>
-            <div class="card-home border">
-              <div class="first-row border">
-                <div class="row border">
-                  <div class="col-sm-offset-1 col-xs-6 col-sm-4">
-                    <div class="avatar border">
-                      <% if ted.avatar? %>
-                        <%= cl_image_tag(ted.avatar.path, { size: '50x50', crop: :thumb, gravity: :face }) %>
-                      <% end %>
-                    </div>
-                  </div>
-                  <div class="col-sm-offset-1 col-xs-6 col-sm-6">
-                    <div class="name border">
-                      <p><%= ted.name %></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <img src="https://cdn.jdesigngroup.com/wp-content/uploads/2014/01/18143751/bigstock-Landscape-Design-45426937-300x200-1.jpg" style="width:100%; height:65%" alt="">
-              <div class="second-row border">
-                <div class="row border">
-                  <div class="resume border">
+            <div class="container-content">
+              <header>
+                <div class="bio">
                   <% if ted.chapters.present? %>
-                    <p><%= ted.chapters.last.description.first(25)  %></p>
+                    <% if ted.chapters.last.photos.present? %>
+                      <%= cl_image_tag(ted.chapters.last.photos.first.image.path, class: "bg", height: 179, width: 320, crop: :fill ) %>
+                    <% end %>
+                  <% else %>
+                    <%= image_tag("http://www.croop.cl/UI/twitter/images/up.jpg", class: "bg") %>
                   <% end %>
+                  <div class="desc"></div>
+                </div>
+                <div class="avatarcontainer">
+                  <% if ted.avatar? %>
+                    <%= cl_image_tag(ted.avatar.path, class: "avatar-ted", size: '70x70', crop: :thumb, gravity: :face ) %>
+                    <% else %>
+                     <%= image_tag("ted-avatar.jpg", class: "avatar-ted", size: '70x70') %>
+                  <% end %>
+                  <div class="hover">
+                      <div class="icon-twitter"></div>
                   </div>
                 </div>
+              </header>
+              <div class="content">
+                <div class="data">
+                  <ul>
+                    <li>
+                        <%= ted.rank %>
+                      <span>rank</span>
+                    </li>
+                    <li>
+                      <%= ted.distance_traveled  %>
+                      <span>distance</span>
+                    </li>
+                    <li>
+                      <p>2 </p>
+                      <span>days</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="follow"> <div class="icon-twitter"></div>
+                  <p><%= ted.name %></p>
+                </div>
               </div>
-              <% if ted.user_id == current_user %>
-                <%= link_to 'Edit', edit_ted_path(ted), class: 'btn btn-primary' %>
-              <% end %>
             </div>
           <% end %>
         </div>
@@ -41,3 +56,7 @@
     </div>
   </div>
 </div>
+
+
+
+
