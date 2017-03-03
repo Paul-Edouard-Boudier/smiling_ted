@@ -8,5 +8,5 @@
 //= require attachinary
 //= require cocoon
 //= require_tree .
-
+//= require swipebox
 
