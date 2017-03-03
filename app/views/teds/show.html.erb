@@ -1,68 +1,86 @@
-<div class="container">
+<div class="container-full">
 
+  <!-- Offset & main row-->
   <div class="row">
-
-    <div class="col-xs-12 col-md-6">
-    <h1>
-      <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
-      <%= @ted.name %>'s story
-    </h1>
-    </div>
-
-    <div class="col-xs-12 col-md-6">
-      <div class="add-chapter">
-        <%= link_to new_ted_chapter_path(@ted) do %>
-          <button type="button" class="btn btn-default" href="#" >write your chapter of <%= @ted.name.capitalize %>'s story<span class="btn glyphicon glyphicon-pencil" aria-hidden="true"></span>
-          </button>
-        <% end %>
-      </div>
-    </div>
-
-      <!-- Chapter -->
-      <% @ted.chapters.each do |chapter| %>
-        <div class="chapter">
-
-          <div class="col-xs-12">
-            <blockquote><%= @ted.name.upcase %> is in <%= chapter.localisation.upcase %> !</blockquote>
-            <h1><%= chapter.description %></h1>
-          </div>
-
-          <div class="col-xs-12 col-md-9 col-lg-5">
-            <!-- Map -->
-             <div style='width: 100%;'>
-              <div class="gmap" id="map-<%= chapter.id %>" data-longitude="<%= chapter.longitude %>" data-latitude="<%= chapter.latitude %>" style='width: 100%; height: 400px;'></div>
-            </div>
-          </div>
+   <div class="col-xs-10 col-xs-offset-1">
+    <div class="row">
 
 
-            <!-- Photos -->
-            <div class="col-xs12 col-md-3 col-lg-7">
-            <div class="row">
 
-            <% chapter.photos.each do |photo| %>
-              <div class="col-xs-12 col-sm-4 col-md-6">
 
+
+      <!-- Story Title -->
+      <h1>
+        <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
+        <%= @ted.name %>'s story
+      </h1>
+
+
+
+      <!-- Call-To-Action -->
+      <%= link_to new_ted_chapter_path(@ted) do %>
+        <button type="button" class="btn btn-default" href="#" >write your chapter of <%= @ted.name.capitalize %>'s story<span class="btn glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        </button>
+      <% end %>
+
+
+
+      <% @ted.chapters.reverse.each do |chapter| %>
+
+
+        <!-- Chapter -->
+        <div class="row">
+
+          <!-- Chapter Title -->
+         <h1>Chapter <%= chapter.id %>. <%= @ted.name %> went to <%= chapter.localisation %></h1>
+
+          <div class="col-md-6">
+           <div class="row">
+
+              <% chapter.photos.each do |photo| %>
+               <div class="col-md-6">
+
+                <!-- One Clikable Photo -->
                 <%= link_to cl_image_path(photo.image.path), class: "swipebox", title: photo.title do %>
-
                   <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo.image.path, height: 270, gravity: :center, crop: :fill %>');">
                     <div class="card-content">
                       <h3 class="font<%= [1,2,3,4,5].sample %>"><%= photo.title %></h3>
                     </div>
                   </div>
-
                 <% end %>
 
-              </div>
-            <% end %>
+
+               </div>
+              <% end %>
+
 
             </div>
-            </div>
+          </div>
+
+          <!-- Map & Text -->
+          <div class="col-md-6">
+            <div class="gmap" id="map-<%= chapter.id %>" data-longitude="<%= chapter.longitude %>" data-latitude="<%= chapter.latitude %>" style='width: 100%; height: 400px;'></div>
+
+            <h3 class="font<%= [1,2,3,4,5].sample %>"><%= chapter.description %></h3>
+          </div>
 
 
-      <hr/>
+          <hr>
+
+
+        </div><!-- Chapter -->
+
+
       <% end %>
 
 
-    </div><!-- row -->
+
+
+
+
+    <!-- Offset & main row-->
+    </div>
+   </div>
+  </div>
 
 </div><!--container-->
