@@ -16,6 +16,10 @@
 @import "vendor/index";
 @import "components/*";
 
+body{
+  font-family: $main_font, sans-serif;
+}
+
 #body-wrap {
   background-color:   #FFF;
   position:           relative;

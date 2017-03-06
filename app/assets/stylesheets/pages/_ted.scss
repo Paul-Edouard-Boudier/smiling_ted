@@ -6,12 +6,6 @@
   padding: 15px;
 }
 
-.chapter {
-  border: 1px dashed #ccc;
-  padding: 15px;
-  margin-bottom: 20px;
-}
-
 .teddy-card {
   border: 1px dashed #ccc;
   height: 200px;
@@ -34,7 +28,20 @@
 // SWIPEBOX
 
 #swipebox-title{
-  font-family: $handwriting2;
+  font-family: $main_titlefont;
   font-size: 2em;
   padding: 11% 30% 0 30%;
+}
+
+.chapter{
+  margin: 5% 0 3% 0;
+  padding: 15px;
+  border-bottom: 1px solid $light_color;
+  // border-radius: $border_radius;
+}
+.chapter h1, p{
+  padding: 0 20px;
+}
+.chapter .col-md-4 h3{
+  font-size: 0.8em;
 }

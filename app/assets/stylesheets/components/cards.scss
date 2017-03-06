@@ -33,13 +33,16 @@
   color: black;
 }
 
-.font1{font-family: $handwriting1, sans-serif; font-size:0.9em;}
-.font2{font-family: $handwriting2, sans-serif; font-size:0.9em;}
-.font3{font-family: $handwriting3, sans-serif; font-size:0.9em;}
-.font4{font-family: $handwriting4, sans-serif; font-size:0.9em;}
-.font5{font-family: $handwriting5, sans-serif; font-size:0.9em;}
+// .font1{font-family: $handwriting1, sans-serif; font-size:0.9em;}
+// .font2{font-family: $handwriting2, sans-serif; font-size:0.9em;}
+// .font3{font-family: $handwriting3, sans-serif; font-size:0.9em;}
+// .font4{font-family: $handwriting4, sans-serif; font-size:0.9em;}
+// .font5{font-family: $handwriting5, sans-serif; font-size:0.9em;}
 
-
+.font1, .font2, .font3, .font4, .font5{
+  font-family: $header-font;
+  color: $text_color !important;
+}
 
 
 
@@ -188,7 +191,7 @@ header {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in; }
   .desc h3 {
-    font-family: "Lato";
+    font-family: $main_titlefont;
     font-size: 1.2em;
     margin-bottom: .5em; }
   .desc p {
@@ -201,7 +204,7 @@ header {
   background-color: #2589cc;
   width: 150px;
   color: white;
-  font-family: "Lato";
+  font-family: $main_titlefont;
   text-align: center;
   padding: .5em;
   -webkit-border-radius: 5px;
