@@ -1,6 +1,4 @@
 class Ted < ApplicationRecord
-  before_save :generate_code
-
 
   belongs_to :user
   has_many :chapters, dependent: :destroy
@@ -8,6 +6,8 @@ class Ted < ApplicationRecord
   has_attachment :avatar
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+
+  before_create :generate_code
 
   def distance_traveled
     distance_traveled = 0
