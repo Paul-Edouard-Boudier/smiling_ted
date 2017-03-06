@@ -38,9 +38,13 @@
           <div class="col-md-6">
            <div class="row">
 
-              <% chapter.photos.each do |photo| %>
-               <div class="col-md-6">
+              <% chapter.photos.each_with_index do |photo, index| %>
 
+               <% if index == 0 %>
+                  <div class="col-md-12">
+               <% else %>
+                  <div class="col-md-4">
+               <% end %>
                 <!-- One Clikable Photo -->
                 <%= link_to cl_image_path(photo.image.path), class: "swipebox", title: photo.title do %>
                   <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo.image.path, height: 270, gravity: :center, crop: :fill %>');">
@@ -49,7 +53,7 @@
                     </div>
                   </div>
                 <% end %>
-
+                <% index +=1 %>
 
                </div>
               <% end %>
