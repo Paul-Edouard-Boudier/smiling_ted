@@ -12,18 +12,16 @@
           <th><%= t('.owner') %></th>
           <th><%= t('.location') %></th>
           <th><%= t('.distance_traveled') %> km</th>
-          <th><%= t('.details') %></th>
         </tr>
       </thead>
       <tbody>
         <% @teds.each do |ted| %>
           <tr>
             <td><%= ted.rank %></td>
-            <td><%= ted.name %></td>
+            <td><%= link_to ted.name, ted_path(ted) %></td>
             <td><%= ted.user.first_name %></td>
             <td><%= ted.location %></td>
             <td><%= ted.distance_traveled.round %></td>
-            <td><%= link_to "details", ted_path(ted)  %></td>
           </tr>
         <% end %>
       </tbody>
