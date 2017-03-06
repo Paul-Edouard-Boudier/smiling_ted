@@ -16,7 +16,13 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.new(chapter_params)
     @chapter.ted = @ted
     @chapter.user = current_user
-    @chapter.save
+    if @chapter.save
+      redirect_to ted_path(@ted)
+      #TODO : flash message successfull
+    else
+      render new
+      #TODO : flash error
+    end
   end
 
   def edit
