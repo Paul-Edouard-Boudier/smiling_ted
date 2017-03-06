@@ -4,9 +4,6 @@
   background-size: cover;
   background-position: 50%;
   border-radius: $border_radius;
-  // height:0;
-  // width:30%;
-  // padding-bottom:35%;
   height:0;
   min-width:100%;
   padding-bottom:100%;
@@ -23,7 +20,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  min-height: 30%;
+  min-height: 20%;
   padding: 0 20px 3px 8px;
   background-color: #fff;
   overflow: hidden;
@@ -36,21 +33,11 @@
   color: black;
 }
 
-.font1{font-family: $handwriting1, sans-serif;}
-.font2{font-family: $handwriting2, sans-serif;}
-.font3{font-family: $handwriting3, sans-serif;}
-.font4{font-family: $handwriting4, sans-serif;}
-.font5{font-family: $handwriting5, sans-serif;}
-
-
-
-.photo_set{
-  width: 100%;
-  text-align: center;
-}
-
-
-
+.font1{font-family: $handwriting1, sans-serif; font-size:0.9em;}
+.font2{font-family: $handwriting2, sans-serif; font-size:0.9em;}
+.font3{font-family: $handwriting3, sans-serif; font-size:0.9em;}
+.font4{font-family: $handwriting4, sans-serif; font-size:0.9em;}
+.font5{font-family: $handwriting5, sans-serif; font-size:0.9em;}
 
 
 
