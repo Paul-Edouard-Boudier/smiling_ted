@@ -6,6 +6,7 @@ class Ted < ApplicationRecord
   has_attachment :avatar
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+  after_create :distance_traveled
 
   before_create :generate_code
 
@@ -19,6 +20,11 @@ class Ted < ApplicationRecord
 
   def orphan?
     user.blank?
+  end
+
+  def days
+    days = (DateTime.now.to_date - self.created_at.to_date).to_i
+    days
   end
 
   private

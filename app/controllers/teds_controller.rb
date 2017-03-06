@@ -5,6 +5,9 @@ class TedsController < ApplicationController
   def index
     if params[:name].present?
       @teds = Ted.where('name like ?', params[:name])
+    elsif params[:code].present?
+      @teds = Ted.where(code: params[:code])
+      
     else
       @teds = Ted.all
       @teds = Ted.where.not(latitude: nil, longitude: nil)
