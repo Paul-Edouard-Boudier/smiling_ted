@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get 'team', to: 'pages#team'
     get 'shop', to: 'pages#shop'
 
-    resources :teds, only: [:index, :show, :edit, :update] do
+    resources :teds, only: [:index, :show, :edit, :update, :create] do
       post 'check_code', to: 'teds#check_code'
       resources :chapters
     end

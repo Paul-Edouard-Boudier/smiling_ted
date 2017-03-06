@@ -58,6 +58,7 @@ class TedsController < ApplicationController
     params
       .require(:ted)
       .permit(:name, :avatar)
+      .merge(user: current_user)
   end
 
   def find_ted
