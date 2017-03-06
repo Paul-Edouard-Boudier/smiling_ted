@@ -28,13 +28,17 @@
 
 
         <!-- Chapter -->
-        <div class="row">
+        <div class="row chapter">
 
           <!-- Chapter Title -->
 
          <% chapter_number -= 1 %>
-         <h1>Chapter <%= chapter_number %>. <%= @ted.name %> <%= t('.travel') %> <%= chapter.localisation %></h1>
-
+          <h1>Chapter <%= chapter_number %>. <%= @ted.name %> <%= t('.travel') %> <%= chapter.localisation %></h1>
+          <% if chapter.user.first_name == current_user %>
+            <p>Chapter written by <b>you/b></p>
+          <% elsif chapter.user.first_name? %>
+            <p>Chapter written by <b><%= chapter.user.first_name %></b></p>
+          <% end %>
           <div class="col-md-6">
            <div class="row">
 
@@ -46,10 +50,10 @@
                   <div class="col-md-4">
                <% end %>
                 <!-- One Clikable Photo -->
-                <%= link_to cl_image_path(photo.image.path), class: "swipebox", title: photo.title do %>
-                  <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo.image.path, height: 270, gravity: :center, crop: :fill %>');">
+                <%= link_to cl_image_path(photo.image.path), class: "swipebox", title: chapter.localisation + '<br/>' + photo.title + '<br/>'+ photo.description do %>
+                  <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo.image.path, height: 600, gravity: :center, crop: :fill %>');">
                     <div class="card-content">
-                      <h3 class="font<%= [1,2,3,4,5].sample %>"><%= photo.title %></h3>
+                      <h3 class="font<%= [1,2,3,4,5].sample %> responsive_font"><%= photo.title %></h3>
                     </div>
                   </div>
                 <% end %>
