@@ -17,6 +17,10 @@ class Ted < ApplicationRecord
     distance_traveled
   end
 
+  def orphan?
+    user.blank?
+  end
+
   private
 
   def generate_code
