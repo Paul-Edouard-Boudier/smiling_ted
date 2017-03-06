@@ -6,7 +6,7 @@
     <div class="row">
 
 
-    
+
       <!-- Story Title -->
       <h1>
         <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
@@ -22,7 +22,7 @@
         <%= submit_tag(t('chapter'), class:"btn btn-default")  %><span class="btn glyphicon glyphicon-pencil" aria-hidden="true"></span>
       <% end %>
 
-
+      <% chapter_number = @ted.chapters.size + 1 %>
 
       <% @ted.chapters.reverse.each do |chapter| %>
 
@@ -31,7 +31,9 @@
         <div class="row">
 
           <!-- Chapter Title -->
-         <h1>Chapter <%= chapter.id %>. <%= @ted.name %> <%= t('.travel') %> <%= chapter.localisation %></h1>
+
+         <% chapter_number -= 1 %>
+         <h1>Chapter <%= chapter_number %>. <%= @ted.name %> <%= t('.travel') %> <%= chapter.localisation %></h1>
 
           <div class="col-md-6">
            <div class="row">
