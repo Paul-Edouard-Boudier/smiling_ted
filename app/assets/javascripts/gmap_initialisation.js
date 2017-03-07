@@ -20,6 +20,8 @@ $(document).ready(function() {
         handler.getMap().setZoom(2);
       } else if (markers.length == 1) {
         handler.getMap().setZoom(8);
+      } else {
+        handler.getMap().setZoom(5);
       }
     });
   });
