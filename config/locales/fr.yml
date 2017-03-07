@@ -6,8 +6,8 @@ fr:
   all: Liste des peluches
   new_ted: Devenez propriétaire d'une peluche
   description_chapter_creation: Ecrivez une description
-  localisation_chapter_creation: Entrez la localisation actuel de ted 
-  chapter: Nouveau chapitre 
+  localisation_chapter_creation: Entrez la localisation actuel de ted
+  chapter: Nouveau chapitre
   about: A propos de nous
   aboutinfos: Une équipe de passionné se met aux services des enfants pour leur permettre de voyager
   team: équipe
@@ -24,7 +24,11 @@ fr:
     show:
       name: Nom de la peluche
       history: Les aventures de
-      travel: est allé à
+      traveled: est allé à
+      travels: découvre
+      brought: a amené
+      here: "ici :"
+      someone: "Quelqu'un"
     index:
       title: Toutes nos peluches
       map:  Où se trouvent nos Teddys

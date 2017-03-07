@@ -7,7 +7,6 @@
 
 <!--
       TODO :
-      - Chapter Content only on click
       - Locations with sizable text
       - Better Responsive Timeline
 
@@ -40,15 +39,20 @@
       <% @ted.chapters.reverse.each do |chapter| %>
 
 
-          <li>
+          <% if chapter == @ted.chapters.last %>
+            <li id="chapter_<%= chapter.id %>" class="current_chapter">
+          <% else %>
+            <li id="chapter_<%= chapter.id %>">
+          <% end %>
+
             <time class="cbp_tmtime" datetime="2013-04-10 18:30">
                 <span>
                   <% if chapter.user.first_name? %>
                       <%= chapter.user.first_name %>
                   <% else %>
-                    Quelqu'un
+                    <%= t('.someone') %>
                   <% end %>
-                  a amené <%= @ted.name %> ici :
+                  <%= t('.brought') %> <%= @ted.name %> <%= t('.here') %>
                 </span>
                 <span><%= chapter.localisation %> !</span>
             </time>
@@ -62,19 +66,22 @@
             </div>
 
 
-
-            <% if chapter == @ted.chapters.last %>
-             <div class="cbp_tmlabel current_chapter">
-            <% else %>
-             <div class="cbp_tmlabel" data-sr="ease-in-out 10px, over 2s">
-            <% end %>
+            <div class="cbp_tmlabel" data-sr="ease-in-out 10px, over 1.2s">
 
               <!-- Chapter -->
               <div class="row chapter">
 
                 <!-- Chapter Title -->
                <% chapter_number -= 1 %>
-                <h1 class="padding">Chapter <%= chapter_number %>. <%= @ted.name %> <%= t('.travel') %> <%= chapter.localisation %></h1>
+                <h1 class="padding">Chapter <%= chapter_number %>. <%= @ted.name %>
+                  <% if chapter == @ted.chapters.last %>
+                      <%= t('.travels') %>
+                   <% else %>
+                      <%= t('.traveled') %>
+                   <% end %>
+                  <%= chapter.localisation %>
+
+                  </h1>
                 <% if chapter.user.first_name == current_user %>
                   <p class="padding">Chapter written by <b>you/b></p>
                 <% elsif chapter.user.first_name? %>
