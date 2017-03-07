@@ -2,51 +2,30 @@
   <h2><%= t('.map') %></h2>
   <div id="map" style="width: 100%; height: 400px;"></div>
   <h1><%= t('.title') %></h1>
-  <div class="row">
-    <div class="col-xs-12 col-sm-1">
-      <%= t('.rank') %>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <%= t('.name') %>
-    </div>
-    <div class="col-ws-12 col-sm-2">
-      <%= t('.owner') %>
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <%= t('.location') %>
-    </div>
-    <div class="col-ws-12 col-sm-3">
-      <%= t('.distance_traveled') %> km
-    </div>
-    <div class="col-xs-12 col-sm-2">
-      <%= t('.details') %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <% @teds.each do |ted| %>
-        <div class="ted">
-          <div class="col-xs-12 col-sm-1">
-            <%= ted.rank %>
-          </div>
-          <div class="col-xs-12 col-sm-2">
-            <%= ted.name %>
-          </div>
-          <div class="col-xs-12 col-sm-2">
-            <%= ted.user.first_name %>
-          </div>
-          <div class="col-xs-12 col-sm-2">
-            <%= ted.location %>
-          </div>
-          <div class="col-xs-12 col-sm-3">
-            <%= ted.distance_traveled.round %>
-          </div>
-          <div class="col-xs-12 col-sm-2">
-            <%= link_to "details", ted_path(ted) %>
-          </div>
-        </div>
-      <% end %>
-    </div>
+
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th><%= t('.rank') %></th>
+          <th><%= t('.name') %></th>
+          <th><%= t('.owner') %></th>
+          <th><%= t('.location') %></th>
+          <th><%= t('.distance_traveled') %> km</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @teds.each do |ted| %>
+          <tr>
+            <td><%= ted.rank %></td>
+            <td><%= link_to ted.name, ted_path(ted) %></td>
+            <td><%= ted.user.first_name %></td>
+            <td><%= ted.location %></td>
+            <td><%= ted.distance_traveled.round %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 
   <% content_for(:after_js) do %>
