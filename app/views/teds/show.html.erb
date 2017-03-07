@@ -1,12 +1,20 @@
 <div class="container-full">
-
+   <div id="map" style="width: 100%; height: 400px;"></div>
+  <h1><%= t('.title') %></h1>
   <!-- Offset & main row-->
   <div class="row">
    <div class="col-xs-10 col-xs-offset-1">
     <div class="row">
 
+<!--
+      TODO :
+      - Locations with sizable text
+      - Better Responsive Timeline
 
+      TODO :
+      - Better Write a Chapter Form
 
+ -->
       <!-- Story Title -->
       <h1>
         <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
@@ -23,44 +31,70 @@
       <% end %>
 
 
+
+      <!-- TIMELINE STARTS HERE-->
+
       <ul class="cbp_tmtimeline">
       <% chapter_number = @ted.chapters.size + 1 %>
 
       <% @ted.chapters.reverse.each do |chapter| %>
 
 
-          <li>
+          <% if chapter == @ted.chapters.last %>
+            <li id="chapter_<%= chapter.id %>" class="current_chapter">
+          <% else %>
+            <li id="chapter_<%= chapter.id %>">
+          <% end %>
+
             <time class="cbp_tmtime" datetime="2013-04-10 18:30">
                 <span>
                   <% if chapter.user.first_name? %>
-                    <%= chapter.user.first_name %>
+                      <%= chapter.user.first_name %>
                   <% else %>
-                    Quelqu'un
+                    <%= t('.someone') %>
                   <% end %>
-                  a amené <%= @ted.name %> ici :
+                  <%= t('.brought') %> <%= @ted.name %> <%= t('.here') %>
                 </span>
                 <span><%= chapter.localisation %> !</span>
             </time>
-            <div class="cbp_tmicon cbp_tmicon-phone"></div>
 
-            <% if chapter == @ted.chapters.last %>
-             <div class="cbp_tmlabel current_chapter">
-            <% else %>
-             <div class="cbp_tmlabel">
-            <% end %>
+
+            <div class="cbp_tmicon">
+              <!-- TODO : change by chapter_user_path -->
+              <%= link_to chapter.user.avatar_image_url do %>
+                <%= cl_image_tag chapter.user.avatar_image_url, class: "avatar-timeline" %></a>
+              <% end %>
+            </div>
+
+
+            <div class="cbp_tmlabel" data-sr="ease-in-out 10px, over 1.2s">
 
               <!-- Chapter -->
               <div class="row chapter">
 
                 <!-- Chapter Title -->
                <% chapter_number -= 1 %>
-                <h1 class="padding">Chapter <%= chapter_number %>. <%= @ted.name %> <%= t('.travel') %> <%= chapter.localisation %></h1>
+                <h1 class="padding">Chapter <%= chapter_number %>. <%= @ted.name %>
+                  <% if chapter == @ted.chapters.last %>
+                      <%= t('.travels') %>
+                   <% else %>
+                      <%= t('.traveled') %>
+                   <% end %>
+                  <%= chapter.localisation %>
+
+                  </h1>
                 <% if chapter.user.first_name == current_user %>
                   <p class="padding">Chapter written by <b>you/b></p>
                 <% elsif chapter.user.first_name? %>
-                  <p class="padding">Chapter written by <b><%= chapter.user.first_name %></b></p>
+                  <p class="padding">Chapter written by
+                    <!-- TODO : change by chapter_user_path -->
+                    <%= link_to chapter.user.avatar_image_url do %>
+                      <b><%= chapter.user.first_name %></b>
+                    <% end %>
+                  </p>
                 <% end %>
 
+              <div id="chapter_body_<%= chapter_number %>">
 
                 <!-- Map & Text -->
                 <div class="col-md-4">
@@ -98,6 +132,8 @@
                         </div>
                     <% end %>
 
+              </div>
+
 
                   </div>
                 </div>
@@ -111,24 +147,27 @@
       <% end %>
       </ul>
 
-      <!-- TimeLine Test -->
-<!--
-      <ul class="cbp_tmtimeline">
-        <li>
-          <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-          <div class="cbp_tmicon cbp_tmicon-phone"></div>
-          <div class="cbp_tmlabel">
-            <h2>Ricebean black-eyed pea</h2>
-            <p>Winter purslane...</p>
-          </div>
-        </li>
-      </ul>
-
- -->
-
     <!-- Offset & main row-->
     </div>
    </div>
   </div>
+
+   <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(2);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
+        });
+      });
+    <% end %>
+  <% end %>
 
 </div><!--container-->

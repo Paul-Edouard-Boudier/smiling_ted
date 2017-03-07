@@ -27,23 +27,27 @@
   margin: 5% 0 3% 0;
   padding: 0 15px !important;
   border-bottom: 1px solid $light_color;
-  // border-radius: $border_radius;
 }
 .chapter .padding{
   padding: 0 20px;
 }
 
-/* surcharge of default timeline when current chapter*/
 .current_chapter{
-  background-color: $color_1 !important;
+  // background-color: $color_2;
+  background-color: #DBF2FF;
+  border-radius: $border_radius;
+}
+/* TIMELINE */
+/* surcharge of default timeline when current chapter*/
+.current_chapter .cbp_tmlabel{
+  // background-color: $color_2 !important;
+  background-color: #DBF2FF !important;
+  background-color:rgba(0, 0, 0, 0.5);
 }
 /* The triangle */
-.cbp_tmtimeline > li .current_chapter:after {
-  border-right-color:  $color_1 !important;
-}
-
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-  border-right-color: #6cbfee;
+.current_chapter .cbp_tmlabel:after {
+  // border-right-color:  $color_2 !important;
+  border-right-color: #DBF2FF !important;
 }
 
 
