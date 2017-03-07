@@ -23,9 +23,10 @@
   top: 0;
   bottom: 0;
   width: 10px;
-  background: #afdcf8;
+  background: $light_color;
   left: 20%;
   margin-left: -10px;
+  z-index: 100;
 }
 
 .cbp_tmtimeline > li {
@@ -43,33 +44,31 @@
 .cbp_tmtimeline > li .cbp_tmtime span {
   display: block;
   text-align: right;
-  color: $color_1 !important;
+  color: $text_color !important;
   padding-right: 30px;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
   font-size: 0.9em;
-  color: #bdd0db;
   line-height: 0.6em;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
   font-size: 2.9em;
-  color: #3594cb;
   font-family: $header-font;
   line-height: 1.1em;
   word-wrap: break-word;
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-  color: #6cbfee;
+  color: $text_color;
 }
 
 /* Right content */
 .cbp_tmtimeline > li .cbp_tmlabel {
   margin: 0 0 15px 25%;
-  background: #3594cb;
-  color: #fff;
+  background: $light_color;
+  color: $text_color !important;
   padding: 0 1em 1em 1em;
   font-size: 1.2em;
   font-weight: 300;
@@ -79,7 +78,7 @@
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-  background: #6cbfee;
+  background: $light_color;
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel h2 {
@@ -97,13 +96,13 @@
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-right-color: #3594cb;
+  border-right-color: $light_color;
   border-width: 10px;
   top: 10px;
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
-  border-right-color: #6cbfee;
+  border-right-color: $light_color;
 }
 
 /* The icons */
@@ -121,29 +120,14 @@
   -webkit-font-smoothing: antialiased;
   position: absolute;
   color: #fff;
-  background: #46a4da;
+  background: $color_2;
   border-radius: 50%;
   box-shadow: 0 0 0 8px #afdcf8;
   text-align: center;
   left: 20%;
   top: 0;
   margin: 0 0 0 -25px;
-}
-
-.cbp_tmicon-phone:before {
-  content: "\e000";
-}
-
-.cbp_tmicon-screen:before {
-  content: "\e001";
-}
-
-.cbp_tmicon-mail:before {
-  content: "\e002";
-}
-
-.cbp_tmicon-earth:before {
-  content: "\e003";
+  z-index: 300;
 }
 
 /* Example Media Queries */

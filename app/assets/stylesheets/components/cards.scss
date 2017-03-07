@@ -34,7 +34,7 @@ header {
   box-shadow: #bdc3c7 0 5px 5px; }
 
 .bg {
-  border-bottom: 8px solid #5cc0ff; }
+  border-bottom: 8px solid $color_2; }
 
 .bio:hover > .desc {
   cursor: pointer;
@@ -54,7 +54,7 @@ header {
 
 .avatar-ted {
   width: 100%;
-  border: 8px solid #5cc0ff;
+  border: 8px solid $color_2;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;

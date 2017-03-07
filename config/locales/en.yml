@@ -49,7 +49,11 @@ en:
     show:
       name: Ted's name is
       history: The adventures of
-      travel: went to
+      traveled: went to
+      travels: is in
+      brought: brought
+      here: to
+      someone: someone
     form:
   pages:
     home:
