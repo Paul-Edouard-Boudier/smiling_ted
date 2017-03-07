@@ -7,7 +7,7 @@ class TedsController < ApplicationController
       @teds = Ted.where('name like ?', params[:name])
     elsif params[:code].present?
       @teds = Ted.where(code: params[:code])
-      
+
     else
       @teds = Ted.all
       @teds = Ted.where.not(latitude: nil, longitude: nil)
@@ -23,10 +23,16 @@ class TedsController < ApplicationController
     @chapters = @ted.chapters
     @chapters = @chapters.where.not(latitude: nil, longitude: nil)
 
-    @hash = Gmaps4rails.build_markers(@chapters) do |chapter, marker|
-        marker.lat chapter.latitude
-        marker.lng chapter.longitude
+    @chapters.map do |chapter|
+
     end
+
+    @hash = Gmaps4rails.build_markers(@chapters) do |chapter, marker|
+      marker.lat chapter.latitude
+      marker.lng chapter.longitude
+    end
+
+    @hash.last.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7777ff", width: '64', height: '64' }})
   end
 
   def new
