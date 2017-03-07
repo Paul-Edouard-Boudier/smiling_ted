@@ -31,7 +31,7 @@ class TedsController < ApplicationController
       marker.lat chapter.latitude
       marker.lng chapter.longitude
 
-      # marker.picture('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|74ccfc', width: '64', height: '64')
+    
     end
     @hash.each do |item|
       item.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|74ccfc", width: '64', height: '64'}})
