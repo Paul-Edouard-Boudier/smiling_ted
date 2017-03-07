@@ -58,6 +58,7 @@
   color: #3594cb;
   font-family: $header-font;
   line-height: 1.1em;
+  word-wrap: break-word;
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {

@@ -61,7 +61,7 @@ chapter.photos.create(
 chapter.photos.create(
   image_url: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1444253482/DG2015-paris.jpg?itok=XH81cBH9',
   title: 'Such a beautiful city',
-  description: 'This picture speaks on itself'
+  description: 'This picture speaks on itself, this was such a lovely moment'
 )
 
 chapter.photos.create(
@@ -76,7 +76,13 @@ chapter.photos.create(
   description: 'So famous monument !'
 )
 
-[0, 1, 2, 3].sample.times do
+chapter.photos.create(
+  image_url: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1446842493/3-paris-social-niche1115.jpg?itok=wA-uNK8P',
+  title: 'Magnifique Souvenir...',
+  description: 'Bonjour, merci, vive Paris ! Your ted speak french !'
+)
+
+[2, 3, 4].sample.times do
   chapter = ted.chapters.create(
     user: travelers.sample,
     description: Faker::HarryPotter.quote,
