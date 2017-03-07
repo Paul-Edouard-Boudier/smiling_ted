@@ -30,9 +30,13 @@ class TedsController < ApplicationController
     @hash = Gmaps4rails.build_markers(@chapters) do |chapter, marker|
       marker.lat chapter.latitude
       marker.lng chapter.longitude
-    end
 
-    @hash.last.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|7777ff", width: '64', height: '64' }})
+      # marker.picture('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|74ccfc', width: '64', height: '64')
+    end
+    @hash.each do |item|
+      item.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|74ccfc", width: '64', height: '64'}})
+    end
+    @hash.last.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|fc4016", width: '64', height: '64' }})
   end
 
   def new
