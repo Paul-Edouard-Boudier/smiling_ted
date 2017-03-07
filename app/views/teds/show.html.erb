@@ -5,8 +5,17 @@
    <div class="col-xs-10 col-xs-offset-1">
     <div class="row">
 
+<!--
+      TODO :
+      - Chapter Content only on click
+      - Locations with sizable text
+      - Better Responsive Timeline
+      - Avatar of user or ted or logo
 
+      TODO :
+      - Better Write a Chapter Form
 
+ -->
       <!-- Story Title -->
       <h1>
         <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
@@ -41,7 +50,7 @@
                 </span>
                 <span><%= chapter.localisation %> !</span>
             </time>
-            <div class="cbp_tmicon cbp_tmicon-phone"></div>
+            <div class="cbp_tmicon"><img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-timeline" /></div>
 
             <% if chapter == @ted.chapters.last %>
              <div class="cbp_tmlabel current_chapter">
