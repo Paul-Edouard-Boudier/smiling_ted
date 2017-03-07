@@ -1,34 +1,99 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6">
-      <div class="border">
-        <%= cl_image_tag @user.avatar_image_url  %>
-
-        <h1>first_name <%= @user.first_name %></h1>
-        <h1> created_at <%= @user.created_at%></h1>
-        <h1> nationality <%= @user.nationality%></h1>
-        <h1> long description  <%= @user.long_description %></h1>
-        <h1> description  <%= @user.short_description%></h1>
-        <h1> date of birth   <%= @user.date_of_birth%></h1>
-
-     </div>
+    <!-- bio of user  -->
+    <div class="col-xs-offset-4 col-xs-4">
+      <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, radius: "max" %>
+      <h2><%= @user.first_name %></h2>
+      <p> created_at <%= @user.created_at%></p>
+      <p> nationality <%= @user.nationality%></p>
+      <p> long description  <%= @user.long_description %></p>
+      <p> description  <%= @user.short_description%></p>
+      <p> age  <%= @user.date_of_birth%></p>
+      <% if @user.chapters.present? %>
+        <p> à voyagé <%= @user.chapters.count %> fois</p>
+      <% end %>
+      <% if @user.teds.present? %>
+        <p>est propriétaire de <%= @user.teds.count %> teds </p>
+      <% end %>
     </div>
-
-    <div class="col-xs-6">
-      <div class="border">
-        <% @user.chapters.each do |chapter|  %>
-
-        <% chapter.photos.each_with_index do |photo| %>
-
-            <!-- One Clikable Photo -->
-            <%=  cl_image_tag(photo.image.path) %>
-
-
-            <% end %>
-        <% end %>
-
+  </div>
+  <div class="row"></div>
+    <div class="col-xs-12">
+      <!-- chapters wrote by user  -->
+      <% if @user.chapters.present? %>
+        <div class="row">
+        <h1 class= "text-align">My ted stories</h1>
+          <% @user.chapters.each do |chapter|  %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
+                <div class="card-category"></div>
+                <div class="card-description">
+                  <h2><%= chapter.ted.name %></h2>
+                  <p><%= chapter.ted.location %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
-      </div>
+      <% end %>
+        <!-- ted of user  -->
+      <% if @user.teds.present? %>
+        <div class="row">
+          <h1 class= "text-align">My ted</h1>
+          <% @user.teds.each do |ted| %>
+            <div class="col-xs-12 col-sm-4">
+              <%= link_to ted_path(ted) do %>
+                <div class="container-content">
+                  <header>
+                    <div class="bio">
+                      <% if ted.chapters.present? %>
+                        <% if ted.chapters.last.photos.present? %>
+                          <%= cl_image_tag(ted.chapters.last.photos.first.image.path, class: "bg", height: 179, width: 320, crop: :fill ) %>
+                        <% end %>
+                      <% else %>
+                        <%= image_tag("http://www.croop.cl/UI/twitter/images/up.jpg", class: "bg") %>
+                      <% end %>
+                      <div class="desc"></div>
+                    </div>
+                    <div class="avatarcontainer">
+                      <% if ted.avatar? %>
+                        <%= cl_image_tag(ted.avatar.path, class: "avatar-ted", size: '70x70', crop: :thumb, gravity: :face ) %>
+                      <% else %>
+                         <%= image_tag("ted-avatar.jpg", class: "avatar-ted", size: '70x70') %>
+                      <% end %>
+                      <div class="hover">
+                          <div class="icon-twitter"></div>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="content">
+                    <div class="data">
+                      <ul>
+                        <li>
+                          <%= ted.rank %>
+                          <span>rank</span>
+                        </li>
+                        <li>
+                          <%= ted.distance_traveled.round  %>
+                          <span>distance km</span>
+                        </li>
+                        <li>
+                          <%= ted.days %>
+                          <span>days</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="follow">
+                      <div class="icon-twitter"></div>
+                      <p><%= ted.name %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
