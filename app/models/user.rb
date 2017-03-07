@@ -37,7 +37,7 @@ class User < ApplicationRecord
     if avatar.present?
       avatar.path
     else
-      'http://placehold.it/50'
+      'http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg'
     end
   end
 end

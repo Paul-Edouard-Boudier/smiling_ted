@@ -28,7 +28,12 @@ number_of_travelers.times do
     password_confirmation: "password",
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    avatar_url: 'https://api.adorable.io/avatars/285/abott@adorable.png'
+    avatar_url: [
+      'https://cdn.kimkim.com/files/a/users/profile_photos/b455bdcef1d4f328b65291342e4bcc4057023e70/big.jpg',
+      'https://s-media-cache-ak0.pinimg.com/736x/31/e9/0b/31e90b0ff5662cbe47d3f93fa4203603.jpg',
+      'https://img2.10bestmedia.com/Images/Photos/322437/DSC-0103_56_600x600.jpg',
+      'http://1.bp.blogspot.com/-Z7CrZb3vDmE/VXHhTeJUl5I/AAAAAAAADEA/lFTAJyNKP0o/s1600/Stars%2Bin%2Bthe%2BAlley.jpg'
+      ].sample
   )
 end
 puts "\n"
