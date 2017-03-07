@@ -1,6 +1,10 @@
 <div class="container-full">
    <div id="map" style="width: 100%; height: 400px;"></div>
   <h1><%= t('.title') %></h1>
+
+  <% @chapters.each do |chapter| %>
+    <%= chapter.country %>
+    <% end %>
   <!-- Offset & main row-->
   <div class="row">
    <div class="col-xs-10 col-xs-offset-1">

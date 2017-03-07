@@ -9,7 +9,9 @@ puts "Creating 1 user..."
 user = User.create(
   email:"polo@hello.com" ,
   password:"password" ,
-  password_confirmation: "password"
+  password_confirmation: "password",
+  first_name: "Polo",
+  last_name: "Smith"
 )
 puts "User created : #{user.email} / #{user.password}\n"
 
@@ -54,7 +56,8 @@ chapter = ted.chapters.create(
   user: travelers.sample,
   description: Faker::HarryPotter.quote,
   localisation: 'Paris',
-  likes: 0
+  likes: 0,
+  country: 'France'
 )
 
 chapter.photos.create(
@@ -91,7 +94,8 @@ chapter.photos.create(
   chapter = ted.chapters.create(
     user: travelers.sample,
     description: Faker::HarryPotter.quote,
-    localisation: Faker::Address.country,
+    # localisation: Faker::Address.city,
+    country: Faker::Address.country,
     likes: 0
   )
 
