@@ -31,6 +31,9 @@
       <% end %>
 
 
+
+      <!-- TIMELINE STARTS HERE-->
+
       <ul class="cbp_tmtimeline">
       <% chapter_number = @ted.chapters.size + 1 %>
 
@@ -63,7 +66,7 @@
             <% if chapter == @ted.chapters.last %>
              <div class="cbp_tmlabel current_chapter">
             <% else %>
-             <div class="cbp_tmlabel">
+             <div class="cbp_tmlabel" data-sr="ease-in-out 10px, over 2s">
             <% end %>
 
               <!-- Chapter -->
@@ -83,6 +86,7 @@
                   </p>
                 <% end %>
 
+              <div id="chapter_body_<%= chapter_number %>">
 
                 <!-- Map & Text -->
                 <div class="col-md-4">
@@ -120,6 +124,8 @@
                         </div>
                     <% end %>
 
+              </div>
+
 
                   </div>
                 </div>
@@ -132,21 +138,6 @@
 
       <% end %>
       </ul>
-
-      <!-- TimeLine Test -->
-<!--
-      <ul class="cbp_tmtimeline">
-        <li>
-          <time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-          <div class="cbp_tmicon cbp_tmicon-phone"></div>
-          <div class="cbp_tmlabel">
-            <h2>Ricebean black-eyed pea</h2>
-            <p>Winter purslane...</p>
-          </div>
-        </li>
-      </ul>
-
- -->
 
     <!-- Offset & main row-->
     </div>
