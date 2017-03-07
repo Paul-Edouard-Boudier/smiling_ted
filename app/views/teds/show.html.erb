@@ -1,5 +1,6 @@
 <div class="container-full">
-
+   <div id="map" style="width: 100%; height: 400px;"></div>
+  <h1><%= t('.title') %></h1>
   <!-- Offset & main row-->
   <div class="row">
    <div class="col-xs-10 col-xs-offset-1">
@@ -130,5 +131,23 @@
     </div>
    </div>
   </div>
+
+   <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(2);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
+        });
+      });
+    <% end %>
+  <% end %>
 
 </div><!--container-->
