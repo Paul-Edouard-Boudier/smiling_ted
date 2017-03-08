@@ -33,6 +33,10 @@ class User < ApplicationRecord
     return user
   end
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
   def avatar_image_url
     if avatar.present?
       avatar.path
