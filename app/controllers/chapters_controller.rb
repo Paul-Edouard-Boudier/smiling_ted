@@ -42,6 +42,7 @@ class ChaptersController < ApplicationController
     .permit(
       :description,
       :localisation,
+      :country,
       :likes,
       photos_attributes: [
         :id,
