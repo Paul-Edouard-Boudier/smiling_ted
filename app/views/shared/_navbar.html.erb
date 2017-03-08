@@ -5,6 +5,15 @@
     <%= link_to t('all'), teds_path, class: "navbar-wagon-button" %>
   <% end %>
 
+  <% if I18n.locale.to_s == 'fr' %>
+    <%= link_to "English", { :locale=>'en' } %>  
+  <% else %>
+    <%= link_to "Français", { :locale=>'fr' } %>
+  <% end %>
+
+
+
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
