@@ -1,4 +1,5 @@
 <div class="container-full">
+
    <div id="map" style="width: 100%; height: 400px;"></div>
 
   <% @chapters.each do |chapter| %>
@@ -9,6 +10,33 @@
     <% end %>
   <% end %>
 
+
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+
+      <!-- Story Title -->
+      <h1 id="story-title">
+        <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
+        <%=  t('.history')%> <%= @ted.name %>
+      </h1>
+
+      <!-- Call-To-Action -->
+      <p><%= @ted.name %> a parcouru <%= @ted.distance_traveled.round %> km et découvert ( .count ) pays</p>
+      <%= form_tag ted_check_code_path(@ted) do %>
+        <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
+        <%= submit_tag(t('chapter'), class: "btn navbar-wagon-button")  %>
+      <% end %>
+
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- Map of all chapters -->
+  <div id="map" style="width: 100%; height: 400px;"></div>
+
+
+
   <!-- Offset & main row-->
   <div class="row">
    <div class="col-xs-10 col-xs-offset-1">
@@ -16,27 +44,15 @@
 
 <!--
       TODO :
-      - Locations with sizable text
-      - Better Responsive Timeline
+      - Responsive Page : card-photo text
+      - Better Swipebox
+      - All markers should have the same style
 
       TODO :
       - Better Write a Chapter Form
 
  -->
-      <!-- Story Title -->
-      <h1>
-        <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
-        <%=  t('.history')%> <%= @ted.name %>
-      </h1>
 
-
-
-      <!-- Call-To-Action -->
-      <%= form_tag ted_check_code_path(@ted) do %>
-        <%= label_tag(:ted_code, "code") %>
-        <%= text_field_tag(:ted_code) %>
-        <%= submit_tag(t('chapter'), class:"btn btn-default")  %><span class="btn glyphicon glyphicon-pencil" aria-hidden="true"></span>
-      <% end %>
 
 
 
@@ -75,7 +91,11 @@
             </div>
 
 
-            <div class="cbp_tmlabel" data-sr="ease-in-out 10px, over 1.2s">
+            <% if chapter == @ted.chapters.last %>
+              <div class="cbp_tmlabel">
+            <% else %>
+               <div class="cbp_tmlabel" data-sr="ease-in-out 20px, over 0.8s">
+            <% end %>
 
               <!-- Chapter -->
               <div class="row chapter">
@@ -164,6 +184,7 @@
     <%= javascript_tag do %>
       $(document).ready(function() {
         var handler = Gmaps.build('Google');
+
         handler.buildMap({ internal: { id: 'map' } }, function() {
           markers = handler.addMarkers(<%= raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
@@ -174,6 +195,8 @@
             handler.getMap().setZoom(14);
           }
         });
+
+        <!-- TODO : Disable Zoom on Scroll -->
       });
     <% end %>
   <% end %>
