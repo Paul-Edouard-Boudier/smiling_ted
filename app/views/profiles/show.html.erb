@@ -30,7 +30,7 @@
               <%= link_to ted_path(chapter.ted, anchor: "chapter_#{chapter.id}") do %>
                 <div class="card-chapter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
                   <div class="card-description">
-                    <h2><%= chapter.ted.name %></h2>
+                    <h2><%= chapter.localisation %></h2>
                   </div>
                 </div>
               <% end %>
