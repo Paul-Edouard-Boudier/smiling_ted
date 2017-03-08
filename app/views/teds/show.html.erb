@@ -7,15 +7,7 @@
 <div class="container-fluid">
 
 
-   <div id="map" style="width: 100%; height: 400px;"></div>
-
-  <% @chapters.each do |chapter| %>
-    <% if chapter.country.present? %>
-      <%= chapter.country %>
-      <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %>
-      <%=  image_tag("flags/#{chapter.country.downcase}.png") %>
-    <% end %>
-  <% end %>
+  
 
 
   <div class="row">
@@ -29,7 +21,15 @@
       </h1>
 
       <!-- Call-To-Action -->
-      <p><%= @ted.name %> a parcouru <%= @ted.distance_traveled.round %> km et découvert ( .count ) pays</p>
+      <p><%= @ted.name %> a parcouru <%= @ted.distance_traveled.round %> km et découvert <%= @ted.chapters.count %> pays</p>
+      <% @chapters.each do |chapter| %>
+        <% if chapter.country.present? %>
+          <div class="flags">
+            <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
+            <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
+          </div>
+        <% end %>
+      <% end %>
       <%= form_tag ted_check_code_path(@ted) do %>
         <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
         <%= submit_tag(t('chapter'), class: "btn navbar-wagon-button")  %>
