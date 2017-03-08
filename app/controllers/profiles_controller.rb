@@ -1,5 +1,7 @@
 class ProfilesController < ApplicationController
+
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -10,4 +12,6 @@ class ProfilesController < ApplicationController
 
   def delete
   end
+
+
 end

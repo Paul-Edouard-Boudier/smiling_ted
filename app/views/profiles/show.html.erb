@@ -1,2 +1,98 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <!-- bio of user  -->
+    <div class="col-xs-4">
+      <div class="bio-container">
+        <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, class: "img-circle" %>
+        <h2><%= @user.first_name %></h2>
+        <p> Member since <%= time_ago_in_words(@user.created_at) %></p>
+        <p> nationality <%= @user.nationality%></p>
+        <p> long description  <%= @user.long_description %></p>
+        <p> description  <%= @user.short_description%></p>
+        <p> age  <%= @user.date_of_birth%></p>
+        <% if @user.chapters.present? %>
+          <p> à voyagé <%= @user.chapters.count %> fois</p>
+        <% end %>
+        <% if @user.teds.present? %>
+          <p>est propriétaire de <%= @user.teds.count %> teds </p>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-xs-8">
+      <!-- chapters wrote by user  -->
+      <% if @user.chapters.present? %>
+        <div class="row">
+          <h1 class= "text-align">My ted stories</h1>
+          <% @user.chapters.each do |chapter|  %>
+
+            <div class="col-xs-12 col-sm-4">
+              <%= link_to ted_path(chapter.ted, anchor: "chapter_#{chapter.id}") do %>
+                <div class="card-chapter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
+                  <div class="card-description">
+                    <h2><%= chapter.ted.name %></h2>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+        <!-- ted of user  -->
+      <% if @user.teds.present? %>
+        <div class="row">
+          <h1 class= "text-align">My ted</h1>
+          <% @user.teds.each do |ted| %>
+            <div class="col-xs-12 col-sm-6">
+              <%= link_to ted_path(ted) do %>
+                <div class="container-content my-ted-card">
+                  <header>
+                    <div class="bio">
+                      <div class="image-card" style="background-image: url('<%= cl_image_path ted.last_image_url %>');">
+                      </div>
+                      <div class="desc"></div>
+                    </div>
+                    <div class="avatarcontainer">
+                      <% if ted.avatar? %>
+                        <%= cl_image_tag(ted.avatar.path, class: "avatar-ted", size: '70x70', crop: :thumb, gravity: :face ) %>
+                      <% else %>
+                         <%= image_tag("ted-avatar.jpg", class: "avatar-ted", size: '70x70') %>
+                      <% end %>
+                      <div class="hover">
+                          <div class="icon-twitter"></div>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="content">
+                    <div class="data">
+                      <ul>
+                        <li>
+                          <%= ted.rank %>
+                          <span>rank</span>
+                        </li>
+                        <li>
+                          <%= ted.distance_traveled.round  %>
+                          <span>distance km</span>
+                        </li>
+                        <li>
+                          <%= ted.days %>
+                          <span>days</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="follow">
+                      <div class="icon-twitter"></div>
+                      <p><%= ted.name %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
