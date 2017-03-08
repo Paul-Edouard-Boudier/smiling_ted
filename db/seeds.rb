@@ -6,7 +6,7 @@ User.destroy_all
 
 puts "Creating 1 user..."
 
-user = User.create(
+user = User.create!(
 
   email:"polo@hello.com" ,
   password:"password" ,
@@ -21,7 +21,7 @@ puts "Creating #{number_of_travelers} travelers..."
 travelers = []
 number_of_travelers.times do
  print "."
- travelers << User.create(
+ travelers << User.create!(
    email: Faker::Internet.email,
    password: "password",
    password_confirmation: "password",
@@ -39,14 +39,14 @@ end
 puts "\n"
 puts "Creating a ted with some chapters..."
 
-ted = Ted.create(
+ted = Ted.create!(
  name: Faker::Name.first_name,
  user: user,
  rank: Faker::Number.between(1, 5),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'http://helpsimus.org/blog/wp-content/uploads/2010/11/peluche-et-enfant.jpg'
 )
-chapter = ted.chapters.create(
+chapter = ted.chapters.create!(
 
   user: travelers.sample,
   description: Faker::HarryPotter.quote,
@@ -55,27 +55,27 @@ chapter = ted.chapters.create(
   country: 'fr'
 
 )
-chapter.photos.create(
+chapter.photos.create!(
  image_url: 'http://www.parisattitude.com/images/monuments.jpg',
  title: 'A great view from Paris',
  description: 'We were near the Eiffel Tower'
 )
-chapter.photos.create(
+chapter.photos.create!(
  image_url: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1444253482/DG2015-paris.jpg?itok=XH81cBH9',
  title: 'Such a beautiful city',
  description: 'This picture speaks on itself, this was such a lovely moment'
 )
-chapter.photos.create(
+chapter.photos.create!(
  image_url: 'https://cdn.theculturetrip.com/wp-content/uploads/2015/11/Paris-%C2%A9-Ditty_about_summer-Shutterstock.jpg',
  title: 'Paris from top',
  description: 'The roofs of Paris'
 )
-chapter.photos.create(
+chapter.photos.create!(
  image_url: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1446842493/3-paris-social-niche1115.jpg?itok=wA-uNK8P',
  title: 'Arc de triomphe',
  description: 'So famous monument !'
 )
-chapter.photos.create(
+chapter.photos.create!(
  image_url: 'http://cdn-image.travelandleisure.com/sites/default/files/styles/tnl_redesign_article_landing_page/public/1446842493/3-paris-social-niche1115.jpg?itok=wA-uNK8P',
  title: 'Magnifique Souvenir...',
  description: 'Bonjour, merci, vive Paris ! Your ted speak french !'
@@ -83,7 +83,7 @@ chapter.photos.create(
 
 [2, 3, 4].sample.times do
 
-  chapter = ted.chapters.create(
+  chapter = ted.chapters.create!(
     user: travelers.sample,
     description: Faker::HarryPotter.quote,
     # localisation: Faker::Address.city,
@@ -93,7 +93,7 @@ chapter.photos.create(
 
 
  3.times do
-   chapter.photos.create(
+   chapter.photos.create!(
      image_url: Faker::LoremPixel.image("200x200"),
      title: Faker::Hipster.sentence,
      description: Faker::Hipster.sentence
@@ -108,7 +108,7 @@ number_of_teds = 2
 puts "Creating #{number_of_teds} more teds..."
 
 number_of_teds.times do
- ted = Ted.create(
+ ted = Ted.create!(
    name: Faker::Name.first_name,
    user: user,
    rank: Faker::Number.between(1, 5),

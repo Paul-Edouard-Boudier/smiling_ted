@@ -10,6 +10,8 @@ class Ted < ApplicationRecord
 
   before_create :generate_code
 
+  validates :rank, presence: true
+
   def distance_traveled
     distance_traveled = 0
     chapters.all.each_cons(2) do |chapters|
