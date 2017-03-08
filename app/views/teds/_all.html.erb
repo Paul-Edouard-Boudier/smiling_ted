@@ -1,60 +1,59 @@
 
-<div class="container">
-  <div class="wrapper">
-    <div class="row">
-      <% @teds.each do |ted| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= link_to ted_path(ted) do %>
-            <div class="container-content">
-              <header>
-                <div class="bio">
-                  <% if ted.chapters.present? %>
-                    <% if ted.chapters.last.photos.present? %>
-                      <%= cl_image_tag(ted.chapters.last.photos.first.image.path, class: "bg", height: 179, width: 320, crop: :fill ) %>
-                    <% end %>
-                  <% else %>
-                    <%= image_tag("http://www.croop.cl/UI/twitter/images/up.jpg", class: "bg") %>
-                  <% end %>
-                  <div class="desc"></div>
-                </div>
-                <div class="avatarcontainer">
-                  <% if ted.avatar? %>
-                    <%= cl_image_tag(ted.avatar.path, class: "avatar-ted", size: '70x70', crop: :thumb, gravity: :face ) %>
-                    <% else %>
-                     <%= image_tag("ted-avatar.jpg", class: "avatar-ted", size: '70x70') %>
-                  <% end %>
-                  <div class="hover">
-                      <div class="icon-twitter"></div>
-                  </div>
-                </div>
-              </header>
-              <div class="content">
-                <div class="data">
-                  <ul>
-                    <li>
-                        <%= ted.rank %>
-                      <span>rank</span>
-                    </li>
-                    <li>
-                      <%= ted.distance_traveled.round  %>
-                      <span>distance km</span>
-                    </li>
-                    <li>
-                      <%= ted.days %>
-                      <span>days</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="follow"> <div class="icon-twitter"></div>
-                  <p><%= ted.name %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+
+<div class="row">
+  <% @teds.each do |ted| %>
+    <div class="col-xs-12 col-sm-4">
+
+
+      <%= link_to ted_path(ted) do %>
+
+      <% if ted.chapters.present? %>
+        <% if ted.chapters.last.photos.present? %>
+          <div data-sr="ease-in-out 20px, over 0.8s" class="card-photo" style="background-image: url('<%= cl_image_path(ted.chapters.last.photos.first.image.path)%>');">
+        <% end %>
+      <% else %>
+          <div data-sr="ease-in-out 20px, over 0.8s" class="card-photo" style="background-image: url('http://www.croop.cl/UI/twitter/images/up.jpg');">
       <% end %>
+
+
+
+            <div class="avatarcontainer">
+              <% if ted.avatar? %>
+                <%= cl_image_tag(ted.avatar.path, class: "avatar-ted", size: '70x70', crop: :thumb, gravity: :face ) %>
+              <% else %>
+                 <%= image_tag("ted-avatar.jpg", class: "avatar-ted", size: '70x70') %>
+              <% end %>
+            </div>
+
+            <div class="after-avatar btn navbar-wagon-button"><%= ted.name %></div>
+
+            <div class="after-avatar rank">
+              <% ted.rank.times do %>
+                <i class="fa fa-star" aria-hidden="true"></i>
+              <% end %>
+            </div>
+
+            <div class="card-content">
+
+              <% if ted.distance_traveled.round == 0 %>
+                <h5>Travel just began !</h5>
+              <% else %>
+                <h4><%= ted.distance_traveled.round %><span> km parcourus</span></h4>
+                <% if ted.days < 1 %>
+                  <h5>en <b><%= ted.days %></b> jours</h5>
+                <% end %>
+
+              <% end %>
+            </div>
+
+
+          </div>
+
+      <% end %>
+
+
     </div>
-  </div>
+  <% end %>
 </div>
 
 

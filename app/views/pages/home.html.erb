@@ -2,24 +2,22 @@
   <div class="banner-content">
     <h1> <%= t('.value-proposition') %></h1>
     <p> <%= t('.second-value') %></p>
-    <%= form_tag teds_path, method: :get,  wrapper: :inline_form, html: {class: 'form-inline'} do %>
 
-        <%= text_field_tag :name, nil, placeholder: t('search'), html: {class: 'form-control'} %>
-        <button class='btn btn-default' type="submit"> <%= t('submit')%></button>
-         <%= text_field_tag :code, nil, placeholder: t('search'), html: {class: 'form-control'} %>
-        <button class='btn btn-default' type="submit"> <%= t('submit')%></button>
-
-
+    <%= link_to t('all'), teds_path, class: "btn navbar-wagon-button" %>
+    <%= link_to smile_path, class: "btn navbar-wagon-button" do %>
+      <%= t('new_ted') %>
     <% end %>
+
+
   </div>
 </div>
 
 
-
-<div class="wraper-content" style="background-image: url(<%= image_path("map-background.png") %>); background-size: cover;">
+<div class="wraper-content">
+ <div style="background-image: url(<%= image_path("map-background.png") %>); background-size: cover;">
   <div class="container">
     <div class="row ">
-      <div class="content-info">
+      <!-- <div class="content-info">
       <div class="col-xs-12 col-sm-4" >
         <div class="image-info text-center">
           <%= image_tag("tedpic.jpg", height: '220', width: '200')%>
@@ -41,10 +39,10 @@
         </div>
       </div>
     </div>
-    </div>
+    </div> -->
+
 
     <%= render 'teds/all' %>
 
-    </div>
   </div>
 </div>
