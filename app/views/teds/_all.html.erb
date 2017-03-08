@@ -1,5 +1,5 @@
 
-
+<hr style="visibility:hidden;">
 <div class="row">
   <% @teds.each do |ted| %>
     <div class="col-xs-12 col-sm-4">
@@ -9,10 +9,10 @@
 
       <% if ted.chapters.present? %>
         <% if ted.chapters.last.photos.present? %>
-          <div data-sr="ease-in-out 20px, over 0.8s" class="card-photo" style="background-image: url('<%= cl_image_path(ted.chapters.last.photos.first.image.path)%>');">
+          <div data-sr="ease-in-out 20px, over 0.8s" class="card-photo" style="background-image: linear-gradient(-225deg, rgba(0,10,80,0.6) 0%, rgba(0,5,20,0.3) 5%), url('<%= cl_image_path(ted.chapters.last.photos.first.image.path)%>');">
         <% end %>
       <% else %>
-          <div data-sr="ease-in-out 20px, over 0.8s" class="card-photo" style="background-image: url('http://www.croop.cl/UI/twitter/images/up.jpg');">
+          <div data-sr="ease-in-out 20px, over 0.8s" class="card-photo" style="background-image: linear-gradient(-225deg, rgba(0,10,80,0.6) 0%, rgba(0,5,20,0.3) 5%), url('http://www.bizziebaby.co.uk/images/library/jofli1.jpeg');">
       <% end %>
 
 
@@ -28,9 +28,7 @@
             <div class="after-avatar btn navbar-wagon-button"><%= ted.name %></div>
 
             <div class="after-avatar rank">
-              <% ted.rank.times do %>
-                <i class="fa fa-star" aria-hidden="true"></i>
-              <% end %>
+              <i class="fa fa-trophy" aria-hidden="true"></i> <%= ted.rank %>
             </div>
 
             <div class="card-content">
