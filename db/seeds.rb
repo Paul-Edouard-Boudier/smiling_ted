@@ -57,7 +57,7 @@ chapter = ted.chapters.create(
   description: Faker::HarryPotter.quote,
   localisation: 'Paris',
   likes: 0,
-  country: 'France'
+  country: 'fr'
 )
 
 chapter.photos.create(
@@ -95,7 +95,7 @@ chapter.photos.create(
     user: travelers.sample,
     description: Faker::HarryPotter.quote,
     # localisation: Faker::Address.city,
-    country: Faker::Address.country,
+    country: Faker::Address.country_code,
     likes: 0
   )
 
