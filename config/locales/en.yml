@@ -25,8 +25,8 @@ en:
   hello: Hello world
   search: Search for a name
   submit: Search
-  all: List of all teds
-  new_ted: Create a Ted's profile
+  all: Teds all around the world
+  new_ted: Get my Ted
   description_chapter_creation: write a description
   localisation_chapter_creation: Enter the actual location of ted
   chapter: Write a new chapter

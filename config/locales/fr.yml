@@ -3,8 +3,8 @@ fr:
   code: Entrez le code de la peluche
   search: Cherchez un nom
   submit: Lancer la recherche
-  all: Liste des peluches
-  new_ted: Devenez propriétaire d'une peluche
+  all: peluches actuellement en voyage
+  new_ted: Obtenir ma peluche
   description_chapter_creation: Ecrivez une description
   localisation_chapter_creation: Entrez la localisation actuel de ted
   chapter: Nouveau chapitre
@@ -16,7 +16,7 @@ fr:
   pages:
     home:
       value-proposition: Donnez du sens à vos voyages
-      second-value: Sous titre à trouver fr.yml
+      second-value: "Faites rêver un enfant : voyagez avec sa peluche"
       order: Achetez une peluche sur le site
       write: Ecrivez le premier chapitre de votre peluche
       send: Renvoyez nous votre peluche, nous la partagerons aux voyageurs
@@ -39,4 +39,5 @@ fr:
       location: Localisation
       distance_traveled: Distance parcourue en
       details: Détails
+
 
