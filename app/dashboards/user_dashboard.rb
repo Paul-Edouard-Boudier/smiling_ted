@@ -13,6 +13,7 @@ class UserDashboard < Administrate::BaseDashboard
     photos: Field::HasMany,
     id: Field::Number,
     email: Field::String,
+    name: Field::String,
     encrypted_password: Field::String,
     reset_password_token: Field::String,
     reset_password_sent_at: Field::DateTime,
@@ -34,7 +35,6 @@ class UserDashboard < Administrate::BaseDashboard
     short_description: Field::String,
     provider: Field::String,
     uid: Field::String,
-    facebook_picture_url: Field::String,
     token: Field::String,
     token_expiry: Field::DateTime,
   }.freeze
@@ -47,6 +47,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :chapters,
     :teds,
+    :email,
+    :name,
     :photos,
   ].freeze
 
@@ -79,7 +81,6 @@ class UserDashboard < Administrate::BaseDashboard
     :short_description,
     :provider,
     :uid,
-    :facebook_picture_url,
     :token,
     :token_expiry,
   ].freeze
@@ -111,7 +112,6 @@ class UserDashboard < Administrate::BaseDashboard
     :short_description,
     :provider,
     :uid,
-    :facebook_picture_url,
     :token,
     :token_expiry,
   ].freeze
