@@ -1,32 +1,40 @@
 <div class="container">
   <div class="row">
     <!-- bio of user  -->
-    <div class="col-xs-4">
+    <div class="col-xs-12 col-sm-4">
       <div class="bio-container">
         <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, class: "img-circle" %>
-        <h2><%= @user.first_name %></h2>
-        <p> Member since <%= time_ago_in_words(@user.created_at) %></p>
-        <p> nationality <%= @user.nationality%></p>
-        <p> long description  <%= @user.long_description %></p>
-        <p> description  <%= @user.short_description%></p>
-        <p> age  <%= @user.date_of_birth%></p>
-        <% if @user.chapters.present? %>
-          <p> à voyagé <%= @user.chapters.count %> fois</p>
-        <% end %>
-        <% if @user.teds.present? %>
-          <p>est propriétaire de <%= @user.teds.count %> teds </p>
-        <% end %>
+
+        <ul class="list-unstyled">
+          <li> <h2><%= @user.first_name %> </li>
+          <li> Member since <%= time_ago_in_words(@user.created_at) %></li>
+          <li>
+            <div class= "user-description">
+               <%= @user.long_description %>
+            </div>
+
+          </li>
+          <li>description  <%= @user.short_description%></li>
+          <li>nationality <%= @user.nationality%></li>
+          <li>age  <%= @user.date_of_birth%></li>
+           <% if @user.chapters.present? %>
+             <li> à voyagé <%= @user.chapters.count %> fois</li>
+           <% end %>
+           <% if @user.teds.present? %>
+             <li>est propriétaire de <%= @user.teds.count %> teds </li>
+           <% end %>
+        </ul>
       </div>
     </div>
 
-    <div class="col-xs-8">
+    <div class="col-xs-12 col-sm-8">
       <!-- chapters wrote by user  -->
       <% if @user.chapters.present? %>
         <div class="row">
           <h1 class= "text-align">My ted stories</h1>
           <% @user.chapters.each do |chapter|  %>
 
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-6">
               <%= link_to ted_path(chapter.ted, anchor: "chapter_#{chapter.id}") do %>
               <% if chapter.photos.present? %>
                 <div class="card-chapter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
