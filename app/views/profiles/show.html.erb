@@ -1,28 +1,29 @@
 <div class="container">
   <div class="row">
     <!-- bio of user  -->
-    <div class="col-xs-offset-4 col-xs-4">
-      <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, radius: "max" %>
-      <h2><%= @user.first_name %></h2>
-      <p> created_at <%= @user.created_at%></p>
-      <p> nationality <%= @user.nationality%></p>
-      <p> long description  <%= @user.long_description %></p>
-      <p> description  <%= @user.short_description%></p>
-      <p> age  <%= @user.date_of_birth%></p>
-      <% if @user.chapters.present? %>
-        <p> à voyagé <%= @user.chapters.count %> fois</p>
-      <% end %>
-      <% if @user.teds.present? %>
-        <p>est propriétaire de <%= @user.teds.count %> teds </p>
-      <% end %>
+    <div class="col-xs-4">
+      <div class="bio-container">
+        <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, class: "img-circle" %>
+        <h2><%= @user.first_name %></h2>
+        <p> Member since <%= time_ago_in_words(@user.created_at) %></p>
+        <p> nationality <%= @user.nationality%></p>
+        <p> long description  <%= @user.long_description %></p>
+        <p> description  <%= @user.short_description%></p>
+        <p> age  <%= @user.date_of_birth%></p>
+        <% if @user.chapters.present? %>
+          <p> à voyagé <%= @user.chapters.count %> fois</p>
+        <% end %>
+        <% if @user.teds.present? %>
+          <p>est propriétaire de <%= @user.teds.count %> teds </p>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="row"></div>
-    <div class="col-xs-12">
+
+    <div class="col-xs-8">
       <!-- chapters wrote by user  -->
       <% if @user.chapters.present? %>
         <div class="row">
-        <h1 class= "text-align">My ted stories</h1>
+          <h1 class= "text-align">My ted stories</h1>
           <% @user.chapters.each do |chapter|  %>
             <div class="col-xs-12 col-sm-4">
               <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
@@ -41,18 +42,13 @@
         <div class="row">
           <h1 class= "text-align">My ted</h1>
           <% @user.teds.each do |ted| %>
-            <div class="col-xs-12 col-sm-4">
+            <div class="col-xs-12 col-sm-6">
               <%= link_to ted_path(ted) do %>
-                <div class="container-content">
+                <div class="container-content my-ted-card">
                   <header>
                     <div class="bio">
-                      <% if ted.chapters.present? %>
-                        <% if ted.chapters.last.photos.present? %>
-                          <%= cl_image_tag(ted.chapters.last.photos.first.image.path, class: "bg", height: 179, width: 320, crop: :fill ) %>
-                        <% end %>
-                      <% else %>
-                        <%= image_tag("http://www.croop.cl/UI/twitter/images/up.jpg", class: "bg") %>
-                      <% end %>
+                      <div class="image-card" style="background-image: url('<%= cl_image_path ted.last_image_url %>');">
+                      </div>
                       <div class="desc"></div>
                     </div>
                     <div class="avatarcontainer">
@@ -97,3 +93,5 @@
     </div>
   </div>
 </div>
+
+

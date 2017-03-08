@@ -27,6 +27,14 @@ class Ted < ApplicationRecord
     days
   end
 
+  def last_image_url
+    if chapters.present? && chapters.last.photos.present?
+      chapters.last.photos.first.image.path
+    else
+      "http://www.croop.cl/UI/twitter/images/up.jpg"
+    end
+  end
+
   private
 
   def generate_code
