@@ -5,9 +5,9 @@
   <% end %>
 
   <% if I18n.locale.to_s == 'fr' %>
-    <%= link_to "English", { :locale=>'en' } %>  
+    <%= link_to image_tag('flags/gb.png', class: "icon"), { locale:'en' } %>  
   <% else %>
-    <%= link_to "Français", { :locale=>'fr' } %>
+    <%= link_to image_tag('flags/fr.png', class: "icon"), { locale:'fr' } %>
   <% end %>
 
 
