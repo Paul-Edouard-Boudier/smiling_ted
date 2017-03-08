@@ -1,3 +1,7 @@
+#story-title{
+ font-size: 3em;
+}
+
 
 // SWIPEBOX
 
@@ -39,6 +43,16 @@
   border-right-color: $light_color !important;
 }
 
+.cbp_tmtimeline > li.current_chapter .cbp_tmtime{
+  padding-top: 30px;
+}
+
+.cbp_tmtimeline > li.current_chapter .cbp_tmicon {
+  width: 80px !important;
+  height: 80px !important;
+  right: 10px !important;
+  top: 40px;
+}
 
 // CARD
 
