@@ -2,7 +2,6 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png" %>
-    <%= link_to t('all'), teds_path, class: "navbar-wagon-button" %>
   <% end %>
 
   <% if I18n.locale.to_s == 'fr' %>
@@ -17,18 +16,17 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <!-- Search form -->
-   <!--  <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form> -->
+    <!-- Search Form -->
+    <%= form_tag teds_path, method: :get,  wrapper: :inline_form, html: {class: 'form-inline'} do %>
 
-    <!-- Different navigation if login or not -->
-    <%= link_to smile_path, class: "navbar-wagon-item navbar-wagon-link" do %>
-      <h4> <%= t('new_ted') %> </h4>
+        <%= text_field_tag :name, nil, placeholder: t('search'), html: {class: 'form-control'} %>
+        <button class='btn btn-default' type="submit"> <%= t('submit')%></button>
+         <%= text_field_tag :code, nil, placeholder: t('search'), html: {class: 'form-control'} %>
+        <button class='btn btn-default' type="submit"> <%= t('submit')%></button>
+
     <% end %>
+
+
     <% if user_signed_in? %>
 
       <!-- Profile picture and dropdown -->
