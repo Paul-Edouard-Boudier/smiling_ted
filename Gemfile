@@ -32,6 +32,7 @@ gem 'faker', '~> 1.7', '>= 1.7.3'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'country_select', '~> 3.0'
 
 gem 'swipebox'
 
