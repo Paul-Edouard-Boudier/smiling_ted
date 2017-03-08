@@ -25,14 +25,15 @@
         <div class="row">
           <h1 class= "text-align">My ted stories</h1>
           <% @user.chapters.each do |chapter|  %>
+
             <div class="col-xs-12 col-sm-4">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
-                <div class="card-category"></div>
-                <div class="card-description">
-                  <h2><%= chapter.ted.name %></h2>
-                  <p><%= chapter.ted.location %></p>
+              <%= link_to ted_path(chapter.ted, anchor: "chapter_#{chapter.id}") do %>
+                <div class="card-chapter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
+                  <div class="card-description">
+                    <h2><%= chapter.ted.name %></h2>
+                  </div>
                 </div>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
