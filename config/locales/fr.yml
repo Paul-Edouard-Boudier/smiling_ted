@@ -1,18 +1,14 @@
 fr:
-  name_creation: Nommez votre peluche
-  code: Entrez le code de la peluche
-  search: Cherchez un nom
-  submit: Lancer la recherche
-  all: peluches actuellement en voyage
-  new_ted: Obtenir ma peluche
-  description_chapter_creation: Ecrivez une description
-  localisation_chapter_creation: Entrez la localisation actuel de ted
-  chapter: Nouveau chapitre
-  about: A propos de nous
-  aboutinfos: Une équipe de passionné se met aux services des enfants pour leur permettre de voyager
-  team: équipe
-  home: accueil
 
+  shared:
+    navbar: 
+      search: Cherchez un nom
+      submit: Rechercher
+    footer:
+      about: A propos de nous
+      aboutinfos: Une équipe de passionné se met aux services des enfants pour leur permettre de voyager
+      team: équipe
+      home: accueil
   pages:
     home:
       value-proposition: Donnez du sens à vos voyages
@@ -20,6 +16,8 @@ fr:
       order: Achetez une peluche sur le site
       write: Ecrivez le premier chapitre de votre peluche
       send: Renvoyez nous votre peluche, nous la partagerons aux voyageurs
+      all: peluches actuellement en voyage
+      new_ted: Obtenir ma peluche
   teds:
     show:
       name: Nom de la peluche
@@ -30,6 +28,12 @@ fr:
       here: "ici :"
       someone: "Quelqu'un"
       for: pour
+      went: à parcouru
+      found: et à découvert
+      country: pays
+      chapter: Chapitre écrit par
+      you: vous
+      chapter: Nouveau chapitre
     index:
       title: Toutes nos peluches
       map:  Où se trouvent nos Teddys
@@ -39,5 +43,17 @@ fr:
       location: Localisation
       distance_traveled: Distance parcourue en
       details: Détails
+    all:
+      beggining: Le voyage commence !
+      in: en
+      days: jours
+      covered: parcourus.
+    form:   
+      name_creation: Nommez votre peluche
+      code: Entrez le code de la peluche
+  chapters:
+    form:  
+      description_chapter_creation: Ecrivez une description
+      localisation_chapter_creation: Entrez la localisation actuel de ted
 
 

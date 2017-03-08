@@ -19,10 +19,10 @@
     <!-- Search Form -->
     <%= form_tag teds_path, method: :get,  wrapper: :inline_form, html: {class: 'form-inline'} do %>
 
-        <%= text_field_tag :name, nil, placeholder: t('search'), html: {class: 'form-control'} %>
-        <button class='btn btn-default' type="submit"> <%= t('submit')%></button>
-         <%= text_field_tag :code, nil, placeholder: t('search'), html: {class: 'form-control'} %>
-        <button class='btn btn-default' type="submit"> <%= t('submit')%></button>
+        <%= text_field_tag :name, nil, placeholder: t('.search'), html: {class: 'form-control'} %>
+        <button class='btn btn-default' type="submit"> <%= t('.submit')%></button>
+         <%= text_field_tag :code, nil, placeholder: t('.search'), html: {class: 'form-control'} %>
+        <button class='btn btn-default' type="submit"> <%= t('.submit')%></button>
 
     <% end %>
 
