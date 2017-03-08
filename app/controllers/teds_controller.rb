@@ -33,10 +33,12 @@ class TedsController < ApplicationController
 
     
     end
-    @hash.each do |item|
-      item.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|74ccfc", width: '64', height: '64'}})
+    if @hash.present?
+      @hash.each do |item|
+        item.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|74ccfc", width: 64, height: 64, anchor: [10.5, 34] }})
+      end
+      @hash.last.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|fc4016", width: 64, height: 64, anchor: [10.5, 34] }})
     end
-    @hash.last.merge!({ picture: { url: "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|fc4016", width: '64', height: '64' }})
   end
 
   def new

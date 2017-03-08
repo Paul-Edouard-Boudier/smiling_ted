@@ -1,9 +1,23 @@
+
 <div class="container-fluid">
   <div class="row">
     <div id="map" ></div>
   </div>
 </div>
 <div class="container-fluid">
+
+
+   <div id="map" style="width: 100%; height: 400px;"></div>
+
+  <% @chapters.each do |chapter| %>
+    <% if chapter.country.present? %>
+      <%= chapter.country %>
+      <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %>
+      <%=  image_tag("flags/#{chapter.country.downcase}.png") %>
+    <% end %>
+  <% end %>
+
+
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1 show-head">
 
@@ -29,6 +43,7 @@
 
   <!-- Map of all chapters -->
 <div class="container-fluid">
+
 
 
   <!-- Offset & main row-->

@@ -7,11 +7,12 @@ User.destroy_all
 puts "Creating 1 user..."
 
 user = User.create(
- email:"polo@hello.com" ,
- password:"password" ,
- password_confirmation: "password",
- first_name: "Polo",
- last_name: "Smith"
+
+  email:"polo@hello.com" ,
+  password:"password" ,
+  password_confirmation: "password",
+  first_name: "Polo",
+  last_name: "Smith"
 )
 puts "User created : #{user.email} / #{user.password}\n"
 number_of_travelers = 2
@@ -46,10 +47,13 @@ ted = Ted.create(
  avatar_url: 'http://helpsimus.org/blog/wp-content/uploads/2010/11/peluche-et-enfant.jpg'
 )
 chapter = ted.chapters.create(
- user: travelers.sample,
- description: Faker::HarryPotter.quote,
- localisation: 'Paris',
- likes: 0,
+
+  user: travelers.sample,
+  description: Faker::HarryPotter.quote,
+  localisation: 'Paris',
+  likes: 0,
+  country: 'fr'
+
 )
 chapter.photos.create(
  image_url: 'http://www.parisattitude.com/images/monuments.jpg',
@@ -79,12 +83,14 @@ chapter.photos.create(
 
 [2, 3, 4].sample.times do
 
- chapter = ted.chapters.create(
-   user: travelers.sample,
-   description: Faker::HarryPotter.quote,
-   localisation: Faker::Address.city,
-   likes: 0
- )
+  chapter = ted.chapters.create(
+    user: travelers.sample,
+    description: Faker::HarryPotter.quote,
+    # localisation: Faker::Address.city,
+    country: Faker::Address.country_code,
+    likes: 0
+  )
+
 
  3.times do
    chapter.photos.create(
