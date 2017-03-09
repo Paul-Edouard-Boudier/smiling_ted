@@ -81,7 +81,7 @@
 
             <div class="cbp_tmicon">
               <!-- TODO : change by chapter_user_path -->
-              <%= link_to chapter.user.avatar_image_url do %>
+              <%= link_to profile_path(chapter.user) do %>
                 <%= cl_image_tag chapter.user.avatar_image_url, class: "avatar-timeline" %></a>
               <% end %>
             </div>
@@ -116,7 +116,7 @@
                 <% elsif chapter.user.first_name? %>
                   <p class="padding"><%= t('.chapter') %>
                     <!-- TODO : change by chapter_user_path -->
-                    <%= link_to chapter.user.avatar_image_url do %>
+                    <%= link_to profile_path(chapter.user) do %>
                       <b><%= chapter.user.first_name %></b>
                     <% end %>
                   </p>
