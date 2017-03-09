@@ -5,7 +5,7 @@
   <% end %>
 
   <% if I18n.locale.to_s == 'fr' %>
-    <%= link_to image_tag('flags/gb.png', class: "icon"), { locale:'en' } %>  
+    <%= link_to image_tag('flags/gb.png', class: "icon"), { locale:'en' } %>
   <% else %>
     <%= link_to image_tag('flags/fr.png', class: "icon"), { locale:'fr' } %>
   <% end %>
@@ -19,7 +19,7 @@
     <!-- Search Form -->
     <%= form_tag teds_path, method: :get,  wrapper: :inline_form, class: 'navbar-wagon-search' do %>
 
-        <%= text_field_tag :code, nil, placeholder: t('search'), class: "navbar-wagon-search-input" %>
+        <%= text_field_tag :code, nil, placeholder: t('.search'), class: "navbar-wagon-search-input" %>
         <button type="submit" class='navbar-wagon-search-btn'>
           <i class="fa fa-search"></i>
         </button>
