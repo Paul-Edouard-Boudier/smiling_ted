@@ -15,13 +15,13 @@
         </tr>
       </thead>
       <tbody>
-        <% @teds.each do |ted| %>
+        <% @teds.reverse.each do |ted| %>
           <tr>
             <td><%= ted.rank %></td>
             <td><%= link_to ted.name, ted_path(ted) %></td>
             <td><%= ted.user.first_name %></td>
             <td><%= ted.location %></td>
-            <td><%= ted.distance_traveled.round %></td>
+            <td><%= ted.distance_traveled.round %> km</td>
           </tr>
         <% end %>
       </tbody>

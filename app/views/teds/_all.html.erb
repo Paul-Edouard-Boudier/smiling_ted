@@ -37,7 +37,7 @@
                 <h5><%= t('.beggining') %></h5>
               <% else %>
                 <h4><%= ted.distance_traveled.round %><span> km <%=  t('.covered')%></span></h4>
-                <% if ted.days < 1 %>
+                <% if ted.days > 1 %>
                   <h5><%= t('.in') %> <b><%= ted.days %></b> <%= t('.days') %></h5>
                 <% end %>
 
