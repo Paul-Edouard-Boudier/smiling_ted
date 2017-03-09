@@ -8,14 +8,13 @@
         <% end %>
 
         <p class="footer-links">
-
-          <a href="#"><%= t('.home') %></a>
+          <%= link_to "home", root_path %>
           ·
-          <a href="#">info</a>
+          <%= link_to "shop", shop_path %>
           ·
-          <a href="#"><%= t('.team') %></a>
+          <%= link_to "info", info_path %>
           ·
-          <a href="#">contact</a>
+          <%= link_to "team", team_path %>
         </p>
 
         <p class="footer-company-name">SmilingTed &copy; 2017</p>
