@@ -17,7 +17,6 @@ $(document).ready(function() {
       markers = handler.addMarker({
         lat: lat,
         lng: lng,
-        icon: image,
       });
 
       handler.bounds.extendWith(markers);
