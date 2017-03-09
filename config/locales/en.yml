@@ -32,25 +32,25 @@ en:
       home: home
   pages:
     home:
-      value-proposition: Be a part of a beautifull story
-      second-value: 'Give to a child the travel spririt by making his ted discovering the world '
+      value-proposition: Be part of a beautiful story
+      second-value: Give a child the travel spirit, make his Teddy explore the world
       order: Order a Teddy from the website
       write: Write the first chapter of your ted life
       send: Send him back to us, we will give your ted to travellers
-      all: Teds all around the world
-      new_ted: Get my Ted
+      all: Teddies around the world
+      new_ted: Get my teddy
   teds:
     index:
-      title: Select a ted's story
-      map: Our Teds over the world!
+      title: Select a Teddy's story
+      map: Our Teddies over the world!
       rank: rank
-      name: Ted's name
+      name: Teddy's name
       owner: Owner
       location: Location
       distance_traveled: Distance traveled in
       details: Details
     show:
-      name: Ted's name is
+      name: Teddy's name is
       history: The adventures of
       traveled: went to
       travels: is in
@@ -79,8 +79,8 @@ en:
       localisation_chapter_creation: Where is your Ted ?
       country: In which country are you?
     new:
-      hero: lets be a hero 
-      
+      hero: lets be a hero
+
 
 
 

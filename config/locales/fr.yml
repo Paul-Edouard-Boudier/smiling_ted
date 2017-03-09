@@ -1,7 +1,7 @@
 fr:
 
   shared:
-    navbar: 
+    navbar:
       search: Cherchez un nom
       submit: Rechercher
     footer:
@@ -11,8 +11,8 @@ fr:
       home: accueil
   pages:
     home:
-      value-proposition: Donnez du sens à vos voyages
-      second-value: "Faites rêver un enfant : voyagez avec sa peluche"
+      value-proposition: Rejoignez une belle aventure
+      second-value: Faites découvrir le monde à un enfant, voyagez avec sa peluche"
       order: Achetez une peluche sur le site
       write: Ecrivez le premier chapitre de votre peluche
       send: Renvoyez nous votre peluche, nous la partagerons aux voyageurs
@@ -49,15 +49,15 @@ fr:
       days: jours
       covered: parcourus.
       story: histoire de
-    form:   
+    form:
       name_creation: Nommez votre peluche
       code: Entrez le code de la peluche
   chapters:
-    form:  
+    form:
       description_chapter_creation: Ecrivez une description
       localisation_chapter_creation: Entrez la localisation actuel de ted
       country: Dans quel pays êtes vous ?
-    new: 
+    new:
       hero: Devenez un héros
 
 
