@@ -25,15 +25,15 @@ fr:
       traveled: est allé à
       travels: découvre
       brought: a amené
-      here: "ici :"
-      someone: "Quelqu'un"
+      here: 'ici :'
+      someone: Quelqu'un
       for: pour
-      went: à parcouru
+      went: a parcouru
       found: et à découvert
       country: pays
       chapter: Chapitre écrit par
       you: vous
-      chapter: Nouveau chapitre
+      chapter-new: Nouveau chapitre
     index:
       title: Toutes nos peluches
       map:  Où se trouvent nos Teddys

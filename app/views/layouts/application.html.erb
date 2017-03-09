@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="icon" type="image.png" href=" <%= asset_url 'logo.png' %>">
+
+    <meta property="og:url" content="http://smiling-ted.herokuapp.com" />
+    <meta property="og:image" content="http://d1kcl3yiuixneo.cloudfront.net/wp-content/uploads/teddy-bear-travel-3636201866.jpg" />
+    <meta property="og:description" content="Be a part of a beautifull story" />
+    <meta property="og:site_name" content="Smiling Ted" />    
   </head>
   <body>
     <%= render 'shared/navbar' %>

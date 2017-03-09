@@ -66,11 +66,13 @@
 
             <%= form_tag ted_check_code_path(@ted) do %>
               <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
-              <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
+              <%= submit_tag(t('.chapter-new'), class: "btn navbar-wagon-button")  %>
             <% end %>
 
           </div>
+
         </div>
+
 
 
 
@@ -122,7 +124,7 @@
 
             <div class="cbp_tmicon">
               <!-- TODO : change by chapter_user_path -->
-              <%= link_to chapter.user.avatar_image_url do %>
+              <%= link_to profile_path(chapter.user) do %>
                 <%= cl_image_tag chapter.user.avatar_image_url, class: "avatar-timeline" %></a>
               <% end %>
             </div>
@@ -157,7 +159,7 @@
                 <% elsif chapter.user.first_name? %>
                   <p class="padding"><%= t('.chapter') %>
                     <!-- TODO : change by chapter_user_path -->
-                    <%= link_to chapter.user.avatar_image_url do %>
+                    <%= link_to profile_path(chapter.user) do %>
                       <b><%= chapter.user.first_name %></b>
                     <% end %>
                   </p>
