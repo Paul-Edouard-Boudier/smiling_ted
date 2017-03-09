@@ -32,7 +32,7 @@
       <% end %>
       <%= form_tag ted_check_code_path(@ted) do %>
         <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
-        <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
+        <%= submit_tag(t('.chapter-new'), class: "btn navbar-wagon-button")  %>
       <% end %>
 
     </div>
