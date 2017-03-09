@@ -155,7 +155,7 @@ white_bear_chapter2 = white_bear.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'Vienne',
   likes: 0,
-  country: 'fr'
+  country: 'at'
 )
 
 white_bear_chapter2.photos.create!(
@@ -192,7 +192,7 @@ panda_chapter2 = panda.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'Tokyo',
   likes: 0,
-  country: 'fr'
+  country: 'jp'
 )
 
 panda_chapter2.photos.create!(
@@ -220,7 +220,7 @@ koala_chapter0 = koala.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'Bruxelles',
   likes: 0,
-  country: 'fr'
+  country: 'be'
 )
 
 koala_chapter1 = koala.chapters.create!(
@@ -228,7 +228,7 @@ koala_chapter1 = koala.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'Vietnam',
   likes: 0,
-  country: 'fr'
+  country: 'vn'
 )
 
 koala_chapter1.photos.create!(
@@ -283,7 +283,7 @@ dark_brown_chapter0 = dark_brown.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'Barcelone',
   likes: 0,
-  country: 'fr'
+  country: 'es'
 )
 
 dark_brown_chapter1 = dark_brown.chapters.create!(
@@ -291,7 +291,7 @@ dark_brown_chapter1 = dark_brown.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'Geneve',
   likes: 0,
-  country: 'fr'
+  country: 'ch'
 )
 
 dark_brown_chapter1.photos.create!(
@@ -322,10 +322,10 @@ puts "Chapter 0..."
 
 brown_big_nose_chapter0 = brown_big_nose.chapters.create!(
   user: travelers.sample,
-  description: "Faker::HarryPotter.quote",
+  description: "Sunny all the time + beach every day, what did you expect",
   localisation: 'Florida',
   likes: 0,
-  country: 'fr'
+  country: 'us'
 )
 
 brown_big_nose_chapter0.photos.create!(
@@ -343,7 +343,7 @@ brown_big_nose_chapter1 = brown_big_nose.chapters.create!(
   description: Faker::HarryPotter.quote,
   localisation: 'South Africa',
   likes: 0,
-  country: 'fr'
+  country: 'za'
 )
 
 brown_big_nose_chapter1.photos.create!(
@@ -370,10 +370,10 @@ puts "Chapter 2..."
 
 brown_big_nose_chapter2 = brown_big_nose.chapters.create!(
   user: travelers.sample,
-  description: Faker::HarryPotter.quote,
+  description: "Hollywood was a lot of fun, so was Dinseyland",
   localisation: 'Hollywood',
   likes: 0,
-  country: 'fr'
+  country: 'us'
 )
 
 brown_big_nose_chapter2.photos.create!(
@@ -403,7 +403,7 @@ brown_big_nose_chapter3 = brown_big_nose.chapters.create!(
   description: "Venise has more than 150 canals and 1,250 bridges, but it never seems crowded, nor bent and bitter from fleecing the tourist",
   localisation: 'Italy',
   likes: 0,
-  country: 'fr'
+  country: 'it'
 )
 
 brown_big_nose_chapter3.photos.create!(
