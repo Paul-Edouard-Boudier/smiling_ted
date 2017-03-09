@@ -25,7 +25,7 @@
               <% end %>
             </div>
 
-            <div class="after-avatar btn navbar-wagon-button"><%= ted.name %></div>
+            <div class="after-avatar btn navbar-wagon-button"><%= ted.name %>'s story</div>
 
             <div class="after-avatar rank">
               <i class="fa fa-trophy" aria-hidden="true"></i> <%= ted.rank %>
@@ -34,11 +34,11 @@
             <div class="card-content">
 
               <% if ted.distance_traveled.round == 0 %>
-                <h5>Travel just began !</h5>
+                <h5><%= t('.beggining') %></h5>
               <% else %>
-                <h4><%= ted.distance_traveled.round %><span> km parcourus</span></h4>
+                <h4><%= ted.distance_traveled.round %><span> km <%=  t('.covered')%></span></h4>
                 <% if ted.days < 1 %>
-                  <h5>en <b><%= ted.days %></b> jours</h5>
+                  <h5><%= t('.in') %> <b><%= ted.days %></b> <%= t('.days') %></h5>
                 <% end %>
 
               <% end %>

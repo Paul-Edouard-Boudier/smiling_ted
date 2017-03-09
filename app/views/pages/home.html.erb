@@ -3,9 +3,9 @@
     <h1> <%= t('.value-proposition') %></h1>
     <p> <%= t('.second-value') %></p>
 
-    <%= link_to t('all'), teds_path, class: "btn navbar-wagon-button" %>
+    <%= link_to t('.all'), teds_path, class: "btn navbar-wagon-button" %>
     <%= link_to smile_path, class: "btn navbar-wagon-button" do %>
-      <%= t('new_ted') %>
+      <%= t('.new_ted') %>
     <% end %>
 
 
@@ -14,7 +14,9 @@
 
 
 <div class="wraper-content">
+
  <div style="background-image: url(<%= image_path("map-back.png") %>); background-size: cover;">
+
   <div class="container">
     <div class="row ">
       <!-- <div class="content-info">
