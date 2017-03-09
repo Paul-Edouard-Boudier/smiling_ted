@@ -6,10 +6,11 @@ $(document).ready(function() {
 
     var handler = Gmaps.build('Google');
     handler.buildMap({ internal: { id: id } }, function() {
-
+    var image = "http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|fc4016"
       markers = handler.addMarker({
         lat: lat,
-        lng: lng
+        lng: lng,
+        icon: image,
       });
 
       handler.bounds.extendWith(markers);
