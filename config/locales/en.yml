@@ -69,13 +69,18 @@ en:
       in: in
       days: days
       covered: covered.
+      story: story of
     form:
       name_creation: Name your Teddybear
       code: What's his code?
   chapters:
     form:
       description_chapter_creation: Describe what happened
-      localisation_chapter_creation: "Where is your Ted ?"
+      localisation_chapter_creation: Where is your Ted ?
+      country: In which country are you?
+    new:
+      hero: lets be a hero 
+      
 
 
 

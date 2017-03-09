@@ -16,7 +16,7 @@ class Chapter < ApplicationRecord
   end
 
   def full_address
-    return "#{localisation}, #{country}"
+    [localisation, country].compact.join(', ')
   end
 
   def full_address_changed?
