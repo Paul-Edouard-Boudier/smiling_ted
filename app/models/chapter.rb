@@ -8,7 +8,7 @@ class Chapter < ApplicationRecord
   accepts_nested_attributes_for :photos, reject_if: :all_blank, allow_destroy: true
   after_create :update_ted_location
 
-  validates :country, presence: true
+  # validates :country, presence: true
 
   def update_ted_location
     self.ted.location = self.localisation

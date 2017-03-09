@@ -69,6 +69,7 @@ en:
       in: in
       days: days
       covered: covered.
+      story: story of
     form:
       name_creation: Name your Teddybear
       code: What's his code?
@@ -76,6 +77,9 @@ en:
     form:
       description_chapter_creation: write a description
       localisation_chapter_creation: Enter the actual location of ted
+      country: In which country are you?
+    new:
+      hero: lets be a hero 
       
 
 
