@@ -20,16 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  
+
   shared:
-    navbar: 
+    navbar:
       search: Search for a name
       submit: Search
     footer:
       about: About us
       aboutinfos: A team that work together to allow children to realise their dream
       team: team
-      home: home    
+      home: home
   pages:
     home:
       value-proposition: Give meaning to your travels
@@ -74,9 +74,9 @@ en:
       code: What's his code?
   chapters:
     form:
-      description_chapter_creation: write a description
-      localisation_chapter_creation: Enter the actual location of ted
-      
+      description_chapter_creation: Describe what happened
+      localisation_chapter_creation: "Where is your Ted ?"
+
 
 
 
