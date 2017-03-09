@@ -323,9 +323,9 @@ puts "Chapter 0..."
 brown_big_nose_chapter0 = brown_big_nose.chapters.create!(
   user: travelers.sample,
   description: "Sunny all the time + beach every day, what did you expect",
-  localisation: 'Florida',
+  localisation: 'Montreal',
   likes: 0,
-  country: 'us'
+  country: 'ca'
 )
 
 brown_big_nose_chapter0.photos.create!(
