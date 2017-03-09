@@ -28,44 +28,40 @@
           </h1>
 
           <!-- Call-To-Action -->
-          <ul >
+          <ul class="list-unstyled">
             <li>
               <%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km
             </li>
             <li>
               <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %>
             </li>
+            <ul class="list-inline flags">
 
+                   <% @chapters.each do |chapter| %>
+                  <% if chapter.country.present? %>
+                    <li class="flag-item">
+                      <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
+                      <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
+                    </li>
+                  <% end %>
+                <% end %>
+
+            </ul>
           </ul>
 
 
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-4 ">
+          <div class="pull-right">
 
-          <% @chapters.each do |chapter| %>
-            <% if chapter.country.present? %>
-              <div class="flags">
-                <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
-                <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
-              </div>
+            <%= form_tag ted_check_code_path(@ted) do %>
+              <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
+              <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
             <% end %>
-          <% end %>
-          <%= form_tag ted_check_code_path(@ted) do %>
-            <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
-            <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
-          <% end %>
-
+          </div>
         </div>
 
 
-
-
-
-
-        <div class="col-xs-6">
-
-
-        </div>
 
 
     </div>

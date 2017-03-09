@@ -114,11 +114,9 @@
 
 
 .flags {
-  display: inline-block;
-  width: 160px;
-  text-align: center;
-  font-size: 15px;
   color: #999;
+
+
   .country_flag:hover + .country_name {
     opacity: 1;
     transition-duration: 3ms;
