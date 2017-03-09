@@ -15,6 +15,7 @@
 
 
       <!-- Story Title -->
+
       <div class="row">
         <div class="col-xs-12 col-sm-8">
 
@@ -23,7 +24,7 @@
 
 
             <h1>
-            <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
+            <%=  cl_image_tag( @ted.avatar.path , class: "avatar-large") %>
 
             <%=  t('.history')%> <%= @ted.name %>
           </h1>
@@ -67,6 +68,7 @@
               <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
               <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
             <% end %>
+
           </div>
         </div>
 
