@@ -15,6 +15,7 @@ user = User.create!(
   last_name: "Smith"
 )
 puts "User created : #{user.email} / #{user.password}\n"
+
 number_of_travelers = 2
 puts "Creating #{number_of_travelers} travelers..."
 
