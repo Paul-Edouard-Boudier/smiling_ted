@@ -10,6 +10,8 @@ class Ted < ApplicationRecord
 
   before_create :generate_code
 
+  validates :rank, presence: true
+
   def distance_traveled
     distance_traveled = 0
     chapters.all.each_cons(2) do |chapters|
@@ -25,6 +27,14 @@ class Ted < ApplicationRecord
   def days
     days = (DateTime.now.to_date - self.created_at.to_date).to_i
     days
+  end
+
+  def last_image_url
+    if chapters.present? && chapters.last.photos.present?
+      chapters.last.photos.first.image.path
+    else
+      "http://www.croop.cl/UI/twitter/images/up.jpg"
+    end
   end
 
   private

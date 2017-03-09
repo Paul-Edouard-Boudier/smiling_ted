@@ -1,2 +1,108 @@
-<h1>Profile#show</h1>
-<p>Find me in app/views/profile/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <!-- bio of user  -->
+    <div class="col-xs-12 col-sm-4">
+      <div class="bio-container">
+        <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, class: "img-circle" %>
+
+        <ul class="list-unstyled">
+          <li> <h2><%= @user.first_name %> </li>
+          <li> Member since <%= time_ago_in_words(@user.created_at) %></li>
+          <li>
+            <div class= "user-description">
+               <%= @user.long_description %>
+            </div>
+
+          </li>
+          <li>description  <%= @user.short_description%></li>
+          <li>nationality <%= @user.nationality%></li>
+          <li>age  <%= @user.date_of_birth%></li>
+           <% if @user.chapters.present? %>
+             <li> à voyagé <%= @user.chapters.count %> fois</li>
+           <% end %>
+           <% if @user.teds.present? %>
+             <li>est propriétaire de <%= @user.teds.count %> teds </li>
+           <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+      <!-- chapters wrote by user  -->
+      <% if @user.chapters.present? %>
+        <div class="row">
+          <h1 class= "text-align">My ted stories</h1>
+          <% @user.chapters.each do |chapter|  %>
+
+            <div class="col-xs-12 col-sm-6">
+              <%= link_to ted_path(chapter.ted, anchor: "chapter_#{chapter.id}") do %>
+              <% if chapter.photos.present? %>
+                <div class="card-chapter" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(chapter.photos.first.image.path) %>');height: 250px ;">
+                <% end %>
+                  <div class="card-description">
+                    <h2><%= chapter.localisation %></h2>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+        <!-- ted of user  -->
+      <% if @user.teds.present? %>
+        <div class="row">
+          <h1 class= "text-align">My ted</h1>
+          <% @user.teds.each do |ted| %>
+            <div class="col-xs-12 col-sm-6">
+              <%= link_to ted_path(ted) do %>
+                <div class="container-content my-ted-card">
+                  <header>
+                    <div class="bio">
+                      <div class="image-card" style="background-image: url('<%= cl_image_path ted.last_image_url %>');">
+                      </div>
+                      <div class="desc"></div>
+                    </div>
+                    <div class="avatarcontainer">
+                      <% if ted.avatar? %>
+                        <%= cl_image_tag(ted.avatar.path, class: "avatar-ted", size: '70x70', crop: :thumb, gravity: :face ) %>
+                      <% else %>
+                         <%= image_tag("ted-avatar.jpg", class: "avatar-ted", size: '70x70') %>
+                      <% end %>
+                      <div class="hover">
+                          <div class="icon-twitter"></div>
+                      </div>
+                    </div>
+                  </header>
+                  <div class="content">
+                    <div class="data">
+                      <ul>
+                        <li>
+                          <%= ted.rank %>
+                          <span>rank</span>
+                        </li>
+                        <li>
+                          <%= ted.distance_traveled.round  %>
+                          <span>distance km</span>
+                        </li>
+                        <li>
+                          <%= ted.days %>
+                          <span>days</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="follow">
+                      <div class="icon-twitter"></div>
+                      <p><%= ted.name %></p>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

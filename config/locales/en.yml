@@ -20,26 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  name_creation: Name your Teddybear
-  code: What's his code?
-  hello: Hello world
-  search: Search for a name
-  submit: Search
-  all: Teds all around the world
-  new_ted: Get my Ted
-  description_chapter_creation: write a description
-  localisation_chapter_creation: Enter the actual location of ted
-  chapter: Write a new chapter
-  sign_out: Déconnexion
-  about: About us
-  aboutinfos: A team that work together to allow children to realise their dream
-  team: team
-  home: home
-
+  
+  shared:
+    navbar: 
+      search: Search for a name
+      submit: Search
+    footer:
+      about: About us
+      aboutinfos: A team that work together to allow children to realise their dream
+      team: team
+      home: home    
+  pages:
+    home:
+      value-proposition: Give meaning to your travels
+      second-value: 'Make a ted travel : make a child happy'
+      order: Order a Teddy from the website
+      write: Write the first chapter of your ted life
+      send: Send him back to us, we will give your ted to travellers
+      all: Teds all around the world
+      new_ted: Get my Ted
   teds:
     index:
       title: Select a ted's story
-      map: Here's where are all Teds
+      map: Our Teds over the world!
       rank: rank
       name: Ted's name
       owner: Owner
@@ -55,14 +58,25 @@ en:
       here: to
       someone: someone
       for: for
+      went: travelled
+      found: and discovered
+      country: countries
+      chapter: Chapter written by
+      you: you
+      chapter: Write a new chapter
+    all:
+      beggining: Travel just began!
+      in: in
+      days: days
+      covered: covered.
     form:
-  pages:
-    home:
-      value-proposition: Give meaning to your travels
-      second-value: 'Make a ted travel : make a child happy'
-      order: Order a Teddy from the website
-      write: Write the first chapter of your ted life
-      send: Send him back to us, we will give your ted to travellers
+      name_creation: Name your Teddybear
+      code: What's his code?
+  chapters:
+    form:
+      description_chapter_creation: write a description
+      localisation_chapter_creation: Enter the actual location of ted
+      
 
 
 

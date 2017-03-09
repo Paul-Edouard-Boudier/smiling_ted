@@ -1,7 +1,18 @@
-<div class="container-full">
+
+<div class="container-fluid">
+  <div class="row">
+    <div id="map" ></div>
+  </div>
+</div>
+<div class="container-fluid">
+
+
+  
+
 
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1">
+    <div class="col-xs-10 col-xs-offset-1 show-head">
+
 
       <!-- Story Title -->
       <h1 id="story-title">
@@ -10,19 +21,29 @@
       </h1>
 
       <!-- Call-To-Action -->
-      <p><%= @ted.name %> a parcouru <%= @ted.distance_traveled.round %> km et découvert ( .count ) pays</p>
+      <p><%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km, <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %></p>
+      <% @chapters.each do |chapter| %>
+        <% if chapter.country.present? %>
+          <div class="flags">
+            <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
+            <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
+          </div>
+        <% end %>
+      <% end %>
       <%= form_tag ted_check_code_path(@ted) do %>
         <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
-        <%= submit_tag(t('chapter'), class: "btn navbar-wagon-button")  %>
+        <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
       <% end %>
 
     </div>
   </div>
+</div>
 
   <hr/>
 
   <!-- Map of all chapters -->
-  <div id="map" style="width: 100%; height: 400px;"></div>
+<div class="container-fluid">
+
 
 
   <!-- Offset & main row-->
@@ -80,16 +101,20 @@
                 <h1 class="padding">Chapter <%= chapter_number %>. <%= @ted.name %>
                   <% if chapter == @ted.chapters.last %>
                       <%= t('.travels') %>
-                   <% else %>
+                  <% else %>
                       <%= t('.traveled') %>
-                   <% end %>
-                  <%= chapter.localisation %>
+                  <% end %>
+                  <% if chapter.localisation.present? %>
+                    <%= chapter.localisation %>
+                  <% else %>
+                    <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s]  %>
+                  <% end %>
 
                   </h1>
                 <% if chapter.user.first_name == current_user %>
-                  <p class="padding">Chapter written by <b>you/b></p>
+                  <p class="padding"><%= t('.chapter') %> <b><%= t('.you') %>/b></p>
                 <% elsif chapter.user.first_name? %>
-                  <p class="padding">Chapter written by
+                  <p class="padding"><%= t('.chapter') %>
                     <!-- TODO : change by chapter_user_path -->
                     <%= link_to chapter.user.avatar_image_url do %>
                       <b><%= chapter.user.first_name %></b>
@@ -121,7 +146,9 @@
                      <% end %>
 
                           <!-- One Clikable Photo -->
+                          <% if chapter.localisation.present? %>
                           <%= link_to cl_image_path(photo.image.path), class: "swipebox", title: chapter.localisation + '<br/>' + photo.title + '<br/>'+ photo.description do %>
+                          <% end %>
                             <div class="card-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path photo.image.path, height: 600, gravity: :center, crop: :fill %>');">
                               <div class="card-content">
                                 <h3 class="font<%= [1,2,3,4,5].sample %>"><%= photo.title %></h3>
@@ -160,16 +187,24 @@
       $(document).ready(function() {
         var handler = Gmaps.build('Google');
 
-        handler.buildMap({ internal: { id: 'map' } }, function() {
-          markers = handler.addMarkers(<%= raw @hash.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-          if (markers.length == 0) {
-            handler.getMap().setZoom(2);
-          } else if (markers.length == 1) {
-            handler.getMap().setZoom(14);
+        handler.buildMap(
+          {
+            internal: { id: 'map' },
+            provider: {
+              styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+            }
+          },
+          function() {
+            markers = handler.addMarkers(<%= raw @hash.to_json %>);
+            handler.bounds.extendWith(markers);
+            handler.fitMapToBounds();
+            if (markers.length == 0) {
+              handler.getMap().setZoom(2);
+            } else if (markers.length == 1) {
+              handler.getMap().setZoom(14);
+            }
           }
-        });
+        );
 
         <!-- TODO : Disable Zoom on Scroll -->
       });
