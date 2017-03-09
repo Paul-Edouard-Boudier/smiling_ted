@@ -7,7 +7,7 @@
 <div class="container-fluid">
 
 
-  
+
 
 
   <div class="row">
@@ -15,27 +15,61 @@
 
 
       <!-- Story Title -->
-      <h1 id="story-title">
-        <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
-        <%=  t('.history')%> <%= @ted.name %>
-      </h1>
+      <div class="row">
+        <div class="col-xs-8">
 
-      <!-- Call-To-Action -->
-      <p><%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km, <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %></p>
-      <% @chapters.each do |chapter| %>
-        <% if chapter.country.present? %>
-          <div class="flags">
-            <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
-            <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
-          </div>
-        <% end %>
-      <% end %>
-      <%= form_tag ted_check_code_path(@ted) do %>
-        <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
-        <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
-      <% end %>
+
+
+
+
+          <h1 id="story-title ">
+            <img src="http://cdn.perfectmemorials.com/product_images/3673837/lg/3415.brownteddybearcr_lrg_0.jpg" class="avatar-large" />
+            <%=  t('.history')%> <%= @ted.name %>
+          </h1>
+
+          <!-- Call-To-Action -->
+          <ul >
+            <li>
+              <%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km
+            </li>
+            <li>
+              <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %>
+            </li>
+
+          </ul>
+
+
+        </div>
+        <div class="col-xs-4">
+
+          <% @chapters.each do |chapter| %>
+            <% if chapter.country.present? %>
+              <div class="flags">
+                <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
+                <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
+              </div>
+            <% end %>
+          <% end %>
+          <%= form_tag ted_check_code_path(@ted) do %>
+            <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
+            <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
+          <% end %>
+
+        </div>
+
+
+
+
+
+
+        <div class="col-xs-6">
+
+
+        </div>
+
 
     </div>
+
   </div>
 </div>
 
