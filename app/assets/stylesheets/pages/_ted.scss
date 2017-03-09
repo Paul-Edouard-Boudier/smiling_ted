@@ -1,5 +1,7 @@
 #story-title{
  font-size: 3em;
+ margin-top: -20px;
+
 }
 
 
@@ -71,6 +73,7 @@
   box-shadow:         $box-shadow;
 }
 
+
 .card-content{
   position: absolute;
   left: 0;
@@ -113,18 +116,7 @@
 
 
 .flags {
-  display: inline-block;
-  width: 160px;
-  text-align: center;
-  font-size: 15px;
   color: #999;
-  .country_flag:hover + .country_name {
-    opacity: 1;
-    transition-duration: 3ms;
-  }
-  .country_name {
-    opacity: 0;
-  }
 }
 
 
@@ -137,6 +129,10 @@
   margin-top: -5em;
   background-color: white;
   padding: 2em 4em;
-  border-radius: 30px 30px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
+.show-head h1 {
+  margin-top: 0px;
+
+}

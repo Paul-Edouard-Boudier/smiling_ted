@@ -7,7 +7,7 @@
 // -- handwritting fonts :
 @import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Coming+Soon|Satisfy|Sue+Ellen+Francisco|Waiting+for+the+Sunrise');
 
-$base-font: "Open Sans", "Helvetica", "sans-serif";
+$base-font: "Helvetica", "Open Sans", "sans-serif";
 $header-font: "Copse", "Helvetica", "sans-serif";
 
 $handwriting1: 'Satisfy';
@@ -26,12 +26,13 @@ $base-height: 1.4;
  * ------------------------------------- */
 
 // OUR COLOURS
+$bg_color: #7DCDCD;
 $text_color: #100e14; // dark-grey
 $light_text_color: #e5e5e5;  // light grey
 
-$color_1: #fc4016; // couleur chaude
-$color_2: #74ccfc; // couleur froide
-$light_color: #e9fca4;
+$color_1: #fd7827; // couleur chaude
+$color_2: #E2FAFA; // couleur froide
+$light_color: #E2FAFA;
 
 
 // Scheme

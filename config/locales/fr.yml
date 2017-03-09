@@ -48,6 +48,7 @@ fr:
       in: en
       days: jours
       covered: parcourus.
+      story: histoire de
     form:   
       name_creation: Nommez votre peluche
       code: Entrez le code de la peluche
@@ -55,5 +56,8 @@ fr:
     form:  
       description_chapter_creation: Ecrivez une description
       localisation_chapter_creation: Entrez la localisation actuel de ted
+      country: Dans quel pays êtes vous ?
+    new: 
+      hero: Devenez un héros
 
 

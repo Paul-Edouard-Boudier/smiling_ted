@@ -15,27 +15,68 @@
 
 
       <!-- Story Title -->
-      <h1 id="story-title">
-        <%=  cl_image_tag( @ted.avatar.path , class: "avatar-large") %>
-        <%=  t('.history')%> <%= @ted.name %>
-      </h1>
 
-      <!-- Call-To-Action -->
-      <p><%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km, <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %></p>
-      <% @chapters.each do |chapter| %>
-        <% if chapter.country.present? %>
-          <div class="flags">
-            <%=  image_tag("flags/#{chapter.country.downcase}.png", class: "country_flag") %>
-            <p class="country_name"> <%= ISO3166::Country[chapter.country].translations[I18n.locale.to_s] %></p>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+
+
+
+
+
+            <h1>
+            <%=  cl_image_tag( @ted.avatar.path , class: "avatar-large") %>
+
+            <%=  t('.history')%> <%= @ted.name %>
+          </h1>
+
+          <!-- Call-To-Action -->
+          <ul class="list-unstyled">
+            <li>
+              <%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km
+            </li>
+            <li>
+              <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %>
+            </li>
+            <ul class="list-inline flags">
+
+                   <% @chapters.each do |chapter| %>
+                  <% if chapter.country.present? %>
+                    <li class="flag-item">
+                      <%=  image_tag(
+                            "flags/#{chapter.country.downcase}.png",
+                            class: "country_flag",
+                            data: {
+                              toggle: 'tooltip',
+                              placement: 'bottom'
+                            },
+                            title: ISO3166::Country[chapter.country].translations[I18n.locale.to_s]
+                          )
+                      %>
+                    </li>
+                  <% end %>
+                <% end %>
+
+            </ul>
+          </ul>
+
+
+        </div>
+        <div class="col-xs-12 col-sm-4 ">
+          <div class="pull-right">
+
+            <%= form_tag ted_check_code_path(@ted) do %>
+              <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
+              <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
+            <% end %>
+
           </div>
-        <% end %>
-      <% end %>
-      <%= form_tag ted_check_code_path(@ted) do %>
-        <%= text_field_tag(:ted_code, "code #{ t('.for') } #{@ted.name}", class: "navbar-wagon-search-input") %>
-        <%= submit_tag(t('.chapter'), class: "btn navbar-wagon-button")  %>
-      <% end %>
+        </div>
+
+
+
 
     </div>
+
   </div>
 </div>
 

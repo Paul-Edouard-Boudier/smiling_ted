@@ -1,11 +1,10 @@
 
+<%= simple_form_for([@ted, @chapter]) do |f| %>
+  <%= f.input :description, label: t('.description_chapter_creation'), input_html: { class: 'navbar-wagon-search-input' } %>
+  <%= f.input :localisation, label: t('.localisation_chapter_creation'), input_html: { class: 'autocomplete navbar-wagon-search-input'  } %>
+  <%= f.input :country, label: t('.country'), required: true, as: :hidden %>
 
-<%= simple_form_for ([@ted, @chapter]), defaults: { input_html: { class: 'navbar-wagon-search' } } do |f| %>
 
-   <!--  TODO : Geocoder gem with Autocomplete -->
-  <%= f.input :localisation, label: t('.localisation_chapter_creation'), input_html: { class: 'navbar-wagon-search-input'} %>
-  <%= f.input :country, label: "Country", required: true %>
-  <%= f.input :description, label: t('.description_chapter_creation'), input_html: { class: 'navbar-wagon-search-input'} %>
 
   <h3>Photos</h3>
   <div id="photos">
