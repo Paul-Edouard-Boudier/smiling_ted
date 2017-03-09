@@ -55,3 +55,16 @@
 .icon:hover {
   opacity: 0.7;
 }
+
+.ted-action-button {
+  color: $color_1;
+  border-radius: 50px;
+  border: 2px solid $color_1 ;
+
+}
+.ted-action-button:hover {
+  background-color: $color_2;
+  color: $color_1;
+
+}
+

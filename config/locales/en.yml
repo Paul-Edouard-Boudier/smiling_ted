@@ -20,20 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  
+
   shared:
-    navbar: 
+    navbar:
       search: Search for a name
       submit: Search
     footer:
       about: About us
       aboutinfos: A team that work together to allow children to realise their dream
       team: team
-      home: home    
+      home: home
   pages:
     home:
-      value-proposition: Give meaning to your travels
-      second-value: 'Make a ted travel : make a child happy'
+      value-proposition: Be a part of a beautifull story
+      second-value: 'Give to a child the travel spririt by making his ted discovering the world '
       order: Order a Teddy from the website
       write: Write the first chapter of your ted life
       send: Send him back to us, we will give your ted to travellers
@@ -75,12 +75,13 @@ en:
       code: What's his code?
   chapters:
     form:
-      description_chapter_creation: write a description
-      localisation_chapter_creation: Enter the actual location of ted
+      description_chapter_creation: Describe what happened
+      localisation_chapter_creation: Where is your Ted ?
       country: In which country are you?
     new:
       hero: lets be a hero 
       
+
 
 
 
