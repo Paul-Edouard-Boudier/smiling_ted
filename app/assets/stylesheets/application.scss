@@ -21,6 +21,7 @@ body{
 }
 
 #body-wrap {
-  background-color:   #FFF;
-  position:           relative;
+  background-color: #FFF;
+  position: relative;
+  min-height: calc(100vh - #{$footer-height} - #{$navbar-height});
 }
