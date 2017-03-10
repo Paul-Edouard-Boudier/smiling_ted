@@ -4,13 +4,12 @@
   <%= f.input :localisation, label: t('.localisation_chapter_creation'), input_html: { class: 'autocomplete navbar-wagon-search-input'  } %>
   <%= f.input :country, label: t('.country'), required: true, as: :hidden %>
 
-
-
   <h3>Photos</h3>
   <div id="photos">
-  <%= f.simple_fields_for :photos do |photo|  %>
-    <%= render 'photo_fields', f: photo %>
-  <% end %>
+    <%= f.simple_fields_for :photos do |photo|  %>
+      <%= render 'photo_fields', f: photo %>
+    <% end %>
+  </div>
   <div class="links">
     <%= link_to_add_association 'add photo', f, :photos  %>
   </div>
