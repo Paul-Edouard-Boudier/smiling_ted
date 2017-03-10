@@ -6,22 +6,21 @@
         <%= cl_image_tag @user.avatar_image_url, height: 200, width: 200, class: "img-circle" %>
 
         <ul class="list-unstyled">
-          <li> <h2><%= @user.first_name %> </li>
-          <li> Member since <%= time_ago_in_words(@user.created_at) %></li>
+          <li> <h2><%= @user.first_name %></h2> </li>
+          <li> <b>Member since</b> <%= time_ago_in_words(@user.created_at) %></li>
           <li>
             <div class= "user-description">
                <%= @user.long_description %>
             </div>
 
           </li>
-          <li>description  <%= @user.short_description%></li>
-          <li>nationality <%= @user.nationality%></li>
-          <li>age  <%= @user.date_of_birth%></li>
+          <li><b>description</b>  <%= @user.short_description%></li>
+          <li><b>nationality</b> <%= @user.nationality%></li>
            <% if @user.chapters.present? %>
-             <li> à voyagé <%= @user.chapters.count %> fois</li>
+             <li> <b>à voyagé</b> <%= @user.chapters.count %> fois</li>
            <% end %>
            <% if @user.teds.present? %>
-             <li>est propriétaire de <%= @user.teds.count %> teds </li>
+             <li><b>est propriétaire de</b> <%= @user.teds.count %> teds </li>
            <% end %>
         </ul>
       </div>
@@ -32,7 +31,7 @@
       <% if @user.chapters.present? %>
         <div class="row">
           <h1 class= "text-align">My ted stories</h1>
-          <% @user.chapters.each do |chapter|  %>
+          <% @user.chapters.reverse.each do |chapter|  %>
 
             <div class="col-xs-12 col-sm-6">
               <%= link_to ted_path(chapter.ted, anchor: "chapter_#{chapter.id}") do %>
