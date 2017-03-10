@@ -95,10 +95,10 @@ doyle = User.create!(
   password_confirmation: "password",
   first_name: "Pierre",
   last_name: Faker::Name.last_name,
-  avatar_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQM_JmGUbr8X-azKPEpi_EpbQ8L-rd3NWt4CdKz1HILJHzn9ON',
+  avatar_url: 'https://www.metroplus.org/CMSPages/GetFile.aspx?guid=5db33ce4-95b6-4584-ba28-d82c49cc878a',
   created_at: DateTime.parse("09/04/2016 17:00"),
-  nationality: 'french',
-  short_description: "My monkey travels for my niece, she's 7 years old and we are gratefull for all of your help guys !"
+  nationality: 'français',
+  short_description: "Bonjour j'ai 10 ans, je m'appelle Pierre, j'habite à Lille et j'ai toujours rêvé de découvrir le monde"
   )
 
 
@@ -152,7 +152,7 @@ white_bear_chapter1 = white_bear.chapters.create!(
   description: 'So glad to have a teddy with me in this trip',
   localisation: 'Athenes',
   likes: 0,
-  country: 'fr'
+  country: 'gr'
 )
 
 white_bear_chapter1.photos.create!(
@@ -163,7 +163,7 @@ white_bear_chapter1.photos.create!(
 )
 
 white_bear_chapter2 = white_bear.chapters.create!(
-  user: doyle,
+  user: travelers.sample,
   description: Faker::HarryPotter.quote,
   localisation: 'Vienne',
   likes: 0,
@@ -258,22 +258,22 @@ monkey = Ted.create!(
  name: 'Trevor',
  user: doyle,
  rank: Faker::Number.between(1, 11),
- distance_traveled: Faker::Number.between(10, 3000),
+ distance_traveled: 0,
  avatar_url: 'http://media.jojomamanbebe.com/media/catalog/product/cache/2/image/1000x/cc44d3b39965d3efd15a8158cb2fdfb4/D/4/D4286.jpg'
 )
 
-monkey_chapter1 = monkey.chapters.create!(
-  user: travelers.sample,
-  description: Faker::HarryPotter.quote,
-  localisation: 'Paris',
+monkey_chapter0 = monkey.chapters.create!(
+  user: doyle,
+  description: "Je voudrais que Trevor fasse le tour du monde et surtout aille en Inde",
+  localisation: 'Bruxelles',
   likes: 0,
-  country: 'fr'
+  country: 'be'
 )
 
-monkey_chapter1.photos.create!(
+monkey_chapter0.photos.create!(
  image_url: 'http://68.media.tumblr.com/689da107ea574fd9c6f26318aea1bab9/tumblr_inline_of9g72RHaI1qahamr_1280.jpg',
- title: 'A great view from Paris',
- description: 'We were near the Eiffel Tower'
+ title: 'Prêt pour le départ !',
+ description: "Merci d'avance !!!"
 )
 
 
@@ -319,7 +319,7 @@ puts "Creating OUR MAIN brown teddybear with some chapters : "
 
 brown_big_nose = Ted.create!(
  name: 'Izzy',
- user: traveler5,
+ user: travelers.sample,
  rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'http://img2.everafterguide.com/EpA4ddwvwaKmtVlzyp3Lkt1fmzg=/product_images/full/3ffb45f9675205d7c7fb0e5d837d6cf4287485a2/buddy-balls-plush-teddy-bear-convertible-toy-football-dash-tan-brown-white-by-buddy-balls.jpg',
@@ -350,7 +350,7 @@ puts "\n"
 puts "Chapter 1..."
 
 brown_big_nose_chapter1 = brown_big_nose.chapters.create!(
-  user: doyle,
+  user: travelers.sample,
   description: 'We took Izzy with us all the time',
   localisation: 'South Africa',
   likes: 0,

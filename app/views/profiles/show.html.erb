@@ -17,7 +17,7 @@
           </li>
 
         <li><b>description</b>  <%= @user.short_description%></li>
-          <li><b><%= t('.nationality') %></b><%= @user.nationality%></li>
+          <li><b><%= t('.nationality') %></b> <%= @user.nationality%></li>
            <% if @user.chapters.present? %>
              <li><b> <%= t('.traveled') %></b> <%= @user.chapters.count %> <%= t('.times') %></li>
            <% end %>
