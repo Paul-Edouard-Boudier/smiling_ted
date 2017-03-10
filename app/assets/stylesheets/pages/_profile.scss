@@ -11,3 +11,37 @@
     }
   }
 }
+
+.bio-container {
+  img {
+    width: 60%;
+  }
+}
+
+.profile {
+  margin-top: 50px;
+}
+
+.my-ted-card {
+  border: 1px solid #dedede;
+  margin-bottom: 15px;
+
+  ul {
+    padding: 10px;
+    display: flex;
+    color: #888;
+    justify-content: space-between;
+    font-size: bold;
+  }
+
+  .avatarcontainer {
+    top: 95px;
+    right: 22px;
+    bottom: auto;
+  }
+}
+
+
+a.my-card-link {
+  text-decoration: none !important;
+}
