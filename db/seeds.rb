@@ -70,12 +70,12 @@ traveler5 = User.create!(
 )
 
 traveler6 = User.create!(
-  email:"doyle@hello.com" ,
+  email:"brice@hello.com" ,
   password:"password" ,
   password_confirmation: "password",
-  first_name: "Doyle",
+  first_name: "Brice",
    last_name: Faker::Name.last_name,
-   avatar_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQM_JmGUbr8X-azKPEpi_EpbQ8L-rd3NWt4CdKz1HILJHzn9ON',
+   avatar_url: 'https://lh3.googleusercontent.com/-5-yxbI8MtNQ/VcBeFN3gyUI/AAAAAAAAB2Q/5zrvofKXWkw/w1171-h1171/Profile%2B-%2B2015-7-14%2BSquare%2B50.jpg',
 )
 
 traveler7 = User.create!(
@@ -87,16 +87,21 @@ traveler7 = User.create!(
    avatar_url: 'http://d38we5ntdyxyje.cloudfront.net/270979/profile/avatar_medium_square.jpg',
 )
 
-traveler8 = User.create!(
-  email:"brice@hello.com" ,
+travelers = [traveler1, traveler2, traveler3, traveler4, traveler5, traveler6, traveler7 ]
+
+doyle = User.create!(
+  email:"pierre@hello.com" ,
   password:"password" ,
   password_confirmation: "password",
-  first_name: "Brice",
-   last_name: Faker::Name.last_name,
-   avatar_url: 'https://lh3.googleusercontent.com/-5-yxbI8MtNQ/VcBeFN3gyUI/AAAAAAAAB2Q/5zrvofKXWkw/w1171-h1171/Profile%2B-%2B2015-7-14%2BSquare%2B50.jpg',
-)
+  first_name: "Pierre",
+  last_name: Faker::Name.last_name,
+  avatar_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQM_JmGUbr8X-azKPEpi_EpbQ8L-rd3NWt4CdKz1HILJHzn9ON',
+  created_at: DateTime.parse("09/04/2016 17:00"),
+  nationality: 'french',
+  short_description: "My monkey travels for my niece, she's 7 years old and we are gratefull for all of your help guys !"
+  )
 
-travelers = [traveler1, traveler2, traveler3, traveler4, traveler5, traveler6, traveler7, traveler8 ]
+
 
 
 
@@ -107,7 +112,7 @@ travelers = [traveler1, traveler2, traveler3, traveler4, traveler5, traveler6, t
 a_ted = Ted.create!(
  name: Faker::Name.first_name,
  user: travelers.sample,
- rank: Faker::Number.between(1, 5),
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000)
 )
 
@@ -136,7 +141,7 @@ puts "Creating a white bear with some chapters..."
 white_bear = Ted.create!(
  name: 'Einstein',
  user: traveler1,
- rank: Faker::Number.between(1, 5),
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'https://www.dhresource.com/600x600/f2/albu/g1/M00/24/0B/rBVaGFZwTSSABsWuAAMS9b_8Hdk555.jpg',
  created_at: DateTime.parse("09/12/2016 17:00")
@@ -144,14 +149,21 @@ white_bear = Ted.create!(
 
 white_bear_chapter1 = white_bear.chapters.create!(
   user: travelers.sample,
-  description: Faker::HarryPotter.quote,
-  localisation: 'Lyon',
+  description: 'So glad to have a teddy with me in this trip',
+  localisation: 'Athenes',
   likes: 0,
   country: 'fr'
 )
 
+white_bear_chapter1.photos.create!(
+ image_url: 'http://3.bp.blogspot.com/-AaH7kfbnRg4/Uw4UX-adL5I/AAAAAAAAFV8/k2tKpBEqes8/s1600/DSC02158-+Maurice+admire+le+port+de+Sidi+Bou+Said.jpg
+',
+ title: 'I love Grece',
+ description: 'Beautiful Europe...'
+)
+
 white_bear_chapter2 = white_bear.chapters.create!(
-  user: travelers.sample,
+  user: doyle,
   description: Faker::HarryPotter.quote,
   localisation: 'Vienne',
   likes: 0,
@@ -166,14 +178,13 @@ white_bear_chapter2.photos.create!(
 
 
 
-
 puts "\n"
 puts "Creating a panda with some chapters..."
 
 panda = Ted.create!(
  name: 'Nia',
  user: traveler2,
- rank: Faker::Number.between(1, 5),
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'http://peluchepanda.fr/324-thickbox_default/panda-teddy.jpg',
  created_at: DateTime.parse("21/07/2016 17:00")
@@ -209,7 +220,7 @@ puts "Creating a koala with some chapters..."
 koala = Ted.create!(
  name: 'Isobel',
  user: traveler3,
- rank: Faker::Number.between(1, 5),
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'https://images-na.ssl-images-amazon.com/images/I/41slR9tEN4L._SY355_.jpg',
  created_at: DateTime.parse("07/01/2017 17:00")
@@ -245,8 +256,8 @@ puts "Creating a monkey with ONE CHAPTER (travel just began)..."
 
 monkey = Ted.create!(
  name: 'Trevor',
- user: traveler4,
- rank: Faker::Number.between(1, 5),
+ user: doyle,
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'http://media.jojomamanbebe.com/media/catalog/product/cache/2/image/1000x/cc44d3b39965d3efd15a8158cb2fdfb4/D/4/D4286.jpg'
 )
@@ -272,7 +283,7 @@ puts "Creating a dark brown teddy with some chapters..."
 dark_brown = Ted.create!(
  name: 'Walter',
  user: traveler4,
- rank: Faker::Number.between(1, 5),
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'http://media.jojomamanbebe.com/media/catalog/product/cache/2/image/1000x/cc44d3b39965d3efd15a8158cb2fdfb4/D/4/D4286.jpg',
  created_at: DateTime.parse("25/12/2016 17:00")
@@ -309,7 +320,7 @@ puts "Creating OUR MAIN brown teddybear with some chapters : "
 brown_big_nose = Ted.create!(
  name: 'Izzy',
  user: traveler5,
- rank: Faker::Number.between(1, 5),
+ rank: Faker::Number.between(1, 11),
  distance_traveled: Faker::Number.between(10, 3000),
  avatar_url: 'http://img2.everafterguide.com/EpA4ddwvwaKmtVlzyp3Lkt1fmzg=/product_images/full/3ffb45f9675205d7c7fb0e5d837d6cf4287485a2/buddy-balls-plush-teddy-bear-convertible-toy-football-dash-tan-brown-white-by-buddy-balls.jpg',
  created_at: DateTime.parse("10/07/2016 17:00")
@@ -339,8 +350,8 @@ puts "\n"
 puts "Chapter 1..."
 
 brown_big_nose_chapter1 = brown_big_nose.chapters.create!(
-  user: travelers.sample,
-  description: Faker::HarryPotter.quote,
+  user: doyle,
+  description: 'We took Izzy with us all the time',
   localisation: 'South Africa',
   likes: 0,
   country: 'za'
@@ -378,7 +389,7 @@ brown_big_nose_chapter2 = brown_big_nose.chapters.create!(
 
 brown_big_nose_chapter2.photos.create!(
  image_url: 'https://neverimitate.files.wordpress.com/2014/08/p1020445.jpg',
- title: 'Castles !! ',
+ title: 'Izzy Came an actor :P',
  description: 'I was really inspired taking this photo !'
 )
 

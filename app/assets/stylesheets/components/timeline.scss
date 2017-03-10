@@ -31,6 +31,7 @@
 
 .cbp_tmtimeline > li {
   position: relative;
+  padding-left: 0;
 }
 
 /* The date/time */
@@ -45,18 +46,19 @@
   display: block;
   text-align: right;
   color: $text_color !important;
-  padding-right: 30px;
+  padding-right: 20px;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:first-child {
   font-size: 0.9em;
   line-height: 0.8em;
+  padding-right: 42px;
 }
 
 .cbp_tmtimeline > li .cbp_tmtime span:last-child {
-  font-size: 2.6em;
+  font-size: 2.4em;
   font-family: $header-font;
-  line-height: 1.1em;
+  line-height: 1.3em;
   word-wrap: break-word;
 }
 

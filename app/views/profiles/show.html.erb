@@ -6,22 +6,23 @@
         <%= cl_image_tag @user.avatar_image_url, class: "img-circle" %>
 
         <ul class="list-unstyled">
-          <li> <h2><%= @user.first_name %> </li>
-          <li> <%= t('.member') %> <%= time_ago_in_words(@user.created_at) %></li>
+        <li> <h2><%= @user.first_name %></h2> </li>
+        <li> <b><%= t('.member') %></b> <%= time_ago_in_words(@user.created_at) %></li>
+
           <li>
             <div class= "user-description">
                <%= @user.long_description %>
             </div>
 
           </li>
-          <li>description  <%= @user.short_description%></li>
-          <li><%= t('.nationality') %> <%= @user.nationality%></li>
-          <li><%= t('.age') %>  <%= @user.date_of_birth%></li>
+
+        <li><b>description</b>  <%= @user.short_description%></li>
+          <li><b><%= t('.nationality') %></b><%= @user.nationality%></li>
            <% if @user.chapters.present? %>
-             <li> <%= t('.traveled') %> <%= @user.chapters.count %> <%= t('.times') %></li>
+             <li><b> <%= t('.traveled') %></b> <%= @user.chapters.count %> <%= t('.times') %></li>
            <% end %>
            <% if @user.teds.present? %>
-             <li><%= t('.has') %> <%= @user.teds.count %> <%= t('.teds') %> </li>
+             <li><b><%= t('.has') %></b> <%= @user.teds.count %> <%= t('.teds') %> </li>
            <% end %>
         </ul>
       </div>
