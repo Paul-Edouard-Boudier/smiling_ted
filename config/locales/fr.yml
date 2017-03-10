@@ -2,7 +2,7 @@ fr:
 
   shared:
     navbar:
-      search: Cherchez un nom
+      search: Cherchez avec un code
       submit: Rechercher
     footer:
       about: A propos de nous

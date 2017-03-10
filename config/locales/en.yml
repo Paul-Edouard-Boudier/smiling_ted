@@ -23,7 +23,7 @@ en:
 
   shared:
     navbar:
-      search: Search for a name
+      search: Search for a code
       submit: Search
     footer:
       about: About us
