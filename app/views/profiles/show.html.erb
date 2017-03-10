@@ -7,7 +7,7 @@
 
         <ul class="list-unstyled">
           <li> <h2><%= @user.first_name %> </li>
-          <li> Member since <%= time_ago_in_words(@user.created_at) %></li>
+          <li> <%= t('.member') %> <%= time_ago_in_words(@user.created_at) %></li>
           <li>
             <div class= "user-description">
                <%= @user.long_description %>
@@ -15,13 +15,13 @@
 
           </li>
           <li>description  <%= @user.short_description%></li>
-          <li>nationality <%= @user.nationality%></li>
-          <li>age  <%= @user.date_of_birth%></li>
+          <li><%= t('.nationality') %> <%= @user.nationality%></li>
+          <li><%= t('.age') %>  <%= @user.date_of_birth%></li>
            <% if @user.chapters.present? %>
-             <li> à voyagé <%= @user.chapters.count %> fois</li>
+             <li> <%= t('.traveled') %> <%= @user.chapters.count %> <%= t('.times') %></li>
            <% end %>
            <% if @user.teds.present? %>
-             <li>est propriétaire de <%= @user.teds.count %> teds </li>
+             <li><%= t('.has') %> <%= @user.teds.count %> <%= t('.teds') %> </li>
            <% end %>
         </ul>
       </div>
@@ -30,7 +30,7 @@
     <div class="col-xs-12 col-sm-8">
       <!-- chapters wrote by user  -->
       <% if @user.chapters.present? %>
-        <h1 class= "text-align">My ted stories</h1>
+        <h1 class= "text-align"><%= t('.story') %></h1>
         <div class="row">
           <% @user.chapters.each do |chapter|  %>
             <% if chapter.photos.present? %>
@@ -50,8 +50,9 @@
         <!-- ted of user  -->
       <% if @user.teds.present? %>
         <div class="row">
+
           <div class="col-xs-12">
-            <h1 class= "text-align">My ted</h1>
+            <h1 class= "text-align"><%= t('.mine') %></h1>
             <% @user.teds.each do |ted| %>
               <div class="col-xs-12 col-sm-6">
                 <%= link_to ted_path(ted), class: 'my-card-link' do %>
@@ -77,16 +78,18 @@
                       <div class="data">
                         <ul class="list-inline">
                           <li>
+                            <span><%= t('.rank') %>:</span>
                             <%= ted.rank %>
-                            <span>rank</span>
+
                           </li>
                           <li>
                             <%= ted.distance_traveled.round  %>
-                            <span>distance km</span>
+                            <span><%= t('.distance') %></span>
                           </li>
                           <li>
+                            <span> <%= t('.ontheroad') %></span>
                             <%= ted.days %>
-                            <span>days</span>
+                            <span><%= t('.days') %></span>
                           </li>
                         </ul>
                       </div>
@@ -94,6 +97,7 @@
                         <div class="icon-twitter"></div>
                         <p><%= ted.name %></p>
                       </div>
+
                     </div>
                   </div>
                 <% end %>

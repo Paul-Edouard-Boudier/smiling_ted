@@ -24,7 +24,10 @@
 
 
             <h1>
+            <% if  @ted.avatar.present?%>
+              
             <%=  cl_image_tag( @ted.avatar.path , class: "avatar-large") %>
+            <% end %>
 
             <%=  t('.history')%> <%= @ted.name %>
           </h1>

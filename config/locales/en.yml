@@ -80,6 +80,21 @@ en:
       country: In which country are you?
     new:
       hero: lets be a hero
+  profiles:
+    show:
+      member: Member for
+      nationality: nationality
+      age: age
+      traveled: traveled
+      times: times
+      has: has
+      teds: teds
+      story: My ted stories
+      mine: My teds
+      rank: rank
+      distance: km traveled
+      ontheroad: on the road for 
+      days: days
 
 
 
