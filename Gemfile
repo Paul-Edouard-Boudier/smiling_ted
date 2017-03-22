@@ -8,6 +8,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'redis'
+gem 'pundit'
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -30,7 +31,6 @@ gem 'faker', '~> 1.7', '>= 1.7.3'
 
 # geocoder
 gem "geocoder"
-gem "coffee-rails"
 gem "gmaps4rails"
 gem 'country_select', '~> 3.0'
 
