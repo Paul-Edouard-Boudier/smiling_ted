@@ -25,6 +25,7 @@ en:
     navbar:
       search: Search for a code
       submit: Search
+      new_ted: Register my teddy
     footer:
       about: About us
       aboutinfos: A team that work together to allow children to realise their dream
@@ -93,7 +94,7 @@ en:
       mine: My ted
       rank: rank
       distance: km traveled
-      ontheroad: on the road for 
+      ontheroad: on the road for
       days: days
 
 
