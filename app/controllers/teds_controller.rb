@@ -9,7 +9,7 @@ class TedsController < ApplicationController
       @teds = Ted.where(code: params[:code])
 
     else
-      @teds = Ted.all
+      @teds = policy_scope(Ted)
       @teds = Ted.where.not(latitude: nil, longitude: nil)
 
       @hash = Gmaps4rails.build_markers(@teds) do |ted, marker|
@@ -31,7 +31,7 @@ class TedsController < ApplicationController
       marker.lat chapter.latitude
       marker.lng chapter.longitude
 
-    
+
     end
     if @hash.present?
       @hash.each do |item|
@@ -73,6 +73,15 @@ class TedsController < ApplicationController
 
   private
 
+
+  def check_code
+    @ted = Ted.find(params[:ted_id])
+    if params[:ted_code] == @ted.code
+      redirect_to new_ted_chapter_path(@ted)
+    else
+      render 'show'
+    end
+  end
 
   def ted_params
     params
