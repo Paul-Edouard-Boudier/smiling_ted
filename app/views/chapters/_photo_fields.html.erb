@@ -1,6 +1,13 @@
-<div class="nested-fields">
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :image, as: :attachinary %>
-  <%= link_to_remove_association "remove photo", f %>
+<div class="nested-fields col-sm-4">
+  <div class="photoContainer">
+    <div class="fileContainer">
+      <%= link_to_remove_association f, class: "remove_photo", style: "display:none;" do %>
+        <span class="photo_remove glyphicon glyphicon-remove-circle"></span>
+      <% end %>
+      <i class="add_plus glyphicon glyphicon-plus"></i>
+      <%= f.input :image, as: :attachinary, label: false %>
+    </div>
+    <%= f.input :title, label: false, placeholder: 'Photo description', as: :text, input_html: { class: 'photoDescription',  style: "display:none;"} %>
+  </div>
 </div>
+
