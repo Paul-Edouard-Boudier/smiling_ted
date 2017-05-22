@@ -46,7 +46,6 @@ class ChaptersController < ApplicationController
       :likes,
       photos_attributes: [
         :id,
-        :description,
         :title,
         :image,
         :_destroy
