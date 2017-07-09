@@ -43,6 +43,7 @@ class TedsController < ApplicationController
 
   def new
     @ted = Ted.new
+    authorize @ted
   end
 
   def create
@@ -53,13 +54,7 @@ class TedsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
-
-  end
-
-  def update
+    authorize @ted
   end
 
   def check_code
@@ -71,17 +66,7 @@ class TedsController < ApplicationController
     end
   end
 
-  private
-
-
-  def check_code
-    @ted = Ted.find(params[:ted_id])
-    if params[:ted_code] == @ted.code
-      redirect_to new_ted_chapter_path(@ted)
-    else
-      render 'show'
-    end
-  end
+private
 
   def ted_params
     params
@@ -92,6 +77,7 @@ class TedsController < ApplicationController
 
   def find_ted
     @ted = Ted.find(params[:id])
+    authorize @ted
   end
 
 end
