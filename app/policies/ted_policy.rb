@@ -12,4 +12,8 @@ class TedPolicy < ApplicationPolicy
   def create?
     user.admin?
   end
+
+  def check_code
+    true
+  end
 end

@@ -16,7 +16,7 @@ class ChaptersController < ApplicationController
 
   def create
     @chapter = Chapter.new(chapter_params)
-    authorized @chapter
+    authorize @chapter
     @chapter.ted = @ted
     @chapter.user = current_user
     if @chapter.save
