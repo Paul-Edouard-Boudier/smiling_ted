@@ -1,6 +1,152 @@
 <div class="container text-center">
-  <h1>well</h1>
-  <div class="page-image">
-    <img src="http://www.reactiongifs.com/wp-content/uploads/2013/06/the-fun-has-arrived.gif" >
-  </div>
+  <h1>order a teddy </h1>
+  <div id='product-component-b9ac511cbd1'></div>
+<div id='collection-component-9a736814205'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'followteddy.myshopify.com',
+      apiKey: '789374690cae7539ae346300accfe3c8',
+      appId: '6',
+    });
+
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('collection', {
+        id: 373202885,
+        node: document.getElementById('collection-component-9a736814205'),
+        moneyFormat: '%E2%82%AC%7B%7Bamount%7D%7D',
+        options: {
+  "product": {
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "text": {
+      "button": "get my teddy"
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      },
+      "button": {
+        "background-color": "#fd7827",
+        "padding-left": "30px",
+        "padding-right": "30px",
+        ":hover": {
+          "background-color": "#e46c23"
+        },
+        ":focus": {
+          "background-color": "#e46c23"
+        }
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "button": {
+        "background-color": "#fd7827",
+        ":hover": {
+          "background-color": "#e46c23"
+        },
+        ":focus": {
+          "background-color": "#e46c23"
+        }
+      },
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      },
+      "button": {
+        "background-color": "#fd7827",
+        "padding-left": "30px",
+        "padding-right": "30px",
+        ":hover": {
+          "background-color": "#e46c23"
+        },
+        ":focus": {
+          "background-color": "#e46c23"
+        }
+      }
+    }
+  },
+  "toggle": {
+    "styles": {
+      "toggle": {
+        "background-color": "#fd7827",
+        ":hover": {
+          "background-color": "#e46c23"
+        },
+        ":focus": {
+          "background-color": "#e46c23"
+        }
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  }
+}
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
 </div>

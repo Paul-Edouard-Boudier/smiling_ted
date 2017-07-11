@@ -27,10 +27,16 @@ Rails.application.routes.draw do
       resources :chapters
     end
 
-
     resources :profiles, only: :show
     resources :photos
 
     get 'smile', to: 'teds#new'
+
+  end
+
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :teds, only: [ :index, :show ]
+    end
   end
 end

@@ -4,16 +4,19 @@ class ChaptersController < ApplicationController
 
   def show
     @chapter = Chapter.find(params[:id])
+    authorize @chapter
     @chapter_coordinates = { lat: @chapter.latitude, lng: @chapter.longitude }
   end
 
   def new
     @user = current_user
     @chapter = Chapter.new
+    authorize @chapter
   end
 
   def create
     @chapter = Chapter.new(chapter_params)
+    authorize @chapter
     @chapter.ted = @ted
     @chapter.user = current_user
     if @chapter.save
@@ -23,15 +26,6 @@ class ChaptersController < ApplicationController
       render new
       #TODO : flash error
     end
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def delete
   end
 
   private

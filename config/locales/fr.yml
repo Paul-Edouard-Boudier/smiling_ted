@@ -4,6 +4,7 @@ fr:
     navbar:
       search: Cherchez avec un code
       submit: Rechercher
+      new_ted: Enregister ma peluche
     footer:
       about: A propos de nous
       aboutinfos: Une équipe de passionné se met aux services des enfants pour leur permettre de voyager
@@ -59,7 +60,7 @@ fr:
       country: Dans quel pays êtes vous ?
     new:
       hero: Devenez un héros
-  profiles: 
+  profiles:
     show:
       member: Membre depuis
       nationality: nationalité
@@ -72,7 +73,7 @@ fr:
       mine: Ma peluche
       rank: rang
       distance: km parcourus
-      ontheroad: voyage depuis 
+      ontheroad: voyage depuis
       days: jours
 
       # Date
