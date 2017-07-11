@@ -48,23 +48,23 @@ class TedsController < ApplicationController
 
   def create
     @ted = Ted.find_by_code(params[:ted][:code])
+    authorize @ted
 
     if @ted.orphan? && @ted.update(ted_params)
       redirect_to ted_path(@ted)
     else
       render :new
     end
-    authorize @ted
   end
 
-  def check_code?
+  def check_code
     @ted = Ted.find(params[:ted_id])
+    authorize @ted
     if params[:ted_code] == @ted.code
       redirect_to new_ted_chapter_path(@ted)
     else
       render 'show'
     end
-    authorize @ted
   end
 
 private

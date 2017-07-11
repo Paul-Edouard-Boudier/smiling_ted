@@ -5,7 +5,7 @@ class TedPolicy < ApplicationPolicy
     end
   end
 
-  def show
+  def show?
     true
   end
 
@@ -13,7 +13,7 @@ class TedPolicy < ApplicationPolicy
     user.admin?
   end
 
-  def check_code
+  def check_code?
     true
   end
 end
