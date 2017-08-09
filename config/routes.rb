@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
 
   namespace :admin do
-    resources :users
+    resources :teds
     resources :chapters
     resources :photos
-    resources :teds
+    resources :users
 
-  root to: "users#index"
+  root to: "teds#index"
   end
 
  devise_for :users,

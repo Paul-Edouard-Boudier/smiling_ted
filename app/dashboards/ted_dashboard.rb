@@ -26,9 +26,13 @@ class TedDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+    :name,
+    :created_at,
+    :rank,
+    :distance_traveled,
     :user,
-    :chapters,
-    :photos
+    :id,
+    :code,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
