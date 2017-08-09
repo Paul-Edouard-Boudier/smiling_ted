@@ -20,6 +20,14 @@ class Ted < ApplicationRecord
     distance_traveled
   end
 
+  def countries
+    countries = []
+    chapters.each do |chapter|
+      countries << chapter.country
+    end
+    countries.uniq
+  end
+
   def orphan?
     user.blank?
   end

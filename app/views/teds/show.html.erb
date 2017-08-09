@@ -10,17 +10,14 @@
     <div class="col-xs-10 col-xs-offset-1 show-head">
 
       <!-- Story Title -->
-
       <div class="row">
         <div class="col-xs-12 col-sm-8">
 
             <h1>
             <% if  @ted.avatar.present?%>
-
-            <%=  cl_image_tag( @ted.avatar.path , class: "avatar-large") %>
+              <%=  cl_image_tag( @ted.avatar.path , class: "avatar-large") %>
             <% end %>
-
-            <%=  t('.history')%> <%= @ted.name %>
+             <%=  t('.history')%> <%= @ted.name %>
           </h1>
 
           <!-- Call-To-Action -->
@@ -29,25 +26,23 @@
               <%= @ted.name %> <%= t('.went') %> <%= @ted.distance_traveled.round %> km
             </li>
             <li>
-              <%= t('.found') %> <%= @ted.chapters.count %> <%= t('.country') %>
+              <%= t('.found') %> <%= @ted.countries.count %> <%= t('.country') %>
             </li>
             <ul class="list-inline flags">
 
-                   <% @chapters.each do |chapter| %>
-                  <% if chapter.country.present? %>
+                <% @ted.countries.each do |country| %>
                     <li class="flag-item">
                       <%=  image_tag(
-                            "flags/#{chapter.country.downcase}.png",
+                            "flags/#{country.downcase}.png",
                             class: "country_flag",
                             data: {
                               toggle: 'tooltip',
                               placement: 'bottom'
                             },
-                            title: ISO3166::Country[chapter.country].translations[I18n.locale.to_s]
+                            title: ISO3166::Country["#{country}"].translations[I18n.locale.to_s]
                           )
                       %>
                     </li>
-                  <% end %>
                 <% end %>
 
             </ul>
