@@ -1,7 +1,7 @@
 class PhotoPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
 
@@ -11,5 +11,5 @@ class PhotoPolicy < ApplicationPolicy
 
   def create?
     true
-  end+
+  end
 end

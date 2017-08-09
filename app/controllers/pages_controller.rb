@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!
+  skip_after_action :verify_authorized
+
   def home
     @teds = Ted.all.order('updated_at DESC').limit(6)
     filtered_ted
