@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
 
     resources :profiles, only: :show
-    resources :photos
+    resources :photos, only: [:show, :new, :create]
 
     get 'smile', to: 'teds#new'
 
