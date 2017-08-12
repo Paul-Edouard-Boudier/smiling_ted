@@ -15,6 +15,7 @@ class TedsController < ApplicationController
       @hash = Gmaps4rails.build_markers(@teds) do |ted, marker|
         marker.lat ted.latitude
         marker.lng ted.longitude
+
       end
     end
   end

@@ -3,20 +3,32 @@
  * ------------------------------------- */
 // Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+// -- basic fonts :
 
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Raleway", "Helvetica", "sans-serif";
 
 
 // Font-size and line-height
-$base-size: 16px;
-$base-height: 1.4;
+$base-size: 1em;
+$base-height: 1.4em;
 
 /* -------------------------------------
  * Colors
  * ------------------------------------- */
+
+ // OUR COLOURS
+$bg_color: #7DCDCD;
+$text_color: #100e14; // dark-grey
+$light_text_color: #e5e5e5;  // light grey
+
+$color_1: #fd7827; // couleur chaude
+$color_2: #E2FAFA; // couleur froide
+$light_color: #E2FAFA;
+
+
 // Scheme
-$brand-color: #D23333;
+$brand-color: $color_1;
 
 $red: #EE5F5B;
 $blue: #469AE0;
@@ -29,10 +41,13 @@ $gray: #100e14;
 $navbar-height: 70px;
 $footer-height: 250px;
 
+/* -------------------------------------
+ * Other
+ * ------------------------------------- */
 
-// FONTS
-$main_font: 'Open Sans';
-$main_titlefont: 'Raleway';
+// $box-shadow:  1px 3px 4px 0px #f2edfc;
+$box-shadow:  0px 0px 0px 0px #f2edfc;
 
+$border_radius: 8px;
 
-
+$nav_height: 70px;
