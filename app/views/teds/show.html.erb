@@ -101,14 +101,16 @@
                 <span><%= chapter.localisation %> !</span>
             </time>
 
-
             <div class="cbp_tmicon">
               <!-- TODO : change by chapter_user_path -->
-              <%= link_to profile_path(chapter.user) do %>
-                <%= cl_image_tag chapter.user.avatar_image_url, class: "avatar-timeline" %></a>
+
+
+              <% if policy(:profile).show? %>
+                <%= link_to profile_path(chapter.user) do %>
+                  <%= cl_image_tag chapter.user.avatar_image_url, class: "avatar-timeline" %></a>
+                <% end %>
               <% end %>
             </div>
-
 
             <% if chapter == @ted.chapters.last %>
               <div class="cbp_tmlabel">
