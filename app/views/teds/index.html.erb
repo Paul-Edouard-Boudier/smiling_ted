@@ -1,8 +1,10 @@
-<div class="container">
-  <h2><%= t('.map') %></h2>
-  <div id="map" style="width: 100%; height: 400px;"></div>
-  <h1><%= t('.title') %></h1>
+<div class="container-fluid">
 
+  <div id="map" style="width: 100%; height: 400px;"></div>
+</div>
+
+<div class="container">
+<h1><%= t('.title') %></h1>
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
@@ -32,7 +34,16 @@
     <%= javascript_tag do %>
       $(document).ready(function() {
         var handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' } }, function() {
+        handler.buildMap({
+          internal: { id: 'map' },
+          provider: {
+              scrollwheel: false,
+              fullscreenControl: true,
+              streetViewControl: false,
+              mapTypeControl: false,
+              styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
+            }
+        }, function() {
           markers = handler.addMarkers(<%= raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
           handler.fitMapToBounds();
