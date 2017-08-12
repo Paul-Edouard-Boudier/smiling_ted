@@ -221,6 +221,12 @@
           },
           function() {
             markers = handler.addMarkers(<%= raw @hash.to_json %>);
+            polyline = handler.addPolyline(<%= raw @hash.to_json %>,{
+            geodesic: true,
+            strokeColor: '#305759',
+            strokeOpacity: 0.8,
+            strokeWeight: 1.5
+            });
             handler.bounds.extendWith(markers);
             handler.fitMapToBounds();
             if (markers.length == 0) {
