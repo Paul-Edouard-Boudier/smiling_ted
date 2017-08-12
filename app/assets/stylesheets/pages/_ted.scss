@@ -1,107 +1,7 @@
 #story-title{
- font-size: 3em;
+ font-size: 2em;
  margin-top: -20px;
 
-}
-
-// CHAPTER
-
-.chapter{
-  margin: 5% 0 3% 0;
-  padding: 0 15px !important;
-  border-bottom: 1px solid $light_color;
-}
-.chapter .padding{
-  padding: 0 20px;
-}
-
-.current_chapter{
-  // background-color: $color_2;
-  // background-color: #DBF2FF;
-  background-color: $light_color;
-  border-radius: $border_radius;
-}
-/* TIMELINE */
-/* surcharge of default timeline when current chapter*/
-.current_chapter .cbp_tmlabel{
-  // background-color: $color_2 !important;
-  // background-color: #DBF2FF !important;
-  background-color: $light_color !important;
-}
-/* The triangle */
-.current_chapter .cbp_tmlabel:after {
-  // border-right-color:  $color_2 !important;
-  // border-right-color: #DBF2FF !important;
-  border-right-color: $light_color !important;
-}
-
-.cbp_tmtimeline > li.current_chapter .cbp_tmtime{
-  padding-top: 30px;
-}
-
-.cbp_tmtimeline > li.current_chapter .cbp_tmicon {
-  width: 80px !important;
-  height: 80px !important;
-  right: 10px !important;
-  top: 40px;
-}
-
-// CARD
-
-.card-photo{
-  background-size: cover;
-  background-position: 50%;
-  border-radius: $border_radius;
-  height:0;
-  min-width:100%;
-  padding-bottom:100%;
-  display: inline-block;
-  position: relative;
-  margin: 5px;
-  -moz-box-shadow:    $box-shadow;
-  -webkit-box-shadow: $box-shadow;
-  box-shadow:         $box-shadow;
-}
-
-
-.card-content{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  min-height: 20%;
-  padding: 0 8%;
-  background-color: #fff;
-  overflow: hidden;
-  border-bottom-left-radius: $border_radius;
-  border-bottom-right-radius: $border_radius;
- }
-.card-content h3, .card-content h4, .card-content h5{
-  line-height: 90%;
-  text-align: center;
-  color: black;
-}
-
-
-.font1, .font2, .font3, .font4, .font5{
-  font-family: $header-font;
-  color: $text_color !important;
-}
-
-
-// RESPONSIVE CARD
-
-.chapter .col-md-4 h3{
-  font-size: 0.8em;
-}
-.chapter .col-md-2 h3{
-  font-size: 0.3em;
-  padding: 0;
-  line-height:0;
-}
-
-.chapter .col-md-2 .card-content{
-  height: 30%;
 }
 
 
@@ -125,4 +25,186 @@
 .show-head h1 {
   margin-top: 0px;
 
+}
+
+/* TIMELINE */
+
+
+/* surcharge of default timeline when current chapter*/
+.current_chapter .cbp_tmlabel{
+  // background-color: $color_2 !important;
+  // background-color: #DBF2FF !important;
+  background-color: $light_color !important;
+}
+/* The triangle */
+.current_chapter .cbp_tmlabel:after {
+  // border-right-color:  $color_2 !important;
+  // border-right-color: #DBF2FF !important;
+  border-right-color: $light_color !important;
+}
+
+
+
+.cbp_tmtimeline {
+  margin: 30px 0 0 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* The line */
+.cbp_tmtimeline:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: $light_color;
+  left: 0;
+  margin-left: -10px;
+  z-index: 100;
+}
+
+.cbp_tmtimeline > li {
+  position: relative;
+  padding-left: 0;
+}
+
+/* The date/time */
+.cbp_tmtimeline > li .cbp_tmtime {
+  display: block;
+  width: 25%;
+  padding-right: 100px;
+  position: absolute;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span {
+  display: block;
+  text-align: right;
+  color: $text_color !important;
+  padding-right: 20px;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:first-child {
+  font-size: 0.9em;
+  line-height: 0.8em;
+  padding-right: 42px;
+}
+
+.cbp_tmtimeline > li .cbp_tmtime span:last-child {
+  font-size: 2.4em;
+  font-family: $header-font;
+  line-height: 1.3em;
+  word-wrap: break-word;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
+  color: $text_color;
+}
+
+/* Right content */
+.cbp_tmtimeline > li .cbp_tmlabel {
+  margin: 0 0 15px 0;
+  background: $light_color;
+  color: $text_color !important;
+  padding: 0 1em 1em 1em;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.4;
+  position: relative;
+  border-radius: 5px;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
+  background: $light_color;
+}
+
+.cbp_tmtimeline > li .cbp_tmlabel h2 {
+  margin-top: 0px;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+/* The triangle */
+.cbp_tmtimeline > li .cbp_tmlabel:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: $light_color;
+  border-width: 10px;
+  top: 10px;
+}
+
+.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+  border-right-color: $light_color;
+}
+
+/* The icons */
+.cbp_tmtimeline > li .cbp_tmicon {
+    width: 80px !important;
+  height: 80px !important;
+  right: 10px !important;
+  top: -4%;
+  left: -4%;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  background: $color_2;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #afdcf8;
+  z-index: 300;
+}
+
+/* Example Media Queries */
+@media screen and (max-width: 65.375em) {
+
+  .cbp_tmtimeline > li .cbp_tmtime span:last-child {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 47.2em) {
+  .cbp_tmtimeline:before {
+    display: none;
+  }
+
+  .cbp_tmtimeline > li .cbp_tmtime {
+    width: 100%;
+    position: relative;
+    padding: 0 0 20px 0;
+  }
+
+  .cbp_tmtimeline > li .cbp_tmtime span {
+    text-align: left;
+  }
+
+  .cbp_tmtimeline > li .cbp_tmlabel {
+    margin: 0 0 30px 0;
+    padding: 1em;
+    font-weight: 400;
+    font-size: 95%;
+  }
+
+  .cbp_tmtimeline > li .cbp_tmlabel:after {
+    right: auto;
+    left: 20px;
+    border-right-color: transparent;
+    border-bottom-color: #3594cb;
+    top: -20px;
+  }
+
+  .cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel:after {
+    border-right-color: transparent;
+    border-bottom-color: #6cbfee;
+  }
+
+  .cbp_tmtimeline > li .cbp_tmicon {
+    position: relative;
+    float: right;
+    left: auto;
+    margin: -55px 5px 0 0px;
+  }
 }

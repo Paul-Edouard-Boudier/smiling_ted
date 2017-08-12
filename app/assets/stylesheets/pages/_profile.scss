@@ -12,6 +12,27 @@
   }
 }
 
+.card-chapter {
+  height: 170px;
+  background-size: cover;
+  border-radius: 10px;
+}
+
+.card-description {
+  color: white;
+  background-color: rgba(50,50,200,0.3);
+  padding-left: 10px;
+
+}
+
+.card-chapter:hover {
+  box-shadow: 7px 7px 20px black;
+}
+
+.card-chapter {
+  transition: all 0.3s ease;
+}
+
 .bio-container {
   img {
     width: 60%;
@@ -44,4 +65,13 @@
 
 a.my-card-link {
   text-decoration: none !important;
+}
+
+.my-ted-card {
+  .image-card {
+    height: 170px;
+    background-size: cover;
+  }
+
+  width: 100%;
 }
