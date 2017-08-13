@@ -39,9 +39,15 @@
     right: 22px;
     bottom: auto;
   }
-}
+  .image-card {
+    height: 170px;
+    background-size: cover;
+  }
 
+  width: 100%;
+}
 
 a.my-card-link {
   text-decoration: none !important;
 }
+
