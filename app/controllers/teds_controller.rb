@@ -3,23 +3,31 @@ class TedsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:name].present?
-      @teds = Ted.where('name like ?', params[:name])
-      @teds = policy_scope(Ted)
-    elsif params[:code].present?
-      @teds = Ted.where(code: params[:code])
-      @teds = policy_scope(Ted)
 
-    else
       @teds = policy_scope(Ted)
       @teds = Ted.where.not(latitude: nil, longitude: nil)
+      @teds = Ted.where(code: params[:code]) if params[:code].present?
 
       @hash = Gmaps4rails.build_markers(@teds) do |ted, marker|
         marker.lat ted.latitude
         marker.lng ted.longitude
-
       end
-    end
+    # if params[:name].present?
+    #   @teds = Ted.where("name like ?", "%#{params[:name]}%")
+    #   @teds = policy_scope(Ted)
+    # elsif params[:code].present?
+    #   @teds = Ted.where(code: params[:code])
+    #   @teds = policy_scope(Ted)
+
+    # else
+    #   @teds = policy_scope(Ted)
+    #   @teds = Ted.where.not(latitude: nil, longitude: nil)
+
+    #   @hash = Gmaps4rails.build_markers(@teds) do |ted, marker|
+    #     marker.lat ted.latitude
+    #     marker.lng ted.longitude
+    #   end
+
   end
 
   def show
